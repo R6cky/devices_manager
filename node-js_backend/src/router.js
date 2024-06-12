@@ -1,12 +1,15 @@
 import { Router } from "express";
 import { CreateBluebirdController } from "./controllers/bluebird/createBluebirdController.js";
 import { GetAllBluebirdsController } from "./controllers/bluebird/getAllBluebirdsController.js";
-import {GetBluebirdByIdController} from "./controllers/bluebird/getBluebirdByIdController.js";
-import {UpdateBluebirdController} from "./controllers/bluebird/updateBluebirdController.js";
-import {DeleteBluebirdController} from "./controllers/bluebird/deleteBluebirdController.js";
+import { GetBluebirdByIdController} from "./controllers/bluebird/getBluebirdByIdController.js";
+import { UpdateBluebirdController} from "./controllers/bluebird/updateBluebirdController.js";
+import { DeleteBluebirdController} from "./controllers/bluebird/deleteBluebirdController.js";
 import { CreateComputerController } from "./controllers/computer/createComputerController.js";
 import { GetAllComputerController } from "./controllers/computer/getAllComputerController.js";
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
+import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
+import { DeleteComputerController } from "./controllers/computer/deleteComputerController.js";
+
 
 const router = Router();
 
@@ -19,8 +22,8 @@ const deleteBlueBird = new DeleteBluebirdController();
 const createComputer = new CreateComputerController();
 const getAllComputer = new GetAllComputerController();
 const getComputerById = new GetComputerByIdController();
-// const updateComputer = new UpdateBluebirdController();
-// const deleteComputer = new DeleteBluebirdController();
+const updateComputer = new UpdateComputerController();
+const deleteComputer = new DeleteComputerController();
 
 
 
@@ -36,8 +39,8 @@ router.delete("/bluebird/:id", deleteBlueBird.handle);
 router.post("/computer", createComputer.handle);
 router.get("/computer", getAllComputer.handle);
 router.get("/computer/:id", getComputerById.handle);
-// router.patch("/computer/:id", updateComputer.handle);
-// router.delete("/computer/:id", deleteComputer.handle);
+router.patch("/computer/:id", updateComputer.handle);
+router.delete("/computer/:id", deleteComputer.handle);
 
 
 
