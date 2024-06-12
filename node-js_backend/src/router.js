@@ -37,6 +37,12 @@ const updatePrint = new UpdatePrintController();
 const deletePrint = new DeletePrintController();
 
 
+const createTas = new CreateTasController();
+const getAllTas = new GetAllTasController();
+const getTasById = new GetTasByIdController();
+const updateTas = new UpdateTasController();
+const deleteTas = new DeleteTasController();
+
 
 
 router.post("/bluebird", createBluebirds.handle);
