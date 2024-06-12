@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id String @id @default(uuid())
+  name String
+  email String @unique
+  password String 
+
+  @@map("user")
+}
+
+
+model BlueBird {
+  id String @id @default(uuid())
+  serial_name String 
+  host_name String
+  fix_date String
+  description String 
+
+  @@map("bluebird")
+}
+
+
+model Computer{
+  id String @id @default(uuid())
+  hostname String 
+  ip String  
+  sector String
+  operational_system String
+  type String
+
+  @@map("computer")
+}
+
+model Tas {
+  id String @id @default(uuid())
+  hostname String
+  wifi_name String
+
+  @@map("tas")
+}
+
+model Print {
+  id String @id @default(uuid())
+  hostname String 
+  ip String
+  brand_and_model String
+
+  @@map("print")
+}
+
+model Toner {
+  id String @id @default(uuid())
+  model String 
+  in_out String 
+
+  @@map("toner")
+}
