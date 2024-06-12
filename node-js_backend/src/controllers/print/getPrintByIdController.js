@@ -1,14 +1,14 @@
 import {prismaClient} from '../../database/prismaClient.js'
 
 
-export class GetComputerByIdController{
+export class GetPrintByIdController{
     async handle(req, res){
         
-        const computer = await prismaClient.computer.findUnique({
+        const printer = await prismaClient.print.findUnique({
             where:{
                 id: req.params.id
             }
         })
-        return res.json(computer)
+        return res.json( printer )
     }
 }

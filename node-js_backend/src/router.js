@@ -9,6 +9,11 @@ import { GetAllComputerController } from "./controllers/computer/getAllComputerC
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
 import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
 import { DeleteComputerController } from "./controllers/computer/deleteComputerController.js";
+import { CreatePrintController } from "./controllers/print/createPrintController.js";
+import { GetAllPrintController } from "./controllers/print/getAllPrintController.js";
+import { GetPrintByIdController } from "./controllers/print/getPrintByIdController.js";
+import { UpdatePrintController } from "./controllers/print/updatePrintController.js";
+import { DeletePrintController } from "./controllers/print/deletePrintController.js";
 
 
 const router = Router();
@@ -25,7 +30,11 @@ const getComputerById = new GetComputerByIdController();
 const updateComputer = new UpdateComputerController();
 const deleteComputer = new DeleteComputerController();
 
-
+const createPrint = new CreatePrintController();
+const getAllPrint = new GetAllPrintController();
+const getPrintById = new GetPrintByIdController();
+const updatePrint = new UpdatePrintController();
+const deletePrint = new DeletePrintController();
 
 
 
@@ -43,6 +52,11 @@ router.patch("/computer/:id", updateComputer.handle);
 router.delete("/computer/:id", deleteComputer.handle);
 
 
+router.post("/print", createPrint.handle);
+router.get("/print", getAllPrint.handle);
+router.get("/print/:id", getPrintById.handle);
+router.patch("/print/:id", updatePrint.handle);
+router.delete("/print/:id", deletePrint.handle);
 
 
 export { router };
