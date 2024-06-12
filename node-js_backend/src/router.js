@@ -14,6 +14,16 @@ import { GetAllPrintController } from "./controllers/print/getAllPrintController
 import { GetPrintByIdController } from "./controllers/print/getPrintByIdController.js";
 import { UpdatePrintController } from "./controllers/print/updatePrintController.js";
 import { DeletePrintController } from "./controllers/print/deletePrintController.js";
+import { CreateTasController } from "./controllers/tas/createTasController.js";
+import { GetTasByIdController } from "./controllers/tas/getTasByIdController.js";
+import { UpdateTasController } from "./controllers/tas/updateTasController.js";
+import { GetAllTasController } from "./controllers/tas/getAllTasController.js";
+import { DeleteTasController } from "./controllers/tas/deleteTasController.js";
+import { CreateTonerController } from "./controllers/toner/createTonerController.js";
+import { GetAllTonerController } from "./controllers/toner/getAllTonerController.js";
+import { GetTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
+import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
+import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
 
 
 const router = Router();
@@ -44,6 +54,13 @@ const updateTas = new UpdateTasController();
 const deleteTas = new DeleteTasController();
 
 
+const createToner = new CreateTonerController();
+const getAllToner = new GetAllTonerController();
+const getTonerById = new GetTonerByIdController();
+const updateToner = new UpdateTonerController();
+const deleteToner = new DeleteTonerController();
+
+
 
 router.post("/bluebird", createBluebirds.handle);
 router.get("/bluebird", getAllBluebirds.handle);
@@ -63,6 +80,20 @@ router.get("/print", getAllPrint.handle);
 router.get("/print/:id", getPrintById.handle);
 router.patch("/print/:id", updatePrint.handle);
 router.delete("/print/:id", deletePrint.handle);
+
+
+router.post("/tas", createTas.handle);
+router.get("/tas", getAllTas.handle);
+router.get("/tas/:id", getTasById.handle);
+router.patch("/tas/:id", updateTas.handle);
+router.delete("/tas/:id", deleteTas.handle);
+
+
+router.post("/toner", createToner.handle);
+router.get("/toner", getAllToner.handle);
+router.get("/toner/:id", getTonerById.handle);
+router.patch("/toner/:id", updateToner.handle);
+router.delete("/toner/:id", deleteToner.handle);
 
 
 export { router };

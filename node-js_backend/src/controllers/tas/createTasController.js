@@ -8,8 +8,8 @@ export class CreateTasController{
 
         const tas = await prismaClient.tas.create({
             data: {
-                hostname,
-                wifi_name
+                hostname: req.body.hostname,
+                wifi_name:  req.body.wifi_name,
             }
         })
         return res.status(201).json(tas );
