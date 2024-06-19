@@ -1,5 +1,6 @@
 {
   "name": "nextjs-frontend",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.4"
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "eslint": "^8",
