@@ -4,7 +4,7 @@ export const HomeStyle = styled.main`
 
  border: solid red 1px;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
 
     .header{
@@ -17,12 +17,18 @@ export const HomeStyle = styled.main`
         justify-content: space-around;
         align-items: center;
 
-        
-
-    
-    
     }
 
+    .img-container{
+        border: solid green;
+        height: 1200px;
+    }
 
+    .footer{
+        width: 100vw;
+        height: 150px;
+        border: solid red;
+
+    }
 
 `
