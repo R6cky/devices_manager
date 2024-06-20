@@ -5,9 +5,8 @@ export const Bluebird = () => {
 
 
     return (
-        <BluebirdStyled>
+        <BluebirdStyled >
             <Header/>
-
         </BluebirdStyled>
     )
 }
