@@ -1,3 +1,8 @@
-// import styled  from "styled-components";
+import styled  from "styled-components";
 
-// export const HomeStyled = styled.ul
+export const BluebirdStyled = styled.div`
+
+        
+
+
+`
