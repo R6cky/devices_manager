@@ -2,32 +2,78 @@ import styled from "styled-components";
 
 export const HomeStyle = styled.main`
 
- border: solid red 1px;
     width: 100vw;
     height: 100%;
 
 
     .header{
-        border: solid red;
         width: 100%;
         max-width: 100%;
-        height: 80px;
+        height: 300px;
         max-height: 100%;
+        background-color: #00000c;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        color: white;
+
+        .top-header{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .nav-bar{
+            border: solid yellow 1px;
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+           
+
+            ul{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                font-size: 20px;
+                color: blue;
+
+                li{
+                    width: 200px;
+                    height: 60px;
+                    border-radius:6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                    cursor: pointer;
+                    font-weight: bold;
+                   
+                }
+            
+            }
+        }
 
     }
 
     .img-container{
-        border: solid green;
         height: 1200px;
     }
 
     .footer{
         width: 100vw;
-        height: 150px;
-        border: solid red;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #00000c;
+        color: white;
+
 
     }
 

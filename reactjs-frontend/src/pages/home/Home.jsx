@@ -8,9 +8,18 @@ export const Home = () => {
     return (
         <HomeStyle>
             <header className="header">
-                <span className="logo">Logo</span>
+                <div className="top-header">
+                    <span className="logo">FIELDS - CNF</span>
+                </div>
+
                 <nav className="nav-bar">
-                    Menu
+                    <ul className="list-menu">
+                        <li className="item-menu">Impressoras</li>
+                        <li className="item-menu">Tas</li>
+                        <li className="item-menu">Toners</li>
+                        <li className="item-menu">Computadores</li>  
+                        <li className="item-menu">Bluebirds</li>
+                    </ul>
                 </nav>
                 
             </header>
@@ -19,7 +28,7 @@ export const Home = () => {
                     <p></p>
                 </div>
             <footer className="footer">
-
+                <p>Development by Cleiton</p>
             </footer>
         </HomeStyle>
     )
