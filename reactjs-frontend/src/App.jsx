@@ -9,7 +9,7 @@ function App() {
     <>
      {/* <Home /> */}
      <ModalBluebird/>
-    { <Bluebird/>      }
+    { <Bluebird/>  }
     
     </>
   )
