@@ -17,7 +17,7 @@ const {data} = bluebirds
     return (
         <BluebirdStyled >
             <Header/>
-            {data ?data.map((elem )=> {
+            {data ? data.map((elem )=> {
                 return (
                     <p key={elem.id}>SN: {elem.serial_name} </p>
                 ) 
