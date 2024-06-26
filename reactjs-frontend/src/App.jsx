@@ -1,19 +1,16 @@
 
-import { Home } from './pages/home/Home'
-
-
+ import { Bluebird } from './pages/bluebird/Bluebird'
+// import { Home } from './pages/home/Home'
+import { ModalBluebird } from "./modals/bluebird/ModalBluebird"
 function App() {
-  
 
-
-
- 
 
   return (
     <>
-     <Home />
-    {/* <Bluebird/>      */}
-
+     {/* <Home /> */}
+     <ModalBluebird/>
+    { <Bluebird/>      }
+    
     </>
   )
 }
