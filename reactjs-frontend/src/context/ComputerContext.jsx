@@ -13,7 +13,7 @@ export const ComputerProvider = ({children}) => {
         const getComputers = async () => {
 
             try {
-                const requestJson = await api.get('/bluebird')
+                const requestJson = await  api.get('/computer')
                 setComputers(requestJson)
                 
             } catch (error) {
@@ -24,7 +24,7 @@ export const ComputerProvider = ({children}) => {
         const createComputers = async (data) => {
 
             try {
-                const requestJson = await api.post('/bluebird', data)
+                const requestJson = await api.post('/computer', data)
                 setInsertComputer(requestJson)
                 
             } catch (error) {

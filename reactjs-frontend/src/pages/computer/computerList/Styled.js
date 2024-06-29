@@ -1,6 +1,6 @@
 import styled  from "styled-components";
 
-export const BluebirdListStyled = styled.ul`
+export const ComputerListStyled = styled.ul`
     width: 90%;
     max-width: 100%;
     height: 800px;

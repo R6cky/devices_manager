@@ -1,6 +1,6 @@
 import styled  from "styled-components";
 
-export const BluebirdItemStyled = styled.li`
+export const ComputerItemStyled = styled.li`
     
     border-radius: 8px;
     width: 300px;

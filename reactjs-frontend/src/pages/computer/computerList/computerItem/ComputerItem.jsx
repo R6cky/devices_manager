@@ -1,25 +1,25 @@
-import { BluebirdItemStyled } from "./Styled"
-import { BluebirdContext } from "../../../../context/BluebirdContext"
 import { useContext } from "react"
+import { ComputerContext } from "../../../../context/ComputerContext"
+import {ComputerItemStyled} from "./Styled"
 
+export const ComputerItem = ({computer}) => {
 
-
-export const BluebirdItem = ({bluebird}) => {
-
-    const {setIdInLocalStorage,deleteBluebird} = useContext(BluebirdContext)
+    const {setIdInLocalStorage,deleteComputer} = useContext(ComputerContext)
 
     return (
-        <BluebirdItemStyled>
+        <ComputerItemStyled>
             <div className="item-content">
-                <h3 >Serial Number: {bluebird.serial_name} </h3>
-                <h3 >Hostname: {bluebird.host_name} </h3>
-                <h3 >Data de reparo: {bluebird.fix_date} </h3>
-                <h3 >Descrição: {bluebird.description} </h3>
+                <h3 >Hostname: {computer.hostname} </h3>
+                <h3 >IP: {computer.ip} </h3>
+                <h3 >Setor: {computer.sector} </h3>
+                <h3 >Sistema Operacional: {computer.operational_system} </h3>
+                <h3 >Tipo: {computer.type} </h3>
+
             </div>
             <div className="item-buttons">
-                <button onClick={()=> setIdInLocalStorage(bluebird.id)} className="edit">Editar</button>
-                <button onClick={()=>deleteBluebird(bluebird.id)} className="remove">remover</button>
+                <button onClick={()=> setIdInLocalStorage(computer.id)} className="edit">Editar</button>
+                <button onClick={()=>deleteComputer(computer.id)} className="remove">remover</button>
             </div>
-        </BluebirdItemStyled>
+        </ComputerItemStyled>
             )
         }
