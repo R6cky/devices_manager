@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ComputadorStyled = styled.div`
+export const ComputerStyled = styled.div`
 
 
     
