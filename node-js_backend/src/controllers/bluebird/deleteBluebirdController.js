@@ -8,8 +8,7 @@ export class DeleteBluebirdController {
                 id: req.params.id
             }
         })
-        return res.json(bluebird)
+        return res.status(204).json(bluebird)
 
-        
     }
 }

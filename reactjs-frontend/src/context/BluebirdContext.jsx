@@ -38,7 +38,7 @@ export const BluebirdProvider = ({children}) => {
 
             try {
                 const bluebird = await api.patch(`/bluebird/${id}`, data)
-                setInsertBluebird(bluebird)
+                console.log(bluebird)
                 
             } catch (error) {
                 console.log(error)
@@ -58,9 +58,14 @@ export const BluebirdProvider = ({children}) => {
         }
 
 
+
+        const setIdInLocalStorage = (id) =>{
+            localStorage.setItem("id", `${id}`)
+        }
+
     return(
         <BluebirdContext.Provider 
-        value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, deleteBluebird}}>
+        value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, deleteBluebird, setIdInLocalStorage}}>
         {children}
         </BluebirdContext.Provider>
         
