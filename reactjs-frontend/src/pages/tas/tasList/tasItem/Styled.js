@@ -1,6 +1,6 @@
 import styled  from "styled-components";
 
-export const PrintItemStyled = styled.li`
+export const TasItemStyled = styled.li`
     
     border-radius: 8px;
     width: 300px;

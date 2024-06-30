@@ -1,24 +1,24 @@
 import { useContext, useEffect } from "react"
-import { PrintContext } from "../../../context/PrintContext"
-import { PrintListStyled } from "./Styled"
-import { PrintItem } from "./printItem/PrintItem"
+import { TasListStyled } from "./Styled"
+import { TasItem } from "./tasItem/TasItem"
+import { TasContext } from "../../../context/TasContext"
 
-export const PrintList = () => {
+export const TasList = () => {
 
-    const {prints,getPrints} = useContext(PrintContext)
+    const {tas,getTas} = useContext(TasContext)
    
 
     useEffect(()=>{
-        getPrints();
+        getTas();
     },[])
 
     return (
-        <PrintListStyled >
-           {prints.data ? prints.data.map((elem)=>{
+        <TasListStyled >
+           {tas.data ? tas.data.map((elem)=>{
             return (
-                <PrintItem key={elem.id} print={elem}/>
+                <TasItem key={elem.id} tas={elem}/>
             )
            }): <span>null</span>}
-        </PrintListStyled>
+        </TasListStyled>
     )
 }

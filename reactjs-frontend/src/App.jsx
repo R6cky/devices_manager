@@ -1,4 +1,5 @@
 import { Print } from "./pages/print/Print"
+import { Tas } from "./pages/tas/Tas"
 
 // import { ModalBluebirdEdit } from './modals/bluebird/modalBluebirdEdit/ModalBluebirdEdit'
 // import { Bluebird } from './pages/bluebird/Bluebird'
@@ -16,8 +17,8 @@ function App() {
       {/* <ModalBluebirdEdit/> */}
     {/* { <Bluebird/>  } */}
     {/* {<Computer/>} */}
-    <Print/>
-    
+    {/* <Print/> */}
+    <Tas/>
     </>
   )
 }
