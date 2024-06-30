@@ -10,7 +10,7 @@ export const PrintProvider = ({children}) => {
         const [print, setPrint] = useState([])
         const [insertPrint, setInsertPrint] = useState({})
 
-        const getPrint = async () => {
+        const getPrints = async () => {
 
             try {
                 const requestJson = await  api.get('/print')
@@ -64,7 +64,7 @@ export const PrintProvider = ({children}) => {
 
     return(
         <PrintContext.Provider 
-        value={{getPrint, print, createPrint, insertPrint, updatePrint, deletePrint, setIdInLocalStorage}}>
+        value={{getPrints, print, createPrint, insertPrint, updatePrint, deletePrint, setIdInLocalStorage}}>
         {children}
         </PrintContext.Provider>
         
