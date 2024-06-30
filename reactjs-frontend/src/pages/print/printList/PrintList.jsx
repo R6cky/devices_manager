@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
-import { PrintItem } from "./PrintItem/PrintItem"
 import { PrintContext } from "../../../context/PrintContext"
 import { PrintListStyled } from "./Styled"
+import { PrintItem } from "./printItem/PrintItem"
 
 export const PrintList = () => {
 
@@ -16,7 +16,7 @@ export const PrintList = () => {
         <PrintListStyled >
            {prints.data ? prints.data.map((elem)=>{
             return (
-                <PrintItem key={elem.id} Print={elem}/>
+                <PrintItem key={elem.id} print={elem}/>
             )
            }): <span>null</span>}
         </PrintListStyled>

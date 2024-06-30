@@ -7,7 +7,7 @@ export const PrintContext  = createContext({})
 // eslint-disable-next-line react/prop-types
 export const PrintProvider = ({children}) => {
 
-        const [print, setPrint] = useState([])
+        const [prints, setPrint] = useState([])
         const [insertPrint, setInsertPrint] = useState({})
 
         const getPrints = async () => {
@@ -64,7 +64,7 @@ export const PrintProvider = ({children}) => {
 
     return(
         <PrintContext.Provider 
-        value={{getPrints, print, createPrint, insertPrint, updatePrint, deletePrint, setIdInLocalStorage}}>
+        value={{getPrints, prints, createPrint, insertPrint, updatePrint, deletePrint, setIdInLocalStorage}}>
         {children}
         </PrintContext.Provider>
         
