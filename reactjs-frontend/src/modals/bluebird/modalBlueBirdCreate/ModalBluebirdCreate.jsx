@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { BluebirdContext } from "../../../context/BluebirdContext"
 import { ModalBluebirdStyle } from "./Styled"
 
@@ -6,7 +6,7 @@ import { ModalBluebirdStyle } from "./Styled"
 
 export const ModalBluebird = () => {
 
-const {createBluebird} = useContext(BluebirdContext)
+const {createBluebird, modalIsOpen, setModalIsOpen} = useContext(BluebirdContext)
 
 
     const data = {
@@ -26,6 +26,8 @@ const {createBluebird} = useContext(BluebirdContext)
 
 
 
+
+
     return(
             <ModalBluebirdStyle>
                 <form action="" className="form-bluebird" onSubmit={handleSubmit}>
@@ -33,8 +35,8 @@ const {createBluebird} = useContext(BluebirdContext)
                     <input type="text" placeholder="Hostname" onChange={(e)=>{data.host_name = e.target.value}}/>
                     <input type="date"  placeholder="Data do reparo" onChange={(e)=>{data.fix_date = e.target.value}}/>
                     <input type="text-area" placeholder="Descrição" onChange={(e)=>{ data.description = e.target.value}} />
-                    <input type="submit" className="send-bluebird" value={"Enviar"}  />
-                </form>
+                    <input type="submit" className="btn-send" value={"Enviar"}  onClick={()=> setTimeout(setModalIsOpen(false),500)}/>
+                </form> 
             </ModalBluebirdStyle>
     )
 }

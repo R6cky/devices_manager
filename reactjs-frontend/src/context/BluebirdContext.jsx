@@ -9,6 +9,8 @@ export const BluebirdProvider = ({children}) => {
 
         const [bluebirds, setBluebird] = useState([])
         const [insertBluebird, setInsertBluebird] = useState({})
+        const [modalIsOpen, setModalIsOpen] = useState(false)
+
 
         const getBluebirds = async () => {
 
@@ -63,9 +65,13 @@ export const BluebirdProvider = ({children}) => {
             localStorage.setItem("id", `${id}`)
         }
 
+
+
+
+
     return(
         <BluebirdContext.Provider 
-        value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, deleteBluebird, setIdInLocalStorage}}>
+        value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, deleteBluebird, setIdInLocalStorage, modalIsOpen, setModalIsOpen}}>
         {children}
         </BluebirdContext.Provider>
         
