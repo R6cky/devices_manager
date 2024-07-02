@@ -17,11 +17,11 @@ export const Bluebird = () => {
         <BluebirdStyled >
             <Header/>
             <div className="btn-container">
-                <span className="btn-insert" onClick={setModalIsOpen(true)} > Inserir bluebird</span>
+                <span className="btn-insert" onClick={()=> setModalIsOpen(true)} > Inserir bluebird</span>
             </div>
             <BluebirdList/>
         <Footer/>
-        {modalIsOpen ? <ModalBluebird/> : false}
+        {modalIsOpen ? <ModalBluebird/> : null}
         </BluebirdStyled>
     )
 }
