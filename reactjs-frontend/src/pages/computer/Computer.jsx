@@ -1,35 +1,34 @@
 import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
-import { BluebirdStyled } from "./Styled";
-import { BluebirdList } from "./bluebirdList/BluebirdList";
-import { BluebirdContext } from "../../context/BluebirdContext";
-import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBluebirdCreate";
-import { ModalBluebirdDelete } from "../../modals/bluebird/modalBluebirdDelete/ModalBluebirdDelete";
-import { ModalBluebirdEdit } from "../../modals/bluebird/modalBluebirdEdit/ModalBluebirdEdit";
+import { ComputerStyled } from "./Styled";
+import { ComputerList } from "./ComputerList/ComputerList";
+import { ComputerContext } from "../../context/ComputerContext";
+import { ModalComputer } from "../../modals/Computer/modalComputerCreate/ModalComputerCreate";
+import { ModalComputerDelete } from "../../modals/Computer/modalComputerDelete/ModalComputerDelete";
+import { ModalComputerEdit } from "../../modals/Computer/modalComputerEdit/ModalComputerEdit";
 
-export const Bluebird = () => {
+export const Computer = () => {
   const {
     modalCreateIsOpen,
     modalEditIsOpen,
     setModalCreateIsOpen,
     modalDeleteIsOpen,
-  } = useContext(BluebirdContext);
+  } = useContext(ComputerContext);
 
   return (
-    <BluebirdStyled>
+    <ComputerStyled>
       <Header />
       <div className="btn-container">
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
-          {" "}
-          Inserir bluebird
+          Inserir Computer
         </span>
       </div>
-      <BluebirdList />
+      <ComputerList />
       <Footer />
-      {modalCreateIsOpen ? <ModalBluebird /> : null}
-      {modalDeleteIsOpen ? <ModalBluebirdDelete /> : null}
-      {modalEditIsOpen ? <ModalBluebirdEdit /> : null}
-    </BluebirdStyled>
+      {modalCreateIsOpen ? <ModalComputer /> : null}
+      {modalDeleteIsOpen ? <ModalComputerDelete /> : null}
+      {modalEditIsOpen ? <ModalComputerEdit /> : null}
+    </ComputerStyled>
   );
 };

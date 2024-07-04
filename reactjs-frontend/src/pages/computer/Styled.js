@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BluebirdStyled = styled.div`
+export const ComputerStyled = styled.div`
   .btn-container {
     background-color: azure;
     height: 5rem;
