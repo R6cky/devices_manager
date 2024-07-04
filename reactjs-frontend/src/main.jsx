@@ -5,7 +5,7 @@ import { GlobalStyle } from "./GlobalStyle.jsx";
 import { BluebirdProvider } from "./context/BluebirdContext.jsx";
 import { ComputerProvider } from "./context/ComputerContext.jsx";
 import { PrintProvider } from "./context/PrintContext.jsx";
-import { TasContext, TasProvider } from "./context/TasContext.jsx";
+import { TasProvider } from "./context/TasContext.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Bluebird } from "./pages/bluebird/Bluebird.jsx";
 import { Print } from "./pages/print/Print.jsx";
