@@ -5,9 +5,8 @@ import { BluebirdContext } from "../../../context/BluebirdContext";
 export const ModalBluebirdEdit = () => {
   const { updateBluebird, setModalEditIsOpen } = useContext(BluebirdContext);
 
-  const idBluebird = localStorage.getItem("idBluebird");
-
   const dataBluebird = JSON.parse(localStorage.getItem("dataBluebird"));
+  const idBluebird = dataBluebird.id;
 
   console.log(dataBluebird);
 
@@ -34,7 +33,7 @@ export const ModalBluebirdEdit = () => {
           <input
             type="text"
             placeholder="Serial number"
-            value={dataBluebird.serial_name}
+            defaultValue={dataBluebird.serial_name}
             onChange={(e) => {
               data.serial_name = e.target.value;
             }}
@@ -42,7 +41,7 @@ export const ModalBluebirdEdit = () => {
           <input
             type="text"
             placeholder="Hostname"
-            value={dataBluebird.host_name}
+            defaultValue={dataBluebird.host_name}
             onChange={(e) => {
               data.host_name = e.target.value;
             }}
@@ -50,7 +49,7 @@ export const ModalBluebirdEdit = () => {
           <input
             type="date"
             placeholder="Data do reparo"
-            value={dataBluebird.fix_date}
+            defaultValue={dataBluebird.fix_date}
             onChange={(e) => {
               data.fix_date = e.target.value;
             }}
@@ -58,7 +57,7 @@ export const ModalBluebirdEdit = () => {
           <input
             type="text-area"
             placeholder="Descrição"
-            value={dataBluebird.description}
+            defaultValue={dataBluebird.description}
             onChange={(e) => {
               data.description = e.target.value;
             }}
