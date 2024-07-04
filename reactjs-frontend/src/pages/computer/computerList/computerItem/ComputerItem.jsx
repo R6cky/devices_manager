@@ -1,34 +1,34 @@
-import { BluebirdItemStyled } from "./Styled";
-import { BluebirdContext } from "../../../../context/BluebirdContext";
+import { ComputerItemStyled } from "./Styled";
+import { ComputerContext } from "../../../../context/ComputerContext";
 import { useContext } from "react";
 
-export const BluebirdItem = ({ bluebird }) => {
-  const { openModalDelete, openModalEdit } = useContext(BluebirdContext);
+export const ComputerItem = ({ computer }) => {
+  const { openModalDelete, openModalEdit } = useContext(ComputerContext);
 
   return (
-    <BluebirdItemStyled>
+    <ComputerItemStyled>
       <div className="item-content">
         <h3 className="item-content-serialname">
-          Serial Number: {bluebird.serial_name}{" "}
+          Serial Number: {computer.serial_name}{" "}
         </h3>
         <h3 className="item-content-hostname">
-          Hostname: {bluebird.host_name}{" "}
+          Hostname: {computer.host_name}{" "}
         </h3>
         <h3 className="item-content-fixdate">
-          Data de reparo: {bluebird.fix_date}{" "}
+          Data de reparo: {computer.fix_date}{" "}
         </h3>
         <p className="item-content-description">
-          Descrição: {bluebird.description}{" "}
+          Descrição: {computer.description}{" "}
         </p>
       </div>
       <div className="item-buttons">
-        <button onClick={() => openModalEdit(bluebird)} className="edit">
+        <button onClick={() => openModalEdit(computer)} className="edit">
           Editar
         </button>
-        <button onClick={() => openModalDelete(bluebird.id)} className="remove">
+        <button onClick={() => openModalDelete(computer.id)} className="remove">
           remover
         </button>
       </div>
-    </BluebirdItemStyled>
+    </ComputerItemStyled>
   );
 };

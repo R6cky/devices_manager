@@ -1,22 +1,22 @@
 import { useContext, useEffect } from "react";
-import { BluebirdContext } from "../../../context/BluebirdContext";
-import { BluebirdListStyled } from "./Styled";
-import { BluebirdItem } from "./bluebirdItem/BluebirdItem";
+import { ComputerContext } from "../../../context/ComputerContext";
+import { ComputerListStyled } from "./Styled";
+import { ComputerItem } from "./ComputerItem/ComputerItem";
 
-export const BluebirdList = () => {
-  const { bluebirds, getBluebirds } = useContext(BluebirdContext);
+export const ComputerList = () => {
+  const { computers, getComputers } = useContext(ComputerContext);
 
   useEffect(() => {
-    getBluebirds();
+    getComputers();
   }, []);
 
   return (
-    <BluebirdListStyled>
-      {bluebirds.data
-        ? bluebirds.data.map((elem) => {
-            return <BluebirdItem key={elem.id} bluebird={elem} />;
+    <ComputerListStyled>
+      {computers.data
+        ? computers.data.map((elem) => {
+            return <ComputerItem key={elem.id} computer={elem} />;
           })
         : false}
-    </BluebirdListStyled>
+    </ComputerListStyled>
   );
 };
