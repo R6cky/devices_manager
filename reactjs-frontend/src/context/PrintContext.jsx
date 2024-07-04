@@ -1,72 +1,65 @@
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 
-
-export const PrintContext  = createContext({})
+export const PrintContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
-export const PrintProvider = ({children}) => {
+export const PrintProvider = ({ children }) => {
+  const [prints, setPrint] = useState([]);
+  const [insertPrint, setInsertPrint] = useState({});
 
-        const [prints, setPrint] = useState([])
-        const [insertPrint, setInsertPrint] = useState({})
+  const getPrints = async () => {
+    try {
+      const requestJson = await api.get("/print");
+      setPrint(requestJson);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        const getPrints = async () => {
+  const createPrint = async (data) => {
+    try {
+      const requestJson = await api.post("/print", data);
+      setInsertPrint(requestJson);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-            try {
-                const requestJson = await  api.get('/print')
-                setPrint(requestJson)
-                
-            } catch (error) {
-                console.log(error)
-            }
-        }
-    
-        const createPrint = async (data) => {
+  const updatePrint = async (data, id) => {
+    try {
+      const requestJson = await api.patch(`/print/${id}`, data);
+      console.log(requestJson);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-            try {
-                const requestJson = await api.post('/print', data)
-                setInsertPrint(requestJson)
-                
-            } catch (error) {
-                console.log(error)
-            }
-        }
+  const deletePrint = async (id) => {
+    try {
+      await api.delete(`/print/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  const setIdInLocalStorage = (id) => {
+    localStorage.setItem("id", `${id}`);
+  };
 
-
-        const updatePrint = async (data, id) => {
-
-            try {
-                const requestJson = await api.patch(`/print/${id}`, data)
-                console.log(requestJson)
-                
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-
-        const deletePrint = async (id) => {
-
-            try {
-                await api.delete(`/print/${id}`)
-                
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-
-
-        const setIdInLocalStorage = (id) =>{
-            localStorage.setItem("id", `${id}`)
-        }
-
-    return(
-        <PrintContext.Provider 
-        value={{getPrints, prints, createPrint, insertPrint, updatePrint, deletePrint, setIdInLocalStorage}}>
-        {children}
-        </PrintContext.Provider>
-        
-    )
-}
+  return (
+    <PrintContext.Provider
+      value={{
+        getPrints,
+        prints,
+        createPrint,
+        insertPrint,
+        updatePrint,
+        deletePrint,
+        setIdInLocalStorage,
+      }}
+    >
+      {children}
+    </PrintContext.Provider>
+  );
+};
