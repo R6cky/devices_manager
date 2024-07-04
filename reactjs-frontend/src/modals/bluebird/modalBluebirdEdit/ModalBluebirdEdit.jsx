@@ -10,7 +10,7 @@ export const ModalBluebirdEdit = () => {
 
   console.log(dataBluebird);
 
-  const data = {
+  let data = {
     serial_name: "",
     host_name: "",
     data_reparo: "",
@@ -35,7 +35,7 @@ export const ModalBluebirdEdit = () => {
             placeholder="Serial number"
             defaultValue={dataBluebird.serial_name}
             onChange={(e) => {
-              data.serial_name = { ...data, serial_name: e.target.value };
+              data = { ...dataBluebird, serial_name: e.target.value };
             }}
           />
           <input
@@ -43,23 +43,24 @@ export const ModalBluebirdEdit = () => {
             placeholder="Hostname"
             defaultValue={dataBluebird.host_name}
             onChange={(e) => {
-              data.fix_date = { ...data, host_name: e.target.value };
+              data = { ...dataBluebird, host_name: e.target.value };
             }}
           />
           <input
             type="date"
             placeholder="Data do reparo"
-            defaultValue={dataBluebird.data_reparo}
+            defaultValue={dataBluebird.fix_date}
             onChange={(e) => {
-              data.fix_date = { ...data, fix_date: e.target.value };
+              data = { ...dataBluebird, fix_date: e.target.value };
             }}
           />
-          <input
-            type="text-area"
+          <textarea
+            className="textarea-description"
+            type="text"
             placeholder="Descrição"
             defaultValue={dataBluebird.description}
             onChange={(e) => {
-              data.description = { ...data, description: e.target.value };
+              data = { ...dataBluebird, description: e.target.value };
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />

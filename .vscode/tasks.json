@@ -9,6 +9,14 @@
       "problemMatcher": [],
       "label": "npm: build - reactjs-frontend",
       "detail": "vite build"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "node-js_backend",
+      "problemMatcher": [],
+      "label": "npm: dev - node-js_backend",
+      "detail": "nodemon src/app.js"
     }
   ]
 }
