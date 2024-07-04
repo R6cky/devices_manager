@@ -14,15 +14,15 @@ export const ComputerItemStyled = styled.li`
     height: 70%;
     margin-bottom: 30px;
 
-    .item-content-serialname {
-    }
-
     .item-content-hostname {
     }
-    .item-content-fixdate {
+
+    .item-content-ip {
+    }
+    .item-content-sector {
     }
 
-    .item-content-description {
+    .item-content-type {
       border: solid red;
       width: 100%;
       height: 200px;

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BluebirdContext } from "../../../context/BluebirdContext";
 import { ModalBluebirdStyle } from "./Styled";
 

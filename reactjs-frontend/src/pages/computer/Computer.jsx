@@ -4,7 +4,7 @@ import { Header } from "../../components/header/Header";
 import { ComputerStyled } from "./Styled";
 import { ComputerList } from "./ComputerList/ComputerList";
 import { ComputerContext } from "../../context/ComputerContext";
-import { ModalComputer } from "../../modals/Computer/modalComputerCreate/ModalComputerCreate";
+import { ModalComputerCreate } from "../../modals/Computer/modalComputerCreate/ModalComputerCreate";
 import { ModalComputerDelete } from "../../modals/Computer/modalComputerDelete/ModalComputerDelete";
 import { ModalComputerEdit } from "../../modals/Computer/modalComputerEdit/ModalComputerEdit";
 
@@ -26,7 +26,7 @@ export const Computer = () => {
       </div>
       <ComputerList />
       <Footer />
-      {modalCreateIsOpen ? <ModalComputer /> : null}
+      {modalCreateIsOpen ? <ModalComputerCreate /> : null}
       {modalDeleteIsOpen ? <ModalComputerDelete /> : null}
       {modalEditIsOpen ? <ModalComputerEdit /> : null}
     </ComputerStyled>

@@ -11,9 +11,10 @@ export const ComputerItem = ({ computer }) => {
         <h3 className="item-content-hostname">Hostname: {computer.hostname}</h3>
         <h3 className="item-content-ip">IP: {computer.ip}</h3>
         <h3 className="item-content-sector">Setor: {computer.sector} </h3>
-        <p className="item-content-os">
+        <h3 className="item-content-os">
           Sistemna Operacional: {computer.operational_system}
-        </p>
+        </h3>
+        <h3 className="item-content-os">Type: {computer.type}</h3>
       </div>
       <div className="item-buttons">
         <button onClick={() => openModalEdit(computer)} className="edit">
