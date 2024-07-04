@@ -14,10 +14,7 @@ export const BluebirdItem = ({ bluebird }) => {
         <h3>Descrição: {bluebird.description} </h3>
       </div>
       <div className="item-buttons">
-        <button
-          onClick={() => openModalEdit(bluebird.id, bluebird)}
-          className="edit"
-        >
+        <button onClick={() => openModalEdit(bluebird)} className="edit">
           Editar
         </button>
         <button onClick={() => openModalDelete(bluebird.id)} className="remove">

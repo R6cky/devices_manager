@@ -52,9 +52,8 @@ export const BluebirdProvider = ({ children }) => {
     setModalDeleteIsOpen(true);
   };
 
-  const openModalEdit = (id, data) => {
-    localStorage.setItem("idBluebird", id);
-    localStorage.setItem("dataBluebird", data);
+  const openModalEdit = (data) => {
+    localStorage.setItem("dataBluebird", JSON.stringify(data));
     setModalEditIsOpen(true);
   };
 
