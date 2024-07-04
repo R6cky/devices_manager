@@ -35,7 +35,7 @@ export const ModalBluebirdEdit = () => {
             placeholder="Serial number"
             defaultValue={dataBluebird.serial_name}
             onChange={(e) => {
-              data.serial_name = e.target.value;
+              data.serial_name = { ...data, serial_name: e.target.value };
             }}
           />
           <input
@@ -43,15 +43,15 @@ export const ModalBluebirdEdit = () => {
             placeholder="Hostname"
             defaultValue={dataBluebird.host_name}
             onChange={(e) => {
-              data.host_name = e.target.value;
+              data.fix_date = { ...data, host_name: e.target.value };
             }}
           />
           <input
             type="date"
             placeholder="Data do reparo"
-            defaultValue={dataBluebird.fix_date}
+            defaultValue={dataBluebird.data_reparo}
             onChange={(e) => {
-              data.fix_date = e.target.value;
+              data.fix_date = { ...data, fix_date: e.target.value };
             }}
           />
           <input
@@ -59,7 +59,7 @@ export const ModalBluebirdEdit = () => {
             placeholder="Descrição"
             defaultValue={dataBluebird.description}
             onChange={(e) => {
-              data.description = e.target.value;
+              data.description = { ...data, description: e.target.value };
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />
