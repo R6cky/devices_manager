@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ModalBluebirdEditStyle = styled.div`
+export const ModalBluebirdDeleteStyle = styled.div`
 
     position: fixed;
     top: 0px;

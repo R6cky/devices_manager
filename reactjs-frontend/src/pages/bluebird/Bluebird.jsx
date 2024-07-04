@@ -5,12 +5,13 @@ import { BluebirdStyled } from "./Styled"
 import { BluebirdList } from "./bluebirdList/BluebirdList"
 import { BluebirdContext } from "../../context/BluebirdContext"
 import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBluebirdCreate"
+import { ModalBluebirdDelete } from "../../modals/bluebird/modalBluebirdDelete/ModalBluebirdDelete"
 
 
 export const Bluebird = () => {
 
 
-    const {modalCreateIsOpen, setModalCreateIsOpen} = useContext(BluebirdContext)
+    const {modalCreateIsOpen, setModalCreateIsOpen, modalDeleteIsOpen} = useContext(BluebirdContext)
 
 
     return (
@@ -21,7 +22,9 @@ export const Bluebird = () => {
             </div>
             <BluebirdList/>
         <Footer/>
-        {modalCreateIsOpen ? <ModalBluebird/> : null}
+        {modalCreateIsOpen ?  <ModalBluebird/> : null}
+        {modalDeleteIsOpen  ? <ModalBluebirdDelete/> :  null}
+        
         </BluebirdStyled>
     )
 }

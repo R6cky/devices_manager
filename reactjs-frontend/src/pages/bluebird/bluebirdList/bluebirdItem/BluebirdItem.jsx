@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 export const BluebirdItem = ({bluebird}) => {
 
-    const {setIdInLocalStorage,deleteBluebird, setModalDeleteIsOpen} = useContext(BluebirdContext)
+    const {setIdInLocalStorage, openModalDelete} = useContext(BluebirdContext)
 
     return (
         <BluebirdItemStyled>
@@ -18,7 +18,7 @@ export const BluebirdItem = ({bluebird}) => {
             </div>
             <div className="item-buttons">
                 <button onClick={()=> setIdInLocalStorage(bluebird.id)}  className="edit">Editar</button>
-                <button onClick={()=>deleteBluebird(bluebird.id)} className="remove">remover</button>
+                <button onClick={()=>openModalDelete(bluebird.id)} className="remove">remover</button>
             </div>
         </BluebirdItemStyled>
             )

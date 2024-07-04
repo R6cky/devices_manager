@@ -1,30 +1,28 @@
 import { useContext } from "react"
 import { BluebirdContext } from "../../../context/BluebirdContext"
-import { ModalBluebirdEditStyle } from "./Styled"
+import { ModalBluebirdDeleteStyle } from "./Styled"
 
 
 
-export const ModalBluebirdEdit = () => {
+export const ModalBluebirdDelete = () => {
 
-const {createBluebird} = useContext(BluebirdContext)
-
-
-    
+const {deleteBluebird, setModalDeleteIsOpen} = useContext(BluebirdContext)
 
 
+    const idBluebird = localStorage.getItem("idBluebird")
 
-
+    console.log(idBluebird)
 
     return(
-            <ModalBluebirdEditStyle>
+            <ModalBluebirdDeleteStyle>
                 <div className="container">
                     <p>Deseja realmente excluir o bluebird? </p>
                     <div className="btn-container">
-                        <span className="btn-yes">Sim</span>
-                        <span className="btn-no">Não</span>
+                        <span className="btn-yes"onClick={()=>deleteBluebird(idBluebird)}>Sim</span>
+                        <span className="btn-no" onClick={()=> setModalDeleteIsOpen(false)}>Não</span>
                     </div>
                 </div>
                 
-            </ModalBluebirdEditStyle>
+            </ModalBluebirdDeleteStyle>
     )
 }
