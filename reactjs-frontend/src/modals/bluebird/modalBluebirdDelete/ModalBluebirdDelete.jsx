@@ -16,7 +16,7 @@ const {deleteBluebird, setModalDeleteIsOpen} = useContext(BluebirdContext)
     return(
             <ModalBluebirdDeleteStyle>
                 <div className="container">
-                    <p>Deseja realmente excluir o bluebird? </p>
+                    <p className="question-bluebird">Deseja realmente excluir o bluebird? </p>
                     <div className="btn-container">
                         <span className="btn-yes"onClick={()=>deleteBluebird(idBluebird)}>Sim</span>
                         <span className="btn-no" onClick={()=> setModalDeleteIsOpen(false)}>Não</span>
