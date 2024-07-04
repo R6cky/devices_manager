@@ -8,17 +8,11 @@ export const ComputerItem = ({ computer }) => {
   return (
     <ComputerItemStyled>
       <div className="item-content">
-        <h3 className="item-content-serialname">
-          Serial Number: {computer.serial_name}{" "}
-        </h3>
-        <h3 className="item-content-hostname">
-          Hostname: {computer.host_name}{" "}
-        </h3>
-        <h3 className="item-content-fixdate">
-          Data de reparo: {computer.fix_date}{" "}
-        </h3>
-        <p className="item-content-description">
-          Descrição: {computer.description}{" "}
+        <h3 className="item-content-hostname">Hostname: {computer.hostname}</h3>
+        <h3 className="item-content-ip">IP: {computer.ip}</h3>
+        <h3 className="item-content-sector">Setor: {computer.sector} </h3>
+        <p className="item-content-os">
+          Sistemna Operacional: {computer.operational_system}
         </p>
       </div>
       <div className="item-buttons">
