@@ -52,8 +52,9 @@ export const BluebirdProvider = ({ children }) => {
     setModalDeleteIsOpen(true);
   };
 
-  const openModalEdit = (id) => {
+  const openModalEdit = (id, data) => {
     localStorage.setItem("idBluebird", id);
+    localStorage.setItem("dataBluebird", data);
     setModalEditIsOpen(true);
   };
 
