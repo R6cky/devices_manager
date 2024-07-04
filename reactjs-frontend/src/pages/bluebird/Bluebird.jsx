@@ -12,7 +12,7 @@ import { ModalBluebirdEdit } from "../../modals/bluebird/modalBluebirdEdit/Modal
 export const Bluebird = () => {
 
 
-    const {modalCreateIsOpen, setModalCreateIsOpen, modalDeleteIsOpen} = useContext(BluebirdContext)
+    const {modalCreateIsOpen, modalEditIsOpen, setModalCreateIsOpen, modalDeleteIsOpen} = useContext(BluebirdContext)
 
 
     return (
@@ -25,7 +25,7 @@ export const Bluebird = () => {
         <Footer/>
         {modalCreateIsOpen ?  <ModalBluebird/> : null}
         {modalDeleteIsOpen  ? <ModalBluebirdDelete/> :  null}
-        {modalDeleteIsOpen  ? <ModalBluebirdEdit/> :  null}
+        {modalEditIsOpen  ? <ModalBluebirdEdit/> :  null}
         
         </BluebirdStyled>
     )

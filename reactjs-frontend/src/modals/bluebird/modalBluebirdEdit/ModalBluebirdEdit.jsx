@@ -1,14 +1,32 @@
+import { useContext } from "react"
 import { ModalBluebirdEditStyle } from "./Styled"
+import { BluebirdContext } from "../../../context/BluebirdContext"
 
 
 
 export const ModalBluebirdEdit = () => {
 
+    const {updateBluebird, setModalEditIsOpen} = useContext(BluebirdContext)
+
+    const data = {
+        serial_name: '',
+        host_name: '',
+        data_reparo: '',
+        fix_date: '',
+        description: '',
+    }
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        updateBluebird(data)      
+    }
+
 
     return(
             <ModalBluebirdEditStyle>
                 <form action="" className="form-bluebird" onSubmit={handleSubmit}>
-                    <div className="btn-close"><span onClick={()=> setModalCreateIsOpen(false)}>X</span></div>
+                    <div className="btn-close"><span onClick={()=> setModalEditIsOpen(false)}>X</span></div>
                     <div className="input-container">
                         <input type="text" placeholder="Serial number" onChange={(e)=>{data.serial_name = e.target.value}} />
                         <input type="text" placeholder="Hostname" onChange={(e)=>{data.host_name = e.target.value}}/>

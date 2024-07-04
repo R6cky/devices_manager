@@ -85,7 +85,7 @@ export const BluebirdProvider = ({children}) => {
         <BluebirdContext.Provider 
         value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, 
         deleteBluebird, modalCreateIsOpen, setModalCreateIsOpen,setModalEditIsOpen,
-        modalEditIsOpen, modalDeleteIsOpen, setModalDeleteIsOpen, openModalDelete}}>
+        modalEditIsOpen, openModalEdit, modalDeleteIsOpen, setModalDeleteIsOpen, openModalDelete}}>
         {children}
         </BluebirdContext.Provider>
         
