@@ -1,10 +1,9 @@
-import { FooterStyled } from "./Styled"
+import { FooterStyled } from "./Styled";
 
 export const Footer = () => {
-
-    return (
-        <FooterStyled>
-                <p>Development by Cleiton</p>
-        </FooterStyled>
-    )
-}
+  return (
+    <FooterStyled>
+      <p>Development by Cleiton</p>
+    </FooterStyled>
+  );
+};
