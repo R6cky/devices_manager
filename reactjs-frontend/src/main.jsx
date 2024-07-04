@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Toner />,
+    element: <Bluebird />,
   },
 ]);
 
