@@ -8,6 +8,8 @@ export const ModalBluebirdEdit = () => {
 
     const {updateBluebird, setModalEditIsOpen} = useContext(BluebirdContext)
 
+    const idBluebird = localStorage.getItem("idBluebird")
+
     const data = {
         serial_name: '',
         host_name: '',
@@ -19,7 +21,7 @@ export const ModalBluebirdEdit = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        updateBluebird(data)      
+        updateBluebird(data, idBluebird)      
     }
 
 
