@@ -20,7 +20,7 @@ export const ModalComputer = () => {
 
   return (
     <ModalComputerStyle>
-      <form action="" className="form-Computer" onSubmit={handleSubmit}>
+      <form action="" className="form-computer" onSubmit={handleSubmit}>
         <div className="btn-close">
           <span onClick={() => setModalCreateIsOpen(false)}>X</span>
         </div>

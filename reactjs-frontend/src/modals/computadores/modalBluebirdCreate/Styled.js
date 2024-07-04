@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalBluebirdStyle = styled.div`
+export const ModalComputerStyle = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;
@@ -10,7 +10,7 @@ export const ModalBluebirdStyle = styled.div`
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
 
-  .form-bluebird {
+  .form-computer {
     border: solid white 0.1px;
     width: 38rem;
     max-width: 100%;
