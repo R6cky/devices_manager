@@ -24,6 +24,8 @@ export const Bluebird = () => {
         <Footer/>
         {modalCreateIsOpen ?  <ModalBluebird/> : null}
         {modalDeleteIsOpen  ? <ModalBluebirdDelete/> :  null}
+        {modalDeleteIsOpen  ? <Moda/> :  null}
+
         
         </BluebirdStyled>
     )

@@ -2,7 +2,7 @@ import { ModalBluebirdEditStyle } from "./Styled"
 
 
 
-export const ModalBluebirdDelete = () => {
+export const ModalBluebirdEdit = () => {
 
 
     return(
