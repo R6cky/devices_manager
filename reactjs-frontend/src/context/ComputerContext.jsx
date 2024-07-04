@@ -19,7 +19,7 @@ export const ComputerProvider = ({ children }) => {
     }
   };
 
-  const createComputers = async (data) => {
+  const createComputer = async (data) => {
     try {
       const requestJson = await api.post("/computer", data);
       setInsertComputer(requestJson);
@@ -45,8 +45,14 @@ export const ComputerProvider = ({ children }) => {
     }
   };
 
-  const setIdInLocalStorage = (id) => {
-    localStorage.setItem("id", `${id}`);
+  const openModalDelete = (id) => {
+    localStorage.setItem("idComputer", id);
+    setModalDeleteIsOpen(true);
+  };
+
+  const openModalEdit = (data) => {
+    localStorage.setItem("dataComputer", JSON.stringify(data));
+    setModalEditIsOpen(true);
   };
 
   return (
@@ -54,17 +60,18 @@ export const ComputerProvider = ({ children }) => {
       value={{
         getComputers,
         computers,
-        createComputers,
+        createComputer,
         insertComputer,
         updateComputers,
         deleteComputers,
-        setIdInLocalStorage,
         modalCreateIsOpen,
         setModalCreateIsOpen,
         modalDeleteIsOpen,
         setModalDeleteIsOpen,
         modalEditIsOpen,
         setModalEditIsOpen,
+        openModalDelete,
+        openModalEdit,
       }}
     >
       {children}

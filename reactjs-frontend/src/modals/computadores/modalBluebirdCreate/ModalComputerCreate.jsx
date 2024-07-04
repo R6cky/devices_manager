@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ComputerContext } from "../../../context/ComputerContext";
 import { ModalComputerStyle } from "./Styled";
+import { ComputerContext } from "../../../context/ComputerContext";
 
-export const ModalComputer = () => {
+export const ModalComputerCreate = () => {
   const { createComputer, setModalCreateIsOpen } = useContext(ComputerContext);
 
   const data = {
@@ -27,14 +27,14 @@ export const ModalComputer = () => {
         <div className="input-container">
           <input
             type="text"
-            placeholder="Serial number"
+            placeholder="Hostname"
             onChange={(e) => {
               data.hostname = e.target.value;
             }}
           />
           <input
             type="text"
-            placeholder="Hostname"
+            placeholder="IP do computador"
             onChange={(e) => {
               data.ip = e.target.value;
             }}
@@ -51,6 +51,13 @@ export const ModalComputer = () => {
             placeholder="Sistema operacional"
             onChange={(e) => {
               data.operational_system = e.target.value;
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Tipo - Notebook ou Desktop"
+            onChange={(e) => {
+              data.type = e.target.value;
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />
