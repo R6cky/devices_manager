@@ -1,9 +1,9 @@
-import { TonerStyled } from "./Styled"
+import { TonerStyled } from "./Styled";
 
 export const Toner = () => {
-    return(
-        <TonerStyled>
-           <p>Toner</p>
-        </TonerStyled>
-    )
-} 
+  return (
+    <TonerStyled>
+      <p>Toner</p>
+    </TonerStyled>
+  );
+};

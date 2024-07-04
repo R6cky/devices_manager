@@ -1,6 +1,3 @@
 import styled from "styled-components";
 
-export const TasStyled = styled.div`
-
-
-`
+export const TasStyled = styled.div``;

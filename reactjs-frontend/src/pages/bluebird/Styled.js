@@ -1,8 +1,7 @@
-import styled  from "styled-components";
+import styled from "styled-components";
 
 export const BluebirdStyled = styled.div`
-  
-  .btn-container{
+  .btn-container {
     background-color: azure;
     height: 5rem;
     width: 90%;
@@ -11,18 +10,13 @@ export const BluebirdStyled = styled.div`
     align-items: center;
     justify-content: center;
 
-
-    .btn-insert{
-        border: solid ;
-        height: 3rem;
-        padding: 8px;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
+    .btn-insert {
+      border: solid;
+      height: 3rem;
+      padding: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
-
-}
-  
-
-
-`
+  }
+`;
