@@ -6,6 +6,7 @@ import { BluebirdList } from "./bluebirdList/BluebirdList"
 import { BluebirdContext } from "../../context/BluebirdContext"
 import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBluebirdCreate"
 import { ModalBluebirdDelete } from "../../modals/bluebird/modalBluebirdDelete/ModalBluebirdDelete"
+import { ModalBluebirdEdit } from "../../modals/bluebird/modalBluebirdEdit/ModalBluebirdEdit"
 
 
 export const Bluebird = () => {
@@ -24,8 +25,7 @@ export const Bluebird = () => {
         <Footer/>
         {modalCreateIsOpen ?  <ModalBluebird/> : null}
         {modalDeleteIsOpen  ? <ModalBluebirdDelete/> :  null}
-        {modalDeleteIsOpen  ? <Moda/> :  null}
-
+        {modalDeleteIsOpen  ? <ModalBluebirdEdit/> :  null}
         
         </BluebirdStyled>
     )
