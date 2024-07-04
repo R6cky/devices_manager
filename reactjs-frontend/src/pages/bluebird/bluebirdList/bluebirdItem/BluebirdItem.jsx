@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 export const BluebirdItem = ({bluebird}) => {
 
-    const {setIdInLocalStorage,deleteBluebird} = useContext(BluebirdContext)
+    const {setIdInLocalStorage,deleteBluebird, setModalDeleteIsOpen} = useContext(BluebirdContext)
 
     return (
         <BluebirdItemStyled>

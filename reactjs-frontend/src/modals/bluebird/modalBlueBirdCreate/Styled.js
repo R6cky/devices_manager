@@ -65,9 +65,9 @@ background-color: rgba(0,0,23,0.9) ;
         flex-direction: row-reverse;
         
         span{
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,6 +76,7 @@ background-color: rgba(0,0,23,0.9) ;
             background-color: white;
             color: black;
             cursor: pointer;
+            margin: 10px;
         }
     }
 

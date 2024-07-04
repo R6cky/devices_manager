@@ -18,6 +18,7 @@ export const BluebirdStyled = styled.div`
         padding: 8px;
         border-radius: 8px;
         font-weight: bold;
+        cursor: pointer;
     }
 
 }

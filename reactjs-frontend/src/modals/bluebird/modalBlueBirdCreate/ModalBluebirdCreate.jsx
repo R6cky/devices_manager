@@ -6,7 +6,7 @@ import { ModalBluebirdStyle } from "./Styled"
 
 export const ModalBluebird = () => {
 
-const {createBluebird, modalIsOpen, setModalIsOpen} = useContext(BluebirdContext)
+const {createBluebird, setModalCreateIsOpen} = useContext(BluebirdContext)
 
 
     const data = {
@@ -31,7 +31,7 @@ const {createBluebird, modalIsOpen, setModalIsOpen} = useContext(BluebirdContext
     return(
             <ModalBluebirdStyle>
                 <form action="" className="form-bluebird" onSubmit={handleSubmit}>
-                    <div className="btn-close"><span onClick={()=> setModalIsOpen(false)}>X</span></div>
+                    <div className="btn-close"><span onClick={()=> setModalCreateIsOpen(false)}>X</span></div>
                     <div className="input-container">
                         <input type="text" placeholder="Serial number" onChange={(e)=>{data.serial_name = e.target.value}} />
                         <input type="text" placeholder="Hostname" onChange={(e)=>{data.host_name = e.target.value}}/>

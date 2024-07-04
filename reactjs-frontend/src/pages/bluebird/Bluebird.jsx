@@ -10,18 +10,18 @@ import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBl
 export const Bluebird = () => {
 
 
-    const {modalIsOpen, setModalIsOpen} = useContext(BluebirdContext)
+    const {modalCreateIsOpen, setModalCreateIsOpen} = useContext(BluebirdContext)
 
 
     return (
         <BluebirdStyled >
             <Header/>
             <div className="btn-container">
-                <span className="btn-insert" onClick={()=> setModalIsOpen(true)} > Inserir bluebird</span>
+                <span className="btn-insert" onClick={()=> setModalCreateIsOpen(true)} > Inserir bluebird</span>
             </div>
             <BluebirdList/>
         <Footer/>
-        {modalIsOpen ? <ModalBluebird/> : null}
+        {modalCreateIsOpen ? <ModalBluebird/> : null}
         </BluebirdStyled>
     )
 }
