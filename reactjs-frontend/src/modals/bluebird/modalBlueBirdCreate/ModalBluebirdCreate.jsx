@@ -46,7 +46,8 @@ export const ModalBluebird = () => {
               data.fix_date = e.target.value;
             }}
           />
-          <input
+          <textarea
+            className="textarea-description"
             type="text-area"
             placeholder="Descrição"
             onChange={(e) => {
