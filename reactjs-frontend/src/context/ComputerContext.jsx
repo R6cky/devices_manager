@@ -3,10 +3,12 @@ import { createContext, useState } from "react";
 
 export const ComputerContext = createContext({});
 
-// eslint-disable-next-line react/prop-types
 export const ComputerProvider = ({ children }) => {
   const [computers, setComputers] = useState([]);
   const [insertComputer, setInsertComputer] = useState({});
+  const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
+  const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
 
   const getComputers = async () => {
     try {
@@ -57,6 +59,12 @@ export const ComputerProvider = ({ children }) => {
         updateComputers,
         deleteComputers,
         setIdInLocalStorage,
+        modalCreateIsOpen,
+        setModalCreateIsOpen,
+        modalDeleteIsOpen,
+        setModalDeleteIsOpen,
+        modalEditIsOpen,
+        setModalEditIsOpen,
       }}
     >
       {children}
