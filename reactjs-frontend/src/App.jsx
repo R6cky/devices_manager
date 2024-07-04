@@ -7,12 +7,12 @@ import { Tas } from "./pages/tas/Tas";
 // import { Home } from './pages/home/Home'
 
 //import { ModalBluebird } from "./modals/bluebird/ModalBluebird"
-function App() {
+const App = () => {
   return (
     <>
       <Tas />
     </>
   );
-}
+};
 
 export default App;
