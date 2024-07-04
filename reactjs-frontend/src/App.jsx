@@ -10,12 +10,6 @@ import { Tas } from "./pages/tas/Tas";
 function App() {
   return (
     <>
-      {/* <Home /> */}
-      {/* <ModalBluebird/> */}
-      {/* <ModalBluebirdEdit/> */}
-      {/* { <Bluebird/>  } */}
-      {/* {<Computer/>} */}
-      {/* <Print/> */}
       <Tas />
     </>
   );
