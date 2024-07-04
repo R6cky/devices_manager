@@ -17,7 +17,7 @@ export const BluebirdItem = ({bluebird}) => {
                 <h3 >Descrição: {bluebird.description} </h3>
             </div>
             <div className="item-buttons">
-                <button onClick={()=> setIdInLocalStorage(bluebird.id)} className="edit">Editar</button>
+                <button onClick={()=> setIdInLocalStorage(bluebird.id)}  className="edit">Editar</button>
                 <button onClick={()=>deleteBluebird(bluebird.id)} className="remove">remover</button>
             </div>
         </BluebirdItemStyled>
