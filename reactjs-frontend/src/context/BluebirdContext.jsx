@@ -11,6 +11,8 @@ export const BluebirdProvider = ({children}) => {
         const [insertBluebird, setInsertBluebird] = useState({})
         const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false)
         const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false)
+        const [modalEditIsOpen, setModalEditIsOpen] = useState(false)
+
 
 
 
@@ -63,26 +65,27 @@ export const BluebirdProvider = ({children}) => {
 
 
 
-        const setIdInLocalStorage = (id) =>{
-            localStorage.setItem("id", `${id}`)
-        }
 
         const openModalDelete = (id) => {
 
             localStorage.setItem("idBluebird", id);
             setModalDeleteIsOpen(true);
-
-
         }
 
+
+        const openModalEdit = (id) => {
+
+            localStorage.setItem("idBluebird", id);
+            setModalEditIsOpen(true);
+        }
 
 
 
     return(
         <BluebirdContext.Provider 
         value={{getBluebirds, bluebirds, createBluebird, insertBluebird, updateBluebird, 
-        deleteBluebird, setIdInLocalStorage, modalCreateIsOpen, setModalCreateIsOpen,
-        modalDeleteIsOpen, setModalDeleteIsOpen, openModalDelete}}>
+        deleteBluebird, modalCreateIsOpen, setModalCreateIsOpen,setModalEditIsOpen,
+        modalEditIsOpen, modalDeleteIsOpen, setModalDeleteIsOpen, openModalDelete}}>
         {children}
         </BluebirdContext.Provider>
         
