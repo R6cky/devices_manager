@@ -8,10 +8,10 @@ import { PrintProvider } from "./context/PrintContext.jsx";
 import { TasProvider } from "./context/TasContext.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Bluebird } from "./pages/bluebird/Bluebird.jsx";
-import { Print } from "./pages/print/Print.jsx";
 import { Tas } from "./pages/tas/Tas.jsx";
 import { Computer } from "./pages/computer/Computer.jsx";
 import { Toner } from "./pages/toners/Toner.jsx";
+import { Printer } from "./pages/printer/Printer.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/print",
-    element: <Print />,
+    element: <Printer />,
   },
   {
     path: "/computer",
