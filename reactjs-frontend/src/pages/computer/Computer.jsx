@@ -6,7 +6,7 @@ import { ComputerContext } from "../../context/ComputerContext";
 // import { ModalComputerDelete } from "../../modals/Computer/modalComputerDelete/ModalComputerDelete";
 // import { ModalComputerEdit } from "../../modals/Computer/modalComputerEdit/ModalComputerEdit";
 import { ComputerList } from "./computerList/ComputerList";
-import { ModalComputerCreate } from "../../modals/computadores/modalBluebirdCreate/ModalComputerCreate";
+import { ModalComputerCreate } from "../../modals/computadores/modalComputerCreate/ModalComputerCreate";
 
 export const Computer = () => {
   const {

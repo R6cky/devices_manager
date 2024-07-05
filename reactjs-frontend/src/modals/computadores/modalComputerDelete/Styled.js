@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalBluebirdDeleteStyle = styled.div`
+export const ModalComputerDeleteStyle = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;
@@ -43,7 +43,7 @@ export const ModalBluebirdDeleteStyle = styled.div`
     padding: 10px;
     border-radius: 10px;
 
-    .question-bluebird {
+    .question-computer {
       width: 100%;
       height: 100px;
       color: black;
