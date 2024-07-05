@@ -1,16 +1,16 @@
 import { useContext } from "react";
-import { PrintContext } from "../../../context/PrintContext";
+import { PrinterContext } from "../../../context/PrinterContext";
 import { ModalPrinterDeleteStyle } from "./Styled";
 
 export const ModalPrinterDelete = () => {
-  const { deletePrint, setModalDeleteIsOpen } = useContext(PrintContext);
+  const { deletePrinter, setModalDeleteIsOpen } = useContext(PrinterContext);
 
   const idPrint = localStorage.getItem("idPrint");
 
   return (
     <ModalPrinterDeleteStyle>
       <div className="container">
-        <div className="btn-close-container">
+        <div className="btn-close">
           <span
             className="btn-close"
             onClick={() => setModalDeleteIsOpen(false)}
@@ -20,7 +20,7 @@ export const ModalPrinterDelete = () => {
         </div>
         <p className="question-print">Deseja realmente excluir a impressora?</p>
         <div className="btn-container">
-          <span className="btn-yes" onClick={() => deletePrint(idPrint)}>
+          <span className="btn-yes" onClick={() => deletePrinter(idPrint)}>
             Sim
           </span>
           <span className="btn-no" onClick={() => setModalDeleteIsOpen(false)}>

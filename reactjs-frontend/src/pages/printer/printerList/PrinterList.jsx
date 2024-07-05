@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
-import { Printerontext } from "../../../context/Printerontext";
 import { PrinterListStyled } from "./Styled";
-import { PrinterItem } from "./PrinterItem/PrinterItem";
+import { PrinterItem } from "./printerItem/PrinterItem";
+import { PrinterContext } from "../../../context/PrinterContext";
 
 export const PrinterList = () => {
-  const { printer, getPrinter } = useContext(Printerontext);
+  const { printer, getPrinter } = useContext(PrinterContext);
 
   useEffect(() => {
     getPrinter();

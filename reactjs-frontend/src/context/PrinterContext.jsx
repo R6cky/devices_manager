@@ -5,22 +5,22 @@ export const PrinterContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
 export const PrinterProvider = ({ children }) => {
-  const [prints, setPrint] = useState([]);
+  const [printer, setPrinter] = useState([]);
   const [insertPrint, setInsertPrint] = useState({});
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
 
-  const getPrints = async () => {
+  const getPrinter = async () => {
     try {
       const requestJson = await api.get("/print");
-      setPrint(requestJson);
+      setPrinter(requestJson);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const createPrint = async (data) => {
+  const createPrinter = async (data) => {
     try {
       const requestJson = await api.post("/print", data);
       setInsertPrint(requestJson);
@@ -29,7 +29,7 @@ export const PrinterProvider = ({ children }) => {
     }
   };
 
-  const updatePrint = async (data, id) => {
+  const updatePrinter = async (data, id) => {
     try {
       const requestJson = await api.patch(`/print/${id}`, data);
       console.log(requestJson);
@@ -59,11 +59,11 @@ export const PrinterProvider = ({ children }) => {
   return (
     <PrinterContext.Provider
       value={{
-        getPrints,
-        prints,
-        createPrint,
+        getPrinter,
+        printer,
+        createPrinter,
         insertPrint,
-        updatePrint,
+        updatePrinter,
         deletePrint,
         openModalDelete,
         openModalEdit,
