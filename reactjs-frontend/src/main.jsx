@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { GlobalStyle } from "./GlobalStyle.jsx";
 import { BluebirdProvider } from "./context/BluebirdContext.jsx";
 import { ComputerProvider } from "./context/ComputerContext.jsx";
-import { PrintProvider } from "./context/PrintContext.jsx";
+import { PrinterProvider } from "./context/PrinterContext.jsx";
 import { TasProvider } from "./context/TasContext.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Bluebird } from "./pages/bluebird/Bluebird.jsx";
@@ -44,7 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyle />
     <TasProvider>
-      <PrintProvider>
+      <PrinterProvider>
         <ComputerProvider>
           <BluebirdProvider>
             <RouterProvider router={router}>
@@ -52,7 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </RouterProvider>
           </BluebirdProvider>
         </ComputerProvider>
-      </PrintProvider>
+      </PrinterProvider>
     </TasProvider>
   </React.StrictMode>
 );

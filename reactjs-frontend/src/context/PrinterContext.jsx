@@ -1,12 +1,15 @@
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 
-export const PrintContext = createContext({});
+export const PrinterContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
-export const PrintProvider = ({ children }) => {
+export const PrinterProvider = ({ children }) => {
   const [prints, setPrint] = useState([]);
   const [insertPrint, setInsertPrint] = useState({});
+  const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
+  const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
 
   const getPrints = async () => {
     try {
@@ -43,12 +46,18 @@ export const PrintProvider = ({ children }) => {
     }
   };
 
-  const setIdInLocalStorage = (id) => {
-    localStorage.setItem("id", `${id}`);
+  const openModalDelete = (id) => {
+    localStorage.setItem("idComputer", id);
+    setModalDeleteIsOpen(true);
+  };
+
+  const openModalEdit = (data) => {
+    localStorage.setItem("dataComputer", JSON.stringify(data));
+    setModalEditIsOpen(true);
   };
 
   return (
-    <PrintContext.Provider
+    <PrinterContext.Provider
       value={{
         getPrints,
         prints,
@@ -56,10 +65,15 @@ export const PrintProvider = ({ children }) => {
         insertPrint,
         updatePrint,
         deletePrint,
-        setIdInLocalStorage,
+        openModalDelete,
+        openModalEdit,
+        modalCreateIsOpen,
+        modalDeleteIsOpen,
+        modalEditIsOpen,
+        setModalCreateIsOpen,
       }}
     >
       {children}
-    </PrintContext.Provider>
+    </PrinterContext.Provider>
   );
 };

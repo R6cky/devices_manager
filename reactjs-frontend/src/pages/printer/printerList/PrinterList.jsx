@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { Printerontext } from "../../../context/Printerontext";
-import { PrinteristStyled } from "./Styled";
-import { Printertem } from "./Printertem/Printertem";
+import { PrinterListStyled } from "./Styled";
+import { PrinterItem } from "./PrinterItem/PrinterItem";
 
-export const Printerist = () => {
+export const PrinterList = () => {
   const { printer, getPrinter } = useContext(Printerontext);
 
   useEffect(() => {
@@ -11,12 +11,12 @@ export const Printerist = () => {
   }, []);
 
   return (
-    <PrinteristStyled>
+    <PrinterListStyled>
       {printer.data
         ? printer.data.map((elem) => {
-            return <Printertem key={elem.id} printer={elem} />;
+            return <PrinterItem key={elem.id} printer={elem} />;
           })
         : false}
-    </PrinteristStyled>
+    </PrinterListStyled>
   );
 };
