@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { PrintContext } from "../../../context/PrintContext";
-import { ModalPrintDeleteStyle } from "./Styled";
+import { ModalPrinterDeleteStyle } from "./Styled";
 
-export const ModalPrintDelete = () => {
+export const ModalPrinterDelete = () => {
   const { deletePrint, setModalDeleteIsOpen } = useContext(PrintContext);
 
   const idPrint = localStorage.getItem("idPrint");
 
   return (
-    <ModalPrintDeleteStyle>
+    <ModalPrinterDeleteStyle>
       <div className="container">
         <div className="btn-close-container">
           <span
@@ -28,6 +28,6 @@ export const ModalPrintDelete = () => {
           </span>
         </div>
       </div>
-    </ModalPrintDeleteStyle>
+    </ModalPrinterDeleteStyle>
   );
 };

@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import { PrinterStyled } from "./Styled";
-import { PrinterList } from "./PrinterList/PrinterList";
-import { ModalPrinterCreate } from "../../modals/Printer/modalPrinterCreate/ModalPrinterCreate";
-import { ModalPrinterEdit } from "../../modals/Printer/modalPrinterdEdit/ModalPrinterEdit";
-import { ModalPrinterDelete } from "../../modals/Printer/modalPrinterDelete/ModalPrinterDelete";
 import { PrinterContext } from "../../context/PrinterContext";
+import { PrinterList } from "./printerList/PrinterList";
+import { ModalPrinterCreate } from "../../modals/printer/modalPrinterCreate/ModalPrinterCreate";
+import { ModalPrinterEdit } from "../../modals/printer/modalPrinterdEdit/ModalPrinterEdit";
+import { ModalPrinterDelete } from "../../modals/printer/modalPrinterDelete/ModalPrinterDelete";
 
 export const Printer = () => {
   const {
