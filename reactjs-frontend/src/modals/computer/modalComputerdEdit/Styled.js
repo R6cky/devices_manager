@@ -43,28 +43,27 @@ export const ModalComputerEditStyle = styled.div`
       .btn-send {
         cursor: pointer;
       }
+    }
+    .btn-close {
+      color: white;
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      flex-direction: row-reverse;
 
-      .btn-close {
-        color: white;
-        width: 100%;
-        height: 5rem;
+      span {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 4px;
         display: flex;
-        flex-direction: row-reverse;
-
-        span {
-          width: 3rem;
-          height: 3rem;
-          border-radius: 4px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          font-size: 20px;
-          background-color: white;
-          color: black;
-          cursor: pointer;
-          margin: 10px;
-        }
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        margin: 10px;
       }
     }
   }
