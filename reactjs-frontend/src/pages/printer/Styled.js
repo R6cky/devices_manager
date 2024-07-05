@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ComputerStyled = styled.div`
+export const PrinterStyled = styled.div`
   .btn-container {
     background-color: azure;
     height: 5rem;

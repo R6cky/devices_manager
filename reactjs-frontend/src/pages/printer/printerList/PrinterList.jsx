@@ -1,22 +1,22 @@
 import { useContext, useEffect } from "react";
-import { ComputerContext } from "../../../context/ComputerContext";
-import { ComputerListStyled } from "./Styled";
-import { ComputerItem } from "./computerItem/ComputerItem";
+import { Printerontext } from "../../../context/Printerontext";
+import { PrinteristStyled } from "./Styled";
+import { Printertem } from "./Printertem/Printertem";
 
-export const ComputerList = () => {
-  const { computers, getComputers } = useContext(ComputerContext);
+export const Printerist = () => {
+  const { printer, getPrinter } = useContext(Printerontext);
 
   useEffect(() => {
-    getComputers();
+    getPrinter();
   }, []);
 
   return (
-    <ComputerListStyled>
-      {computers.data
-        ? computers.data.map((elem) => {
-            return <ComputerItem key={elem.id} computer={elem} />;
+    <PrinteristStyled>
+      {printer.data
+        ? printer.data.map((elem) => {
+            return <Printertem key={elem.id} printer={elem} />;
           })
         : false}
-    </ComputerListStyled>
+    </PrinteristStyled>
   );
 };

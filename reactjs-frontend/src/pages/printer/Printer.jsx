@@ -1,34 +1,34 @@
 import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
-import { ComputerStyled } from "./Styled";
-import { ComputerContext } from "../../context/ComputerContext";
-import { ComputerList } from "./computerList/ComputerList";
-import { ModalComputerCreate } from "../../modals/computer/modalComputerCreate/ModalComputerCreate";
-import { ModalComputerEdit } from "../../modals/computer/modalComputerdEdit/ModalComputerEdit";
-import { ModalComputerDelete } from "../../modals/computer/modalComputerDelete/ModalComputerDelete";
+import { PrinterStyled } from "./Styled";
+import { PrinterContext } from "../../context/PrinterContext";
+import { PrinterList } from "./PrinterList/PrinterList";
+import { ModalPrinterCreate } from "../../modals/Printer/modalPrinterCreate/ModalPrinterCreate";
+import { ModalPrinterEdit } from "../../modals/Printer/modalPrinterdEdit/ModalPrinterEdit";
+import { ModalPrinterDelete } from "../../modals/Printer/modalPrinterDelete/ModalPrinterDelete";
 
-export const Computer = () => {
+export const Printer = () => {
   const {
     modalCreateIsOpen,
     modalEditIsOpen,
     setModalCreateIsOpen,
     modalDeleteIsOpen,
-  } = useContext(ComputerContext);
+  } = useContext(PrinterContext);
 
   return (
-    <ComputerStyled>
+    <PrinterStyled>
       <Header />
       <div className="btn-container">
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
-          Inserir Computador
+          Inserir Impressora
         </span>
       </div>
-      <ComputerList />
+      <PrinterList />
       <Footer />
-      {modalCreateIsOpen ? <ModalComputerCreate /> : null}
-      {modalDeleteIsOpen ? <ModalComputerDelete /> : null}
-      {modalEditIsOpen ? <ModalComputerEdit /> : null}
-    </ComputerStyled>
+      {modalCreateIsOpen ? <ModalPrinterCreate /> : null}
+      {modalDeleteIsOpen ? <ModalPrinterDelete /> : null}
+      {modalEditIsOpen ? <ModalPrinterEdit /> : null}
+    </PrinterStyled>
   );
 };

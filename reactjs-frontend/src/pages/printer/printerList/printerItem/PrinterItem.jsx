@@ -1,29 +1,27 @@
-import { ComputerItemStyled } from "./Styled";
-import { ComputerContext } from "../../../../context/ComputerContext";
+import { PrinterItemStyled } from "./Styled";
+import { PrinterContext } from "../../../../context/PrinterContext";
 import { useContext } from "react";
 
-export const ComputerItem = ({ computer }) => {
-  const { openModalDelete, openModalEdit } = useContext(ComputerContext);
+export const PrinterItem = ({ printer }) => {
+  const { openModalDelete, openModalEdit } = useContext(PrinterContext);
 
   return (
-    <ComputerItemStyled>
+    <PrinterItemStyled>
       <div className="item-content">
-        <h3 className="item-content-hostname">Hostname: {computer.hostname}</h3>
-        <h3 className="item-content-ip">IP: {computer.ip}</h3>
-        <h3 className="item-content-sector">Setor: {computer.sector} </h3>
-        <h3 className="item-content-os">
-          Sistemna Operacional: {computer.operational_system}
+        <h3 className="item-content-hostname">Hostname: {printer.hostname}</h3>
+        <h3 className="item-content-ip">IP: {printer.ip}</h3>
+        <h3 className="item-content-sector">
+          Marca e Modelo: {printer.brand_and_model}
         </h3>
-        <h3 className="item-content-os">Type: {computer.type}</h3>
       </div>
       <div className="item-buttons">
-        <button onClick={() => openModalEdit(computer)} className="edit">
+        <button onClick={() => openModalEdit(printer)} className="edit">
           Editar
         </button>
-        <button onClick={() => openModalDelete(computer.id)} className="remove">
+        <button onClick={() => openModalDelete(printer.id)} className="remove">
           remover
         </button>
       </div>
-    </ComputerItemStyled>
+    </PrinterItemStyled>
   );
 };

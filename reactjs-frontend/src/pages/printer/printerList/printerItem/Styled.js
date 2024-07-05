@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ComputerItemStyled = styled.li`
+export const PrinterItemStyled = styled.li`
   border-radius: 8px;
   width: 21rem;
   height: 28rem;
@@ -19,16 +19,7 @@ export const ComputerItemStyled = styled.li`
 
     .item-content-ip {
     }
-    .item-content-sector {
-    }
-
-    .item-content-type {
-      border: solid red;
-      width: 100%;
-      height: 200px;
-      overflow-x: hidden;
-      display: flex;
-      flex-wrap: wrap;
+    .item-brand-and-model {
     }
   }
 
