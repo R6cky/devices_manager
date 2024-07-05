@@ -8,8 +8,6 @@ export const ModalBluebirdEdit = () => {
   const dataBluebird = JSON.parse(localStorage.getItem("dataBluebird"));
   const idBluebird = dataBluebird.id;
 
-  console.log(dataBluebird);
-
   let data = {
     serial_name: "",
     host_name: "",

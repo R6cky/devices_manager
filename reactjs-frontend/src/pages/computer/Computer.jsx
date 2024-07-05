@@ -3,17 +3,17 @@ import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import { ComputerStyled } from "./Styled";
 import { ComputerContext } from "../../context/ComputerContext";
-// import { ModalComputerDelete } from "../../modals/Computer/modalComputerDelete/ModalComputerDelete";
-// import { ModalComputerEdit } from "../../modals/Computer/modalComputerEdit/ModalComputerEdit";
 import { ComputerList } from "./computerList/ComputerList";
-import { ModalComputerCreate } from "../../modals/computadores/modalComputerCreate/ModalComputerCreate";
+import { ModalComputerCreate } from "../../modals/computer/modalComputerCreate/ModalComputerCreate";
+import { ModalComputerEdit } from "../../modals/computer/modalComputerdEdit/ModalComputerEdit";
+import { ModalComputerDelete } from "../../modals/computer/modalComputerDelete/ModalComputerDelete";
 
 export const Computer = () => {
   const {
     modalCreateIsOpen,
-    //modalEditIsOpen,
+    modalEditIsOpen,
     setModalCreateIsOpen,
-    //modalDeleteIsOpen,
+    modalDeleteIsOpen,
   } = useContext(ComputerContext);
 
   return (
@@ -27,8 +27,8 @@ export const Computer = () => {
       <ComputerList />
       <Footer />
       {modalCreateIsOpen ? <ModalComputerCreate /> : null}
-      {/* {modalDeleteIsOpen ? <ModalComputerDelete /> : null}
-      {modalEditIsOpen ? <ModalComputerEdit /> : null} */}
+      {modalDeleteIsOpen ? <ModalComputerDelete /> : null}
+      {modalEditIsOpen ? <ModalComputerEdit /> : null}
     </ComputerStyled>
   );
 };

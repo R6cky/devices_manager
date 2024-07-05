@@ -7,8 +7,6 @@ export const ModalComputerDelete = () => {
 
   const idComputer = localStorage.getItem("idComputer");
 
-  console.log(idComputer);
-
   return (
     <ModalComputerDeleteStyle>
       <div className="container">
@@ -21,7 +19,7 @@ export const ModalComputerDelete = () => {
           </span>
         </div>
         <p className="question-computer">
-          Deseja realmente excluir o Computer?{" "}
+          Deseja realmente excluir o Computador?
         </p>
         <div className="btn-container">
           <span className="btn-yes" onClick={() => deleteComputer(idComputer)}>
