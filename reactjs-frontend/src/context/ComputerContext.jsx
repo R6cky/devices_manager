@@ -1,4 +1,4 @@
-import { api } from "../services/api";
+import { api } from "../services /api";
 import { createContext, useState } from "react";
 
 export const ComputerContext = createContext({});
@@ -28,7 +28,7 @@ export const ComputerProvider = ({ children }) => {
     }
   };
 
-  const updateComputers = async (data, id) => {
+  const updateComputer = async (data, id) => {
     try {
       const requestJson = await api.patch(`/computer/${id}`, data);
       console.log(requestJson);
@@ -37,7 +37,7 @@ export const ComputerProvider = ({ children }) => {
     }
   };
 
-  const deleteComputers = async (id) => {
+  const deleteComputer = async (id) => {
     try {
       await api.delete(`/computer/${id}`);
     } catch (error) {
@@ -62,8 +62,8 @@ export const ComputerProvider = ({ children }) => {
         computers,
         createComputer,
         insertComputer,
-        updateComputers,
-        deleteComputers,
+        updateComputer,
+        deleteComputer,
         modalCreateIsOpen,
         setModalCreateIsOpen,
         modalDeleteIsOpen,
