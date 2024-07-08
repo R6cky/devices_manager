@@ -11,7 +11,6 @@ export const ModalBluebirdEdit = () => {
   let data = {
     serial_name: "",
     host_name: "",
-    data_reparo: "",
     fix_date: "",
     description: "",
   };
@@ -19,6 +18,7 @@ export const ModalBluebirdEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateBluebird(data, idBluebird);
+    console.log(dataBluebird);
   };
 
   return (

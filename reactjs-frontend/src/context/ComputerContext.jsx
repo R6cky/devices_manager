@@ -1,4 +1,4 @@
-import { api } from "../services /api";
+import { api } from "../services/api";
 import { createContext, useState } from "react";
 
 export const ComputerContext = createContext({});
