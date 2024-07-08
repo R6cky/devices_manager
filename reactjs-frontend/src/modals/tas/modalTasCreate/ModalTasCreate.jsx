@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ModalPrinterStyle } from "./Styled";
-import { PrinterContext } from "../../../context/PrinterContext";
+import { ModalTasStyle } from "./Styled";
+import { TasContext } from "../../../context/TasContext";
 
-export const ModalPrinterCreate = () => {
-  const { createPrinter, setModalCreateIsOpen } = useContext(PrinterContext);
+export const ModalTasCreate = () => {
+  const { createTas, setModalCreateIsOpen } = useContext(TasContext);
 
   const data = {
     hostname: "",
@@ -13,12 +13,12 @@ export const ModalPrinterCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createPrinter(data);
+    createTas(data);
   };
 
   return (
-    <ModalPrinterStyle>
-      <form action="" className="form-Printer" onSubmit={handleSubmit}>
+    <ModalTasStyle>
+      <form action="" className="form-tas" onSubmit={handleSubmit}>
         <div className="btn-close">
           <span onClick={() => setModalCreateIsOpen(false)}>X</span>
         </div>
@@ -47,6 +47,6 @@ export const ModalPrinterCreate = () => {
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
-    </ModalPrinterStyle>
+    </ModalTasStyle>
   );
 };

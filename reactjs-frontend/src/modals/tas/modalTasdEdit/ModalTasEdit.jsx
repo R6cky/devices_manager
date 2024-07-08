@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ModalPrinterEditStyle } from "./Styled";
-import { PrinterContext } from "../../../context/PrinterContext";
+import { ModalTasEditStyle } from "./Styled";
+import { TasContext } from "../../../context/TasContext";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -13,11 +13,11 @@ const schema = yup
   })
   .required();
 
-export const ModalPrinterEdit = () => {
-  const { updatePrinter, setModalEditIsOpen } = useContext(PrinterContext);
+export const ModalTasEdit = () => {
+  const { updateTas, setModalEditIsOpen } = useContext(TasContext);
 
-  const dataPrinter = JSON.parse(localStorage.getItem("dataPrinter"));
-  const idPrinter = dataPrinter.id;
+  const dataTas = JSON.parse(localStorage.getItem("dataTas"));
+  const idTas = dataTas.id;
 
   const {
     register,
@@ -28,12 +28,12 @@ export const ModalPrinterEdit = () => {
   });
 
   const submit = (data) => {
-    updatePrinter(data, idPrinter);
+    updateTas(data, idTas);
   };
 
   return (
-    <ModalPrinterEditStyle>
-      <form action="" className="form-printer" onSubmit={handleSubmit(submit)}>
+    <ModalTasEditStyle>
+      <form action="" className="form-tas" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
@@ -41,27 +41,27 @@ export const ModalPrinterEdit = () => {
           <input
             type="text"
             placeholder="hostname"
-            defaultValue={dataPrinter.hostname}
+            defaultValue={dataTas.hostname}
             {...register("hostname")}
           />
           <p className="error-msg">{errors.hostname?.message}</p>
           <input
             type="text"
             placeholder="Ip do computador"
-            defaultValue={dataPrinter.ip}
+            defaultValue={dataTas.ip}
             {...register("ip")}
           />
           <p className="error-msg">{errors.ip?.message}</p>
           <input
             type="text"
             placeholder="Marca e Modelo"
-            defaultValue={dataPrinter.brand_and_model}
+            defaultValue={dataTas.brand_and_model}
             {...register("brand_and_model")}
           />
           <p className="error-msg">{errors.brand_and_model?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
-    </ModalPrinterEditStyle>
+    </ModalTasEditStyle>
   );
 };
