@@ -44,10 +44,6 @@ export const ModalBluebirdEdit = () => {
             placeholder="Serial number"
             defaultValue={dataBluebird.serial_name}
             {...register("serial_name")}
-
-            // onChange={(e) => {
-            //   data = { ...dataBluebird, serial_name: e.target.value };
-            // }}
           />
           <p className="error-msg">{errors.serial_name?.message}</p>
           <input
@@ -55,9 +51,6 @@ export const ModalBluebirdEdit = () => {
             placeholder="Hostname"
             defaultValue={dataBluebird.host_name}
             {...register("host_name")}
-            // onChange={(e) => {
-            //   data = { ...dataBluebird, host_name: e.target.value };
-            // }}
           />
           <p className="error-msg">{errors.host_name?.message}</p>
           <input
@@ -65,9 +58,6 @@ export const ModalBluebirdEdit = () => {
             placeholder="Data do reparo"
             defaultValue={dataBluebird.fix_date}
             {...register("fix_date")}
-            // onChange={(e) => {
-            //   data = { ...dataBluebird, fix_date: e.target.value };
-            // }}
           />
           <p className="error-msg">{errors.fix_date?.message}</p>
           <textarea
@@ -76,9 +66,6 @@ export const ModalBluebirdEdit = () => {
             placeholder="Descrição"
             defaultValue={dataBluebird.description}
             {...register("description")}
-            // onChange={(e) => {
-            //   data = { ...dataBluebird, description: e.target.value };
-            // }}
           />
           <p className="error-msg">{errors.description?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />

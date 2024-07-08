@@ -38,7 +38,7 @@ export const PrinterProvider = ({ children }) => {
     }
   };
 
-  const deletePrint = async (id) => {
+  const deletePrinter = async (id) => {
     try {
       await api.delete(`/print/${id}`);
     } catch (error) {
@@ -47,12 +47,12 @@ export const PrinterProvider = ({ children }) => {
   };
 
   const openModalDelete = (id) => {
-    localStorage.setItem("idComputer", id);
+    localStorage.setItem("idPrinter", id);
     setModalDeleteIsOpen(true);
   };
 
   const openModalEdit = (data) => {
-    localStorage.setItem("dataComputer", JSON.stringify(data));
+    localStorage.setItem("dataPrinter", JSON.stringify(data));
     setModalEditIsOpen(true);
   };
 
@@ -64,13 +64,15 @@ export const PrinterProvider = ({ children }) => {
         createPrinter,
         insertPrint,
         updatePrinter,
-        deletePrint,
+        deletePrinter,
         openModalDelete,
         openModalEdit,
         modalCreateIsOpen,
         modalDeleteIsOpen,
         modalEditIsOpen,
         setModalCreateIsOpen,
+        setModalDeleteIsOpen,
+        setModalEditIsOpen,
       }}
     >
       {children}

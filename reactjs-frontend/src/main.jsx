@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Bluebird />,
   },
   {
-    path: "/print",
+    path: "/printer",
     element: <Printer />,
   },
   {

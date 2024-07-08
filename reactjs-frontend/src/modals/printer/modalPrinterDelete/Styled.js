@@ -43,7 +43,7 @@ export const ModalPrinterDeleteStyle = styled.div`
     padding: 10px;
     border-radius: 10px;
 
-    .question-computer {
+    .question-print {
       width: 100%;
       height: 100px;
       color: black;

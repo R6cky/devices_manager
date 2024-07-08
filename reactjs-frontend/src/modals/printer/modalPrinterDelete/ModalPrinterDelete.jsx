@@ -5,12 +5,12 @@ import { ModalPrinterDeleteStyle } from "./Styled";
 export const ModalPrinterDelete = () => {
   const { deletePrinter, setModalDeleteIsOpen } = useContext(PrinterContext);
 
-  const idPrint = localStorage.getItem("idPrint");
+  const idPrint = localStorage.getItem("idPrinter");
 
   return (
     <ModalPrinterDeleteStyle>
       <div className="container">
-        <div className="btn-close">
+        <div className="btn-close-container">
           <span
             className="btn-close"
             onClick={() => setModalDeleteIsOpen(false)}
