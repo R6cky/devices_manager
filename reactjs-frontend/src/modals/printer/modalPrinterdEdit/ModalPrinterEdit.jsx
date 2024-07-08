@@ -1,6 +1,17 @@
 import { useContext } from "react";
 import { ModalPrinterEditStyle } from "./Styled";
 import { PrinterContext } from "../../../context/PrinterContext";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
+const schema = yup
+  .object({
+    hostname: yup.string().required(),
+    ip: yup.string().required(),
+    brand_and_model: yup.string().required(),
+  })
+  .required();
 
 export const ModalPrinterEdit = () => {
   const { updatePrinter, setModalEditIsOpen } = useContext(PrinterContext);
@@ -8,20 +19,21 @@ export const ModalPrinterEdit = () => {
   const dataPrinter = JSON.parse(localStorage.getItem("dataPrinter"));
   const idPrinter = dataPrinter.id;
 
-  let data = {
-    hostname: "",
-    ip: "",
-    brand_and_model: "",
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submit = (data) => {
     updatePrinter(data, idPrinter);
   };
 
   return (
     <ModalPrinterEditStyle>
-      <form action="" className="form-printer" onSubmit={handleSubmit}>
+      <form action="" className="form-printer" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
@@ -30,27 +42,23 @@ export const ModalPrinterEdit = () => {
             type="text"
             placeholder="hostname"
             defaultValue={dataPrinter.hostname}
-            onChange={(e) => {
-              data = { ...dataPrinter, hostname: e.target.value };
-            }}
+            {...register("hostname")}
           />
+          <p className="error-msg">{errors.hostname?.message}</p>
           <input
             type="text"
             placeholder="Ip do computador"
             defaultValue={dataPrinter.ip}
-            onChange={(e) => {
-              data = { ...dataPrinter, ip: e.target.value };
-            }}
+            {...register("ip")}
           />
-
+          <p className="error-msg">{errors.ip?.message}</p>
           <input
             type="text"
             placeholder="Marca e Modelo"
             defaultValue={dataPrinter.brand_and_model}
-            onChange={(e) => {
-              data = { ...dataPrinter, brand_and_model: e.target.value };
-            }}
+            {...register("brand_and_model")}
           />
+          <p className="error-msg">{errors.brand_and_model?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
