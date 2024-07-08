@@ -7,6 +7,9 @@ export const TasContext = createContext({});
 export const TasProvider = ({ children }) => {
   const [tas, setTas] = useState([]);
   const [insertTas, setInsertTas] = useState({});
+  const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
+  const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
 
   const getTas = async () => {
     try {
@@ -43,8 +46,14 @@ export const TasProvider = ({ children }) => {
     }
   };
 
-  const setIdInLocalStorage = (id) => {
-    localStorage.setItem("id", `${id}`);
+  const openModalDelete = (id) => {
+    localStorage.setItem("idPrinter", id);
+    setModalDeleteIsOpen(true);
+  };
+
+  const openModalEdit = (data) => {
+    localStorage.setItem("dataPrinter", JSON.stringify(data));
+    setModalEditIsOpen(true);
   };
 
   return (
@@ -56,7 +65,12 @@ export const TasProvider = ({ children }) => {
         insertTas,
         updateTas,
         deleteTas,
-        setIdInLocalStorage,
+        openModalDelete,
+        openModalEdit,
+        modalDeleteIsOpen,
+        modalEditIsOpen,
+        modalCreateIsOpen,
+        setModalCreateIsOpen,
       }}
     >
       {children}

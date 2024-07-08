@@ -3,7 +3,7 @@ import { TasContext } from "../../../../context/TasContext";
 import { TasItemStyled } from "./Styled";
 
 export const TasItem = ({ tas }) => {
-  const { setIdInLocalStorage, deleteTas } = useContext(TasContext);
+  const { openModalEdit, openModalDelete } = useContext(TasContext);
 
   return (
     <TasItemStyled>
@@ -12,10 +12,10 @@ export const TasItem = ({ tas }) => {
         <h3>Wifi: {tas.wifi_name} </h3>
       </div>
       <div className="item-buttons">
-        <button onClick={() => setIdInLocalStorage(tas.id)} className="edit">
+        <button onClick={() => openModalEdit(tas)} className="edit">
           Editar
         </button>
-        <button onClick={() => deleteTas(tas.id)} className="remove">
+        <button onClick={() => openModalDelete(tas.id)} className="remove">
           remover
         </button>
       </div>
