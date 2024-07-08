@@ -3,6 +3,9 @@ import { Header } from "../../components/header/Header";
 import { TasStyled } from "./Styled";
 import { TasList } from "./tasList/TasList";
 import { TasContext } from "../../context/TasContext";
+import { ModalTasCreate } from "../../modals/tas/modalTasCreate/ModalTasCreate";
+import { ModalTasEdit } from "../../modals/tas/modalTasdEdit/ModalTasEdit";
+import { ModalTasDelete } from "../../modals/tas/modalTasDelete/ModalTasDelete";
 
 export const Tas = () => {
   const {
