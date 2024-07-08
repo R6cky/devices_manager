@@ -5,12 +5,14 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const schema = yup.object({
-  seral_name: yup.string().required(),
-  host_name: yup.string().required(),
-  fix_date: yup.string().required(),
-  description: yup.string().required(),
-});
+const schema = yup
+  .object({
+    serial_name: yup.string().required("Campo obrigatório"),
+    host_name: yup.string().required("Campo obrigatório"),
+    fix_date: yup.string().required("Campo obrigatório"),
+    description: yup.string().required("Campo obrigatório"),
+  })
+  .required();
 
 export const ModalBluebirdEdit = () => {
   const {
@@ -20,8 +22,6 @@ export const ModalBluebirdEdit = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  const onSubmit = (data) => console.log(data);
 
   const { updateBluebird, setModalEditIsOpen } = useContext(BluebirdContext);
 
@@ -35,19 +35,13 @@ export const ModalBluebirdEdit = () => {
   //   description: "",
   // };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   updateBluebird(data, idBluebird);
-  //   console.log(dataBluebird);
-  // };
+  const submit = (data) => {
+    updateBluebird(data, idBluebird);
+  };
 
   return (
     <ModalBluebirdEditStyle>
-      <form
-        action=""
-        className="form-bluebird"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form action="" className="form-bluebird" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
@@ -55,42 +49,45 @@ export const ModalBluebirdEdit = () => {
           <input
             type="text"
             placeholder="Serial number"
-            // defaultValue={dataBluebird.serial_name}
+            defaultValue={dataBluebird.serial_name}
             {...register("serial_name")}
 
             // onChange={(e) => {
             //   data = { ...dataBluebird, serial_name: e.target.value };
             // }}
           />
-          <p>{errors.serial_name?.message}</p>
+          <p className="error-msg">{errors.serial_name?.message}</p>
           <input
             type="text"
             placeholder="Hostname"
-            // defaultValue={dataBluebird.host_name}
+            defaultValue={dataBluebird.host_name}
             {...register("host_name")}
             // onChange={(e) => {
             //   data = { ...dataBluebird, host_name: e.target.value };
             // }}
           />
+          <p className="error-msg">{errors.host_name?.message}</p>
           <input
             type="date"
             placeholder="Data do reparo"
-            // defaultValue={dataBluebird.fix_date}
+            defaultValue={dataBluebird.fix_date}
             {...register("fix_date")}
             // onChange={(e) => {
             //   data = { ...dataBluebird, fix_date: e.target.value };
             // }}
           />
+          <p className="error-msg">{errors.fix_date?.message}</p>
           <textarea
             className="textarea-description"
             type="text"
             placeholder="Descrição"
-            // defaultValue={dataBluebird.description}
+            defaultValue={dataBluebird.description}
             {...register("description")}
             // onChange={(e) => {
             //   data = { ...dataBluebird, description: e.target.value };
             // }}
           />
+          <p className="error-msg">{errors.description?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>

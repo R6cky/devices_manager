@@ -25,6 +25,10 @@ export const ModalBluebirdEditStyle = styled.div`
     border-radius: 10px;
     background-color: rgba(0, 0, 23, 0.9);
 
+    .error-msg {
+      color: white;
+    }
+
     .input-container {
       margin: 0 auto;
       width: 80%;
