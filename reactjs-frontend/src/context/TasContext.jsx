@@ -47,12 +47,12 @@ export const TasProvider = ({ children }) => {
   };
 
   const openModalDelete = (id) => {
-    localStorage.setItem("idPrinter", id);
+    localStorage.setItem("idTas", id);
     setModalDeleteIsOpen(true);
   };
 
   const openModalEdit = (data) => {
-    localStorage.setItem("dataPrinter", JSON.stringify(data));
+    localStorage.setItem("dataTas", JSON.stringify(data));
     setModalEditIsOpen(true);
   };
 
