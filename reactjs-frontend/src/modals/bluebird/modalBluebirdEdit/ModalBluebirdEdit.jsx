@@ -28,13 +28,6 @@ export const ModalBluebirdEdit = () => {
   const dataBluebird = JSON.parse(localStorage.getItem("dataBluebird"));
   const idBluebird = dataBluebird.id;
 
-  // let data = {
-  //   serial_name: "",
-  //   host_name: "",
-  //   fix_date: "",
-  //   description: "",
-  // };
-
   const submit = (data) => {
     updateBluebird(data, idBluebird);
   };

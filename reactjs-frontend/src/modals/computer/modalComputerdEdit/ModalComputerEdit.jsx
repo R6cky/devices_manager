@@ -1,29 +1,39 @@
 import { useContext } from "react";
 import { ModalComputerEditStyle } from "./Styled";
 import { ComputerContext } from "../../../context/ComputerContext";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
+const schema = yup.object().shape({
+  hostname: yup.string().required(),
+  ip: yup.string().required(),
+  sector: yup.string().required(),
+  operational_system: yup.string().required(),
+  type: yup.string().required(),
+});
 
 export const ModalComputerEdit = () => {
   const { updateComputer, setModalEditIsOpen } = useContext(ComputerContext);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
   const dataComputer = JSON.parse(localStorage.getItem("dataComputer"));
   const idComputer = dataComputer.id;
 
-  let data = {
-    hostname: "",
-    ip: "",
-    sector: "",
-    operational_system: "",
-    type: "",
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submit = (data) => {
     updateComputer(data, idComputer);
   };
 
   return (
     <ModalComputerEditStyle>
-      <form action="" className="form-computer" onSubmit={handleSubmit}>
+      <form action="" className="form-computer" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
@@ -32,42 +42,37 @@ export const ModalComputerEdit = () => {
             type="text"
             placeholder="hostname"
             defaultValue={dataComputer.hostname}
-            onChange={(e) => {
-              data = { ...dataComputer, hostname: e.target.value };
-            }}
+            {...register("hostname")}
           />
+          <p className="error-msg">{errors.hostname?.message}</p>
           <input
             type="text"
             placeholder="Ip do computador"
             defaultValue={dataComputer.ip}
-            onChange={(e) => {
-              data = { ...dataComputer, ip: e.target.value };
-            }}
+            {...register("ip")}
           />
+          <p className="error-msg">{errors.ip?.message}</p>
           <input
             type="text"
             placeholder="Setor"
             defaultValue={dataComputer.sector}
-            onChange={(e) => {
-              data = { ...dataComputer, sector: e.target.value };
-            }}
+            {...register("sector")}
           />
+          <p className="error-msg">{errors.sector?.message}</p>
           <input
             type="text"
             placeholder="os"
             defaultValue={dataComputer.operational_system}
-            onChange={(e) => {
-              data = { ...dataComputer, operational_system: e.target.value };
-            }}
+            {...register("operational_system")}
           />
+          <p className="error-msg">{errors.operational_system?.message}</p>
           <input
             type="text"
             placeholder="Tipo"
             defaultValue={dataComputer.type}
-            onChange={(e) => {
-              data = { ...dataComputer, type: e.target.value };
-            }}
+            {...register("type")}
           />
+          <p className="error-msg">{errors.type?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
