@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TasListStyled = styled.ul`
+export const TonerListStyled = styled.ul`
   width: 90%;
   max-width: 100%;
   height: 800px;

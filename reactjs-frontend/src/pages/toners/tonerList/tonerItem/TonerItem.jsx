@@ -1,24 +1,24 @@
 import { useContext } from "react";
-import { TasContext } from "../../../../context/TasContext";
-import { TasItemStyled } from "./Styled";
+import { TonerContext } from "../../../../context/TonerContext";
+import { TonerItemStyled } from "./Styled";
 
-export const TasItem = ({ tas }) => {
-  const { openModalEdit, openModalDelete } = useContext(TasContext);
+export const TonerItem = ({ toner }) => {
+  const { openModalEdit, openModalDelete } = useContext(TonerContext);
 
   return (
-    <TasItemStyled>
+    <TonerItemStyled>
       <div className="item-content">
-        <h3>Hostname: {tas.hostname} </h3>
-        <h3>Wifi: {tas.wifi_name} </h3>
+        <h3>Modelo: {toner.model} </h3>
+        <h3>Entrada ou Saída: {toner.in_out} </h3>
       </div>
       <div className="item-buttons">
-        <button onClick={() => openModalEdit(tas)} className="edit">
+        <button onClick={() => openModalEdit(toner)} className="edit">
           Editar
         </button>
-        <button onClick={() => openModalDelete(tas.id)} className="remove">
+        <button onClick={() => openModalDelete(toner.id)} className="remove">
           remover
         </button>
       </div>
-    </TasItemStyled>
+    </TonerItemStyled>
   );
 };

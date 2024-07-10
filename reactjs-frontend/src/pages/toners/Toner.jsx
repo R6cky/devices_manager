@@ -1,6 +1,7 @@
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import { TonerStyled } from "./Styled";
+import { TonerList } from "./tonerList/TasList";
 
 export const Toner = () => {
   return (
@@ -36,6 +37,7 @@ export const Toner = () => {
         </select>
       </div>
       <div className="body-toner"></div> */}
+      <TonerList />
       <Footer />
     </TonerStyled>
   );

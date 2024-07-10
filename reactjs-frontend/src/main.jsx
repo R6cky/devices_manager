@@ -12,6 +12,7 @@ import { Tas } from "./pages/tas/Tas.jsx";
 import { Computer } from "./pages/computer/Computer.jsx";
 import { Toner } from "./pages/toners/Toner.jsx";
 import { Printer } from "./pages/printer/Printer.jsx";
+import { TonerProvider } from "./context/TonerContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,16 +44,18 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyle />
-    <TasProvider>
-      <PrinterProvider>
-        <ComputerProvider>
-          <BluebirdProvider>
-            <RouterProvider router={router}>
-              <App />
-            </RouterProvider>
-          </BluebirdProvider>
-        </ComputerProvider>
-      </PrinterProvider>
-    </TasProvider>
+    <TonerProvider>
+      <TasProvider>
+        <PrinterProvider>
+          <ComputerProvider>
+            <BluebirdProvider>
+              <RouterProvider router={router}>
+                <App />
+              </RouterProvider>
+            </BluebirdProvider>
+          </ComputerProvider>
+        </PrinterProvider>
+      </TasProvider>
+    </TonerProvider>
   </React.StrictMode>
 );

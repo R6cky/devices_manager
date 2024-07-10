@@ -1,24 +1,24 @@
 import { useContext, useEffect } from "react";
-import { TasListStyled } from "./Styled";
-import { TasItem } from "./tasItem/TasItem";
-import { TasContext } from "../../../context/TasContext";
+import { TonerListStyled } from "./Styled";
+import { TonerItem } from "./tonerItem/TonerItem";
+import { TonerContext } from "../../../context/TonerContext";
 
-export const TasList = () => {
-  const { tas, getTas } = useContext(TasContext);
+export const TonerList = () => {
+  const { toner, getToner } = useContext(TonerContext);
 
   useEffect(() => {
-    getTas();
+    getToner();
   }, []);
 
   return (
-    <TasListStyled>
-      {tas.data ? (
-        tas.data.map((elem) => {
-          return <TasItem key={elem.id} tas={elem} />;
+    <TonerListStyled>
+      {toner.data ? (
+        toner.data.map((elem) => {
+          return <TonerItem key={elem.id} toner={elem} />;
         })
       ) : (
         <span>null</span>
       )}
-    </TasListStyled>
+    </TonerListStyled>
   );
 };

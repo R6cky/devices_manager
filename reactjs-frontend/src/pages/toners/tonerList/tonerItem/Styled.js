@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TasItemStyled = styled.li`
+export const TonerItemStyled = styled.li`
   border-radius: 8px;
   width: 21rem;
   height: 28rem;
