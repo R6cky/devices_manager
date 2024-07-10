@@ -8,15 +8,15 @@ export const TonerItem = ({ toner }) => {
   return (
     <TonerItemStyled>
       <div className="item-content">
-        <h3>Modelo: {toner.model} </h3>
-        <h3>Entrada ou Saída: {toner.in_out} </h3>
+        <h3> {toner.model} </h3>
+        {/* <h3>Entrada ou Saída: {toner.in_out} </h3> */}
       </div>
       <div className="item-buttons">
         <button onClick={() => openModalEdit(toner)} className="edit">
-          Editar
+          Incluir toner
         </button>
         <button onClick={() => openModalDelete(toner.id)} className="remove">
-          remover
+          Retirar toner
         </button>
       </div>
     </TonerItemStyled>

@@ -1,7 +1,7 @@
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import { TonerStyled } from "./Styled";
-import { TonerList } from "./tonerList/TasList";
+import { TonerList } from "./tonerList/TonerList";
 
 export const Toner = () => {
   return (
