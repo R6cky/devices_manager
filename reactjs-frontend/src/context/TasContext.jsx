@@ -71,6 +71,8 @@ export const TasProvider = ({ children }) => {
         modalEditIsOpen,
         modalCreateIsOpen,
         setModalCreateIsOpen,
+        setModalEditIsOpen,
+        setModalDeleteIsOpen,
       }}
     >
       {children}
