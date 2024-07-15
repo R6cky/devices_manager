@@ -46,6 +46,11 @@ export const HeaderStyled = styled.header`
         background-color: white;
         cursor: pointer;
         font-weight: bold;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
