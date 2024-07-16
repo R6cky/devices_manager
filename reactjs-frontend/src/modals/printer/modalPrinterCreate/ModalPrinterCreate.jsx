@@ -9,9 +9,9 @@ export const ModalPrinterCreate = () => {
     hostname: "",
     ip: "",
     brand_and_model: "",
-    queue_name,
-    sector,
-    toner_name,
+    queue_name: "",
+    sector: "",
+    toner_name: "",
   };
 
   const handleSubmit = (e) => {
@@ -59,6 +59,13 @@ export const ModalPrinterCreate = () => {
             placeholder="Setor"
             onChange={(e) => {
               data.sector = e.target.value;
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Toner"
+            onChange={(e) => {
+              data.toner_name = e.target.value;
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />
