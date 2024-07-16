@@ -1,4 +1,3 @@
-import { Printer } from "../../pages/printer/Printer";
 import { HeaderStyled } from "./Styled";
 import { Link } from "react-router-dom";
 

@@ -50,7 +50,17 @@ export const HeaderStyled = styled.header`
         a {
           text-decoration: none;
           color: black;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
+      }
+      :hover {
+        background-color: black;
+        color: white;
+        border: solid white 1px;
       }
     }
   }
