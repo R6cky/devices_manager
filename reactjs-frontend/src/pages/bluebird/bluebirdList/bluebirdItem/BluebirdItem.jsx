@@ -12,11 +12,9 @@ export const BluebirdItem = ({ bluebird }) => {
           Serial Number: {bluebird.serial_number}
         </h3>
         <h3 className="item-content-hostname">Hostname: {bluebird.hostname}</h3>
-        <h3 className="item-content-fixdate">
-          Data de reparo: {bluebird.sector}
-        </h3>
-        <p className="item-content-description">
-          Descrição: {bluebird.contact_number}
+        <h3 className="item-content-sector">Setor: {bluebird.sector}</h3>
+        <p className="item-content-contact-number">
+          Contato do coordenador: {bluebird.contact_number}
         </p>
       </div>
       <div className="item-buttons">
