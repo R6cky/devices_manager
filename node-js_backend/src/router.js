@@ -9,11 +9,11 @@ import { GetAllComputerController } from "./controllers/computer/getAllComputerC
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
 import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
 import { DeleteComputerController } from "./controllers/computer/deleteComputerController.js";
-import { CreatePrintController } from "./controllers/print/createPrintController.js";
-import { GetAllPrintController } from "./controllers/print/getAllPrintController.js";
-import { GetPrintByIdController } from "./controllers/print/getPrintByIdController.js";
-import { UpdatePrintController } from "./controllers/print/updatePrintController.js";
-import { DeletePrintController } from "./controllers/print/deletePrintController.js";
+import { CreatePrintController } from "./controllers/printer/createPrintController.js";
+import { GetAllPrintController } from "./controllers/printer/getAllPrintController.js";
+import { GetPrintByIdController } from "./controllers/printer/getPrintByIdController.js";
+import { UpdatePrintController } from "./controllers/printer/updatePrintController.js";
+import { DeletePrintController } from "./controllers/printer/deletePrintController.js";
 import { CreateTasController } from "./controllers/tas/createTasController.js";
 import { GetTasByIdController } from "./controllers/tas/getTasByIdController.js";
 import { UpdateTasController } from "./controllers/tas/updateTasController.js";

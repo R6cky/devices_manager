@@ -2,7 +2,7 @@ import { prismaClient } from "../../database/prismaClient.js";
 
 export class GetPrintByIdController {
   async handle(req, res) {
-    const printer = await prismaClient.print.findUnique({
+    const printer = await prismaClient.printer.findUnique({
       where: {
         id: req.params.id,
       },

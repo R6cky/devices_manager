@@ -2,7 +2,7 @@ import { prismaClient } from "../../database/prismaClient.js";
 
 export class DeletePrintController {
   async handle(req, res) {
-    const print = await prismaClient.print.delete({
+    const print = await prismaClient.printer.delete({
       where: {
         id: req.params.id,
       },
