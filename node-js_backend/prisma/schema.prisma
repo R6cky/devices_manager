@@ -58,7 +58,7 @@ model Printer {
   brand_and_model String
   queue_name String
 
-  @@map("print")
+  @@map("printer")
 }
 
 model Toner {
