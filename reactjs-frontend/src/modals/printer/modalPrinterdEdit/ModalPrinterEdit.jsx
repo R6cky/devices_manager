@@ -59,6 +59,27 @@ export const ModalPrinterEdit = () => {
             {...register("brand_and_model")}
           />
           <p className="error-msg">{errors.brand_and_model?.message}</p>
+          <input
+            type="text"
+            placeholder="Nome da fila"
+            defaultValue={dataPrinter.queue_name}
+            {...register("queue_name")}
+          />
+          <p className="error-msg">{errors.queue_name?.message}</p>
+          <input
+            type="text"
+            placeholder="Setor"
+            defaultValue={dataPrinter.sector}
+            {...register("sector")}
+          />
+          <p className="error-msg">{errors.sector?.message}</p>
+          <input
+            type="text"
+            placeholder="Toner"
+            defaultValue={dataPrinter.toner_name}
+            {...register("toner_name")}
+          />
+          <p className="error-msg">{errors.toner_name?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
