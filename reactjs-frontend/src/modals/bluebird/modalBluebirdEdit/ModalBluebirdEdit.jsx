@@ -45,7 +45,7 @@ export const ModalBluebirdEdit = () => {
             defaultValue={dataBluebird.serial_number}
             {...register("serial_number")}
           />
-          <p className="error-msg">{errors.serial_name?.message}</p>
+          <p className="error-msg">{errors.serial_number?.message}</p>
           <input
             type="text"
             placeholder="Hostname"
@@ -59,11 +59,11 @@ export const ModalBluebirdEdit = () => {
             defaultValue={dataBluebird.sector}
             {...register("sector")}
           />
-          <p className="error-msg">{errors.fix_date?.message}</p>
-          <textarea
-            className="textarea-contact_number"
+          <p className="error-msg">{errors.sector?.message}</p>
+          <input
+            className="contact_number"
             type="text"
-            placeholder="Descrição"
+            placeholder="Contato do coordenador"
             defaultValue={dataBluebird.contact_number}
             {...register("contact_number")}
           />
