@@ -23,7 +23,7 @@ model User {
 
 model BlueBird {
   id String @id @default(uuid())
-  serial_name String 
+  serial_number String 
   hostname String
   sector String
   owner String 

@@ -6,11 +6,10 @@ export const ModalBluebird = () => {
   const { createBluebird, setModalCreateIsOpen } = useContext(BluebirdContext);
 
   const data = {
-    serial_name: "",
-    host_name: "",
-    data_reparo: "",
-    fix_date: "",
-    description: "",
+    serial_number: "",
+    hostname: "",
+    sector: "",
+    owner: "",
   };
 
   const handleSubmit = (e) => {
