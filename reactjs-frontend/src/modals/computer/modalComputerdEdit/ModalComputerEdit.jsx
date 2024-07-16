@@ -59,19 +59,35 @@ export const ModalComputerEdit = () => {
             {...register("sector")}
           />
           <p className="error-msg">{errors.sector?.message}</p>
-          <input
+          <select
+            title="Selecione o sistema operacional"
+            defaultValue={dataComputer.operational_system}
+            {...register("operational_system")}
+            name="operational_system"
+            className="operational_system"
+            id=""
+          >
+            <option value="Windows 11">Windows 11</option>
+            <option value="Windows 10">Windows 10</option>
+          </select>
+          {/* <input
             type="text"
             placeholder="os"
             defaultValue={dataComputer.operational_system}
             {...register("operational_system")}
-          />
+          /> */}
           <p className="error-msg">{errors.operational_system?.message}</p>
-          <input
-            type="text"
-            placeholder="Tipo"
+
+          <select
+            name=""
+            id=""
+            title="Tipo - Notebook ou Desktop"
             defaultValue={dataComputer.type}
             {...register("type")}
-          />
+          >
+            <option value="Desktop">Desktop</option>
+            <option value="Notebook">Notebook</option>
+          </select>
           <p className="error-msg">{errors.type?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>

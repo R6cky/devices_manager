@@ -44,6 +44,13 @@ export const ModalComputerEditStyle = styled.div`
         font-size: 18px;
       }
 
+      select {
+        width: 100%;
+        height: 3.5rem;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
       .btn-send {
         cursor: pointer;
       }
