@@ -2,10 +2,10 @@ import { prismaClient } from "../../database/prismaClient.js";
 
 export class CreateBluebirdController {
   async handle(req, res) {
-    const { serial_name, hostname, sector, owner } = req.body;
+    const { serial_number, hostname, sector, contact_number } = req.body;
     const bluebird = await prismaClient.blueBird.create({
       data: {
-        serial_name,
+        serial_number,
         hostname,
         sector,
         contact_number,
