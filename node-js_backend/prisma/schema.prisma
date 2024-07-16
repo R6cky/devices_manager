@@ -51,7 +51,7 @@ model Tas {
   @@map("tas")
 }
 
-model Print {
+model Printer {
   id String @id @default(uuid())
   hostname String 
   ip String
