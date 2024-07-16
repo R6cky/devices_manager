@@ -1,46 +1,45 @@
 import { useContext } from "react";
-import { ModalTasStyle } from "./Styled";
-import { TasContext } from "../../../context/TasContext";
+import { ModalTonerStyle } from "./Styled";
+import { TonerContext } from "../../../context/TonerContext";
 
-export const ModalTasCreate = () => {
-  const { createTas, setModalCreateIsOpen } = useContext(TasContext);
+export const ModalTonerCreate = () => {
+  const { createToner, setModalCreateIsOpen } = useContext(TonerContext);
 
   const data = {
-    hostname: "",
-    ip: "",
-    brand_and_model: "",
+    model: "",
+    quantity: 0,
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createTas(data);
+    createToner(data);
   };
 
   return (
-    <ModalTasStyle>
-      <form action="" className="form-tas" onSubmit={handleSubmit}>
+    <ModalTonerStyle>
+      <form action="" className="form-toner" onSubmit={handleSubmit}>
         <div className="btn-close">
           <span onClick={() => setModalCreateIsOpen(false)}>X</span>
         </div>
         <div className="input-container">
           <input
             type="text"
-            placeholder="Hostname"
+            placeholder="Modelo"
             onChange={(e) => {
-              data.hostname = e.target.value;
+              data.model = e.target.value;
             }}
           />
           <input
             type="text"
-            placeholder="Wifi conectado"
+            placeholder="Quantidade"
             onChange={(e) => {
-              data.wifi_name = e.target.value;
+              data.quantity = e.target.value;
             }}
           />
 
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
-    </ModalTasStyle>
+    </ModalTonerStyle>
   );
 };
