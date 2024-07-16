@@ -39,7 +39,7 @@ export const ModalBluebird = () => {
             }}
           />
           <input
-            type="date"
+            type="text"
             placeholder="Setor"
             onChange={(e) => {
               data.sector = e.target.value;

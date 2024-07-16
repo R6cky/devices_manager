@@ -54,7 +54,7 @@ export const ModalBluebirdEdit = () => {
           />
           <p className="error-msg">{errors.hostname?.message}</p>
           <input
-            type="date"
+            type="text"
             placeholder="Setor"
             defaultValue={dataBluebird.sector}
             {...register("sector")}
