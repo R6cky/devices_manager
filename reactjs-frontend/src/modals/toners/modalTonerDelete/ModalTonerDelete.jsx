@@ -5,7 +5,7 @@ import { ModalTonerDeleteStyle } from "./Styled";
 export const ModalTonerDelete = () => {
   const { deleteToner, setModalDeleteIsOpen } = useContext(TonerContext);
 
-  const idPrint = localStorage.getItem("idToner");
+  const idToner = localStorage.getItem("idToner");
 
   return (
     <ModalTonerDeleteStyle>
@@ -20,7 +20,7 @@ export const ModalTonerDelete = () => {
         </div>
         <p className="question-print">Deseja realmente excluir a impressora?</p>
         <div className="btn-container">
-          <span className="btn-yes" onClick={() => deleteToner(idPrint)}>
+          <span className="btn-yes" onClick={() => deleteToner(idToner)}>
             Sim
           </span>
           <span className="btn-no" onClick={() => setModalDeleteIsOpen(false)}>

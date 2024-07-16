@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 
 const schema = yup
   .object({
-    hostname: yup.string().required(),
-    wifi_name: yup.string().required(),
+    model: yup.string().required(),
+    quantity: yup.number().required(),
   })
   .required();
 

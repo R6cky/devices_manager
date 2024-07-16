@@ -9,8 +9,12 @@ import { ModalTonerDelete } from "../../modals/toners/modalTonerDelete/ModalTone
 import { ModalTonerCreate } from "../../modals/toners/modalTonerCreate/ModalTonerCreate";
 
 export const Toner = () => {
-  const { setModalCreateIsOpen, modalDeleteIsOpen, modalEditIsOpen } =
-    useContext(TonerContext);
+  const {
+    setModalCreateIsOpen,
+    modalDeleteIsOpen,
+    modalEditIsOpen,
+    modalCreateIsOpen,
+  } = useContext(TonerContext);
 
   return (
     <TonerStyled>
@@ -23,7 +27,7 @@ export const Toner = () => {
 
       <TonerList />
       <Footer />
-      {setModalCreateIsOpen ? <ModalTonerCreate /> : null}
+      {modalCreateIsOpen ? <ModalTonerCreate /> : null}
       {modalDeleteIsOpen ? <ModalTonerDelete /> : null}
       {modalEditIsOpen ? <ModalTonerEdit /> : null}
     </TonerStyled>

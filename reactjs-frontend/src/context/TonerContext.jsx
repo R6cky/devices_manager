@@ -47,12 +47,12 @@ export const TonerProvider = ({ children }) => {
   };
 
   const openModalDelete = (id) => {
-    localStorage.setItem("idTas", id);
+    localStorage.setItem("idToner", id);
     setModalDeleteIsOpen(true);
   };
 
   const openModalEdit = (data) => {
-    localStorage.setItem("dataTas", JSON.stringify(data));
+    localStorage.setItem("dataToner", JSON.stringify(data));
     setModalEditIsOpen(true);
   };
   return (
@@ -69,6 +69,8 @@ export const TonerProvider = ({ children }) => {
         modalDeleteIsOpen,
         modalEditIsOpen,
         modalCreateIsOpen,
+        setModalEditIsOpen,
+        setModalDeleteIsOpen,
         setModalCreateIsOpen,
       }}
     >
