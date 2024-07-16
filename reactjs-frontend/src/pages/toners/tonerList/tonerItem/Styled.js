@@ -14,6 +14,7 @@ export const TonerItemStyled = styled.li`
     height: 70%;
     margin-bottom: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -28,14 +29,27 @@ export const TonerItemStyled = styled.li`
     justify-content: space-evenly;
     align-items: center;
 
-    .edit {
-      width: 5rem;
+    .add {
+      width: 3rem;
       height: 3rem;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 2rem;
+      border: none;
     }
 
     .remove {
-      width: 5rem;
+      width: 3rem;
       height: 3rem;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 2rem;
+      border: none;
+    }
+    :hover {
+      background-color: black;
+      color: white;
+      border: none;
     }
   }
 `;
