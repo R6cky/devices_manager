@@ -24,9 +24,9 @@ model User {
 model BlueBird {
   id String @id @default(uuid())
   serial_name String 
-  host_name String
-  fix_date String
-  description String 
+  hostname String
+  sector String
+  owner String 
 
   @@map("bluebird")
 }
