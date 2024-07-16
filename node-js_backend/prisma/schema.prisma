@@ -66,7 +66,7 @@ model Printer {
 model Toner {
   id String @id @default(uuid())
   model String 
-  in_out String 
+  quantity Int @default(0) 
 
   @@map("toner")
 }
