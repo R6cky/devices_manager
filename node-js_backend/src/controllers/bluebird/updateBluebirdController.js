@@ -10,7 +10,7 @@ export class UpdateBluebirdController {
         serial_name: req.body.serial_name,
         hostname: req.body.hostname,
         sector: req.body.sector,
-        owner: req.body.owner,
+        contact_number: req.body.owner,
       },
     });
     return res.json(blueBird);

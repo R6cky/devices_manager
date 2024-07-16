@@ -26,7 +26,7 @@ model BlueBird {
   serial_number String 
   hostname String
   sector String
-  owner String 
+  contact_number String 
 
   @@map("bluebird")
 }

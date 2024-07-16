@@ -28,21 +28,21 @@ export const ModalBluebird = () => {
             type="text"
             placeholder="Serial number"
             onChange={(e) => {
-              data.serial_name = e.target.value;
+              data.serial_number = e.target.value;
             }}
           />
           <input
             type="text"
             placeholder="Hostname"
             onChange={(e) => {
-              data.host_name = e.target.value;
+              data.hostname = e.target.value;
             }}
           />
           <input
             type="date"
             placeholder="Data do reparo"
             onChange={(e) => {
-              data.fix_date = e.target.value;
+              data.sector = e.target.value;
             }}
           />
           <textarea
@@ -50,7 +50,7 @@ export const ModalBluebird = () => {
             type="text-area"
             placeholder="Descrição"
             onChange={(e) => {
-              data.description = e.target.value;
+              data.owner = e.target.value;
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />

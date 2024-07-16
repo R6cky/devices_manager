@@ -8,7 +8,7 @@ export class CreateBluebirdController {
         serial_name,
         hostname,
         sector,
-        owner,
+        contact_number,
       },
     });
     return res.status(201).json(bluebird);
