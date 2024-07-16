@@ -8,8 +8,7 @@ import { useForm } from "react-hook-form";
 const schema = yup
   .object({
     hostname: yup.string().required(),
-    ip: yup.string().required(),
-    brand_and_model: yup.string().required(),
+    wifi_name: yup.string().required(),
   })
   .required();
 
@@ -47,18 +46,11 @@ export const ModalTasEdit = () => {
           <p className="error-msg">{errors.hostname?.message}</p>
           <input
             type="text"
-            placeholder="Ip do computador"
-            defaultValue={dataTas.ip}
-            {...register("ip")}
+            placeholder="Wifi conectado"
+            defaultValue={dataTas.wifi_name}
+            {...register("wifi_name")}
           />
-          <p className="error-msg">{errors.ip?.message}</p>
-          <input
-            type="text"
-            placeholder="Marca e Modelo"
-            defaultValue={dataTas.brand_and_model}
-            {...register("brand_and_model")}
-          />
-          <p className="error-msg">{errors.brand_and_model?.message}</p>
+          <p className="error-msg">{errors.wifi_name?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
