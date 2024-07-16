@@ -9,6 +9,8 @@ export const ModalPrinterCreate = () => {
     hostname: "",
     ip: "",
     brand_and_model: "",
+    queue_name,
+    sector,
   };
 
   const handleSubmit = (e) => {
