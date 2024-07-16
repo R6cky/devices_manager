@@ -46,20 +46,30 @@ export const ModalComputerCreate = () => {
               data.sector = e.target.value;
             }}
           />
-          <input
-            type="text"
-            placeholder="Sistema operacional"
+          <select
+            title="Selecione o sistema operacional"
             onChange={(e) => {
               data.operational_system = e.target.value;
             }}
-          />
-          <input
-            type="text"
-            placeholder="Tipo - Notebook ou Desktop"
+            name="operational_system"
+            className="operational_system"
+            id=""
+          >
+            <option value="Windows 11">Windows 11</option>
+            <option value="Windows 10">Windows 10</option>
+          </select>
+
+          <select
+            name=""
+            id=""
+            title="Tipo - Notebook ou Desktop"
             onChange={(e) => {
               data.type = e.target.value;
             }}
-          />
+          >
+            <option value="Desktop">Desktop</option>
+            <option value="Notebook">Notebook</option>
+          </select>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
