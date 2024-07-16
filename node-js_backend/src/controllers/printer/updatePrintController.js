@@ -10,6 +10,8 @@ export class UpdatePrintController {
         hostname: req.body.hostname,
         ip: req.body.ip,
         brand_and_model: req.body.brand_and_model,
+        queue_name: req.body.queue_name,
+        sector: req.body.sector,
       },
     });
     return res.status(200).json(printer);

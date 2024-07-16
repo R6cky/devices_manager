@@ -57,6 +57,7 @@ model Printer {
   ip String
   brand_and_model String
   queue_name String
+  sector String
 
   @@map("printer")
 }
