@@ -19,7 +19,7 @@ export const Tas = () => {
       <Header />
       <div className="btn-container">
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
-          Inserir Impressora
+          Inserir TAS
         </span>
       </div>
       <TasList />

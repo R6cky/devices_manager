@@ -32,18 +32,12 @@ export const ModalTasCreate = () => {
           />
           <input
             type="text"
-            placeholder="IP do computador"
+            placeholder="Wifi conectado"
             onChange={(e) => {
-              data.ip = e.target.value;
+              data.wifi_name = e.target.value;
             }}
           />
-          <input
-            type="text"
-            placeholder="Marca e modelo"
-            onChange={(e) => {
-              data.brand_and_model = e.target.value;
-            }}
-          />
+
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
