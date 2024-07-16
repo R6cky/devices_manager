@@ -7,6 +7,9 @@ export const TonerContext = createContext({});
 export const TonerProvider = ({ children }) => {
   const [toner, setToner] = useState([]);
   const [inserttoner, setInsertToner] = useState({});
+  const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
+  const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
 
   const getToner = async () => {
     try {
@@ -43,10 +46,15 @@ export const TonerProvider = ({ children }) => {
     }
   };
 
-  const setIdInLocalStorage = (id) => {
-    localStorage.setItem("id", `${id}`);
+  const openModalDelete = (id) => {
+    localStorage.setItem("idTas", id);
+    setModalDeleteIsOpen(true);
   };
 
+  const openModalEdit = (data) => {
+    localStorage.setItem("dataTas", JSON.stringify(data));
+    setModalEditIsOpen(true);
+  };
   return (
     <TonerContext.Provider
       value={{
@@ -56,7 +64,12 @@ export const TonerProvider = ({ children }) => {
         inserttoner,
         updateToner,
         deleteToner,
-        setIdInLocalStorage,
+        openModalDelete,
+        openModalEdit,
+        modalDeleteIsOpen,
+        modalEditIsOpen,
+        modalCreateIsOpen,
+        setModalCreateIsOpen,
       }}
     >
       {children}
