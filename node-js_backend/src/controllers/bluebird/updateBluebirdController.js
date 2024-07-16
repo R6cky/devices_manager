@@ -8,9 +8,9 @@ export class UpdateBluebirdController {
       },
       data: {
         serial_name: req.body.serial_name,
-        host_name: req.body.host_name,
-        fix_date: req.body.fix_date,
-        description: req.body.description,
+        hostname: req.body.hostname,
+        sector: req.body.sector,
+        owner: req.body.owner,
       },
     });
     return res.json(blueBird);
