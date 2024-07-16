@@ -9,7 +9,7 @@ export const ModalBluebird = () => {
     serial_number: "",
     hostname: "",
     sector: "",
-    owner: "",
+    contact_number: "",
   };
 
   const handleSubmit = (e) => {
@@ -40,17 +40,16 @@ export const ModalBluebird = () => {
           />
           <input
             type="date"
-            placeholder="Data do reparo"
+            placeholder="Setor"
             onChange={(e) => {
               data.sector = e.target.value;
             }}
           />
-          <textarea
-            className="textarea-description"
-            type="text-area"
-            placeholder="Descrição"
+          <input
+            type="text"
+            placeholder="Contato do coordenador"
             onChange={(e) => {
-              data.owner = e.target.value;
+              data.contact_number = e.target.value;
             }}
           />
           <input type="submit" className="btn-send" value={"Enviar"} />

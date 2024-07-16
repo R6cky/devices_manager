@@ -7,10 +7,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 const schema = yup
   .object({
-    serial_name: yup.string().required("Campo obrigatório"),
-    host_name: yup.string().required("Campo obrigatório"),
-    fix_date: yup.string().required("Campo obrigatório"),
-    description: yup.string().required("Campo obrigatório"),
+    serial_number: yup.string().required("Campo obrigatório"),
+    hostname: yup.string().required("Campo obrigatório"),
+    sector: yup.string().required("Campo obrigatório"),
+    contact_number: yup.string().required("Campo obrigatório"),
   })
   .required();
 
@@ -42,32 +42,32 @@ export const ModalBluebirdEdit = () => {
           <input
             type="text"
             placeholder="Serial number"
-            defaultValue={dataBluebird.serial_name}
-            {...register("serial_name")}
+            defaultValue={dataBluebird.serial_number}
+            {...register("serial_number")}
           />
           <p className="error-msg">{errors.serial_name?.message}</p>
           <input
             type="text"
             placeholder="Hostname"
-            defaultValue={dataBluebird.host_name}
-            {...register("host_name")}
+            defaultValue={dataBluebird.hostname}
+            {...register("hostname")}
           />
-          <p className="error-msg">{errors.host_name?.message}</p>
+          <p className="error-msg">{errors.hostname?.message}</p>
           <input
             type="date"
-            placeholder="Data do reparo"
-            defaultValue={dataBluebird.fix_date}
-            {...register("fix_date")}
+            placeholder="Setor"
+            defaultValue={dataBluebird.sector}
+            {...register("sector")}
           />
           <p className="error-msg">{errors.fix_date?.message}</p>
           <textarea
-            className="textarea-description"
+            className="textarea-contact_number"
             type="text"
             placeholder="Descrição"
-            defaultValue={dataBluebird.description}
-            {...register("description")}
+            defaultValue={dataBluebird.contact_number}
+            {...register("contact_number")}
           />
-          <p className="error-msg">{errors.description?.message}</p>
+          <p className="error-msg">{errors.contact_number?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
