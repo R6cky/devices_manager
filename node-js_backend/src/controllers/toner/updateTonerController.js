@@ -2,7 +2,7 @@ import { prismaClient } from "../../database/prismaClient.js";
 
 export class UpdateTonerController {
   async handle(req, res) {
-    const { model, in_out } = req.body;
+    const { model, quantity } = req.body;
 
     const toner = await prismaClient.toner.update({
       where: {
@@ -10,7 +10,7 @@ export class UpdateTonerController {
       },
       data: {
         model,
-        in_out,
+        quantity,
       },
     });
     return res.status(200).json(toner);
