@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ModalTasEditStyle } from "./Styled";
-import { TasContext } from "../../../context/TasContext";
+import { ModalTonerEditStyle } from "./Styled";
+import { TonerContext } from "../../../context/TonerContext";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -12,11 +12,11 @@ const schema = yup
   })
   .required();
 
-export const ModalTasEdit = () => {
-  const { updateTas, setModalEditIsOpen } = useContext(TasContext);
+export const ModalTonerEdit = () => {
+  const { updateToner, setModalEditIsOpen } = useContext(TonerContext);
 
-  const dataTas = JSON.parse(localStorage.getItem("dataTas"));
-  const idTas = dataTas.id;
+  const dataToner = JSON.parse(localStorage.getItem("dataToner"));
+  const idToner = dataToner.id;
 
   const {
     register,
@@ -27,33 +27,33 @@ export const ModalTasEdit = () => {
   });
 
   const submit = (data) => {
-    updateTas(data, idTas);
+    updateToner(data, idToner);
   };
 
   return (
-    <ModalTasEditStyle>
-      <form action="" className="form-tas" onSubmit={handleSubmit(submit)}>
+    <ModalTonerEditStyle>
+      <form action="" className="form-toner" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
         <div className="input-container">
           <input
             type="text"
-            placeholder="hostname"
-            defaultValue={dataTas.hostname}
-            {...register("hostname")}
+            placeholder="Modelo"
+            defaultValue={dataToner.model}
+            {...register("model")}
           />
-          <p className="error-msg">{errors.hostname?.message}</p>
+          <p className="error-msg">{errors.model?.message}</p>
           <input
             type="text"
-            placeholder="Wifi conectado"
-            defaultValue={dataTas.wifi_name}
-            {...register("wifi_name")}
+            placeholder="Quantidade"
+            defaultValue={dataToner.quantity}
+            {...register("quantity")}
           />
-          <p className="error-msg">{errors.wifi_name?.message}</p>
+          <p className="error-msg">{errors.quantity?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
-    </ModalTasEditStyle>
+    </ModalTonerEditStyle>
   );
 };

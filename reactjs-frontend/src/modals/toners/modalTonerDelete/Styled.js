@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalTasDeleteStyle = styled.div`
+export const ModalTonerDeleteStyle = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;

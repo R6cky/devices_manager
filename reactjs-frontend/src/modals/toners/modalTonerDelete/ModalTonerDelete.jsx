@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { TasContext } from "../../../context/TasContext";
-import { ModalTasDeleteStyle } from "./Styled";
+import { TonerContext } from "../../../context/TonerContext";
+import { ModalTonerDeleteStyle } from "./Styled";
 
-export const ModalTasDelete = () => {
-  const { deleteTas, setModalDeleteIsOpen } = useContext(TasContext);
+export const ModalTonerDelete = () => {
+  const { deleteToner, setModalDeleteIsOpen } = useContext(TonerContext);
 
-  const idPrint = localStorage.getItem("idTas");
+  const idPrint = localStorage.getItem("idToner");
 
   return (
-    <ModalTasDeleteStyle>
+    <ModalTonerDeleteStyle>
       <div className="container">
         <div className="btn-close-container">
           <span
@@ -20,7 +20,7 @@ export const ModalTasDelete = () => {
         </div>
         <p className="question-print">Deseja realmente excluir a impressora?</p>
         <div className="btn-container">
-          <span className="btn-yes" onClick={() => deleteTas(idPrint)}>
+          <span className="btn-yes" onClick={() => deleteToner(idPrint)}>
             Sim
           </span>
           <span className="btn-no" onClick={() => setModalDeleteIsOpen(false)}>
@@ -28,6 +28,6 @@ export const ModalTasDelete = () => {
           </span>
         </div>
       </div>
-    </ModalTasDeleteStyle>
+    </ModalTonerDeleteStyle>
   );
 };
