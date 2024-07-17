@@ -58,7 +58,7 @@ export const HeaderStyled = styled.header`
         }
       }
       :hover {
-        background-color: black;
+        background-color: #00000c;
         color: white;
         border: solid white 1px;
       }

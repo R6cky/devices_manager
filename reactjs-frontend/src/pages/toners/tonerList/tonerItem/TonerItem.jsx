@@ -19,6 +19,7 @@ export const TonerItem = ({ toner }) => {
           -
         </button>
       </div>
+      <span className="btn-remove">remove</span>
     </TonerItemStyled>
   );
 };

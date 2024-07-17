@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TonerItemStyled = styled.li`
   border-radius: 8px;
   width: 21rem;
-  height: 16rem;
+  height: 25rem;
   max-width: 100%;
   border: solid red;
   padding: 5px;
@@ -51,5 +51,12 @@ export const TonerItemStyled = styled.li`
       color: white;
       border: none;
     }
+  }
+
+  .btn-remove {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: end;
   }
 `;
