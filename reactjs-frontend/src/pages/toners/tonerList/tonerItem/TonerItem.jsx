@@ -8,30 +8,24 @@ export const TonerItem = ({ toner }) => {
 
   const [tonerQuant, setTonerQuant] = useState(toner.quantity);
 
+  const dataToner = {
+    model: toner.model,
+    quantity: 0,
+  };
+
+  const changeToner = () => {};
+
+  //updateToner(toner, toner.id);
+
   return (
     <TonerItemStyled>
       <div className="item-content">
         <h3> {toner.model} </h3>
         <span>Quantidade: {tonerQuant} </span>
       </div>
-      <div className="item-buttons">
-        <button
-          onClick={() => setTonerQuant(toner.quantity + 1)}
-          className="add"
-        >
-          +
-        </button>
-        <button
-          onClick={() =>
-            setTonerQuant(toner.quantity > 0 ? toner.quantity - 1 : 0)
-          }
-          className="remove"
-        >
-          -
-        </button>
-      </div>
+
       <div className="remove-edit-container">
-        <span onClick={() => openModalEdit(toner)} className="btn-remove">
+        <span onClick={() => openModalEdit(toner)} className="btn-edit">
           Editar
         </span>
         <span onClick={() => openModalDelete(toner.id)} className="btn-remove">

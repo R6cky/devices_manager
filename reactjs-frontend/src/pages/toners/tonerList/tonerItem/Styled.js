@@ -27,40 +27,18 @@ export const TonerItemStyled = styled.li`
     }
   }
 
-  .item-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    .add {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 2rem;
-      border: none;
-    }
-
-    .remove {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 2rem;
-      border: none;
-    }
-    :hover {
-      background-color: black;
-      color: white;
-      border: none;
-    }
-  }
-
   .remove-edit-container {
     width: 100%;
-    height: 30px;
+    height: 50px;
     display: flex;
-    justify-content: space-between;
-    border: solid red;
+    justify-content: space-around;
+
+    .btn-edit {
+      cursor: pointer;
+    }
+
+    .btn-remove {
+      cursor: pointer;
+    }
   }
 `;
