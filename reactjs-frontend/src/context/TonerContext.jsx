@@ -25,6 +25,8 @@ export const TonerProvider = ({ children }) => {
     try {
       const requestJson = await api.post("/toner", data);
       setInsertToner(requestJson);
+      getToner();
+      setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +34,9 @@ export const TonerProvider = ({ children }) => {
 
   const updateToner = async (data, id) => {
     try {
-      const requestJson = await api.patch(`/toner/${id}`, data);
-      console.log(requestJson);
+      await api.patch(`/toner/${id}`, data);
+      getToner();
+      setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -42,6 +45,8 @@ export const TonerProvider = ({ children }) => {
   const deleteToner = async (id) => {
     try {
       await api.delete(`/toner/${id}`);
+      getToner();
+      setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
     }
