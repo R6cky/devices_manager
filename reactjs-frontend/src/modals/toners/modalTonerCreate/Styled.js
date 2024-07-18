@@ -14,7 +14,7 @@ export const ModalTonerStyle = styled.div`
     border: solid white 0.1px;
     width: 38rem;
     max-width: 100%;
-    height: 50rem;
+    height: 30rem;
     max-height: 100%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ export const ModalTonerStyle = styled.div`
   .input-container {
     margin: 0 auto;
     width: 80%;
-    height: 400px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,10 +45,10 @@ export const ModalTonerStyle = styled.div`
       cursor: pointer;
     }
 
-    .textarea-description {
+    .error-msg {
+      color: yellow;
       width: 100%;
-      height: 100px;
-      font-size: 18px;
+      height: 30px;
     }
   }
 
