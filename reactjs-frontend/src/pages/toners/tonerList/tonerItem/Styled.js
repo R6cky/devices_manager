@@ -8,6 +8,9 @@ export const TonerItemStyled = styled.li`
   border: solid red;
   padding: 5px;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .item-content {
     border: solid green;
@@ -53,10 +56,11 @@ export const TonerItemStyled = styled.li`
     }
   }
 
-  .btn-remove {
+  .remove-edit-container {
     width: 100%;
     height: 30px;
-    display: block;
-    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    border: solid red;
   }
 `;

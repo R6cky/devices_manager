@@ -10,6 +10,7 @@ export const TonerProvider = ({ children }) => {
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
+  //const [toner, setToner] = useState(0);
 
   const getToner = async () => {
     try {
@@ -55,6 +56,7 @@ export const TonerProvider = ({ children }) => {
     localStorage.setItem("dataToner", JSON.stringify(data));
     setModalEditIsOpen(true);
   };
+
   return (
     <TonerContext.Provider
       value={{

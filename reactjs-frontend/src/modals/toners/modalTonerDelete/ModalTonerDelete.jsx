@@ -18,7 +18,7 @@ export const ModalTonerDelete = () => {
             X
           </span>
         </div>
-        <p className="question-print">Deseja realmente excluir a impressora?</p>
+        <p className="question-print">Deseja realmente excluir o toner?</p>
         <div className="btn-container">
           <span className="btn-yes" onClick={() => deleteToner(idToner)}>
             Sim
