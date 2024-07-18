@@ -22,8 +22,9 @@ export const TasProvider = ({ children }) => {
 
   const createTas = async (data) => {
     try {
-      const requestJson = await api.post("/tas", data);
-      setInsertTas(requestJson);
+      await api.post("/tas", data);
+      getTas();
+      setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -31,8 +32,9 @@ export const TasProvider = ({ children }) => {
 
   const updateTas = async (data, id) => {
     try {
-      const requestJson = await api.patch(`/tas/${id}`, data);
-      console.log(requestJson);
+      await api.patch(`/tas/${id}`, data);
+      getTas();
+      setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +43,8 @@ export const TasProvider = ({ children }) => {
   const deleteTas = async (id) => {
     try {
       await api.delete(`/tas/${id}`);
+      getTas();
+      setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
     }
