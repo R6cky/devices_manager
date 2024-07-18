@@ -22,8 +22,9 @@ export const BluebirdProvider = ({ children }) => {
 
   const createBluebird = async (data) => {
     try {
-      const bluebird = await api.post("/bluebird", data);
-      setInsertBluebird(bluebird);
+      await api.post("/bluebird", data);
+      getBluebirds();
+      setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -31,8 +32,9 @@ export const BluebirdProvider = ({ children }) => {
 
   const updateBluebird = async (data, id) => {
     try {
-      const bluebird = await api.patch(`/bluebird/${id}`, data);
-      console.log(bluebird);
+      await api.patch(`/bluebird/${id}`, data);
+      getBluebirds();
+      setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +43,8 @@ export const BluebirdProvider = ({ children }) => {
   const deleteBluebird = async (id) => {
     try {
       await api.delete(`/bluebird/${id}`);
-      //setInsertBluebird(bluebird)
+      getBluebirds();
+      setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
     }
