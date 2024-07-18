@@ -5,8 +5,7 @@ export const PrinterContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
 export const PrinterProvider = ({ children }) => {
-  const [printer, setPrinter] = useState([]);
-  const [insertPrint, setInsertPrint] = useState({});
+  const [printers, setPrinters] = useState([]);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
@@ -14,7 +13,7 @@ export const PrinterProvider = ({ children }) => {
   const getPrinter = async () => {
     try {
       const requestJson = await api.get("/print");
-      setPrinter(requestJson);
+      setPrinters(requestJson);
     } catch (error) {
       console.log(error);
     }
@@ -22,8 +21,9 @@ export const PrinterProvider = ({ children }) => {
 
   const createPrinter = async (data) => {
     try {
-      const requestJson = await api.post("/print", data);
-      setInsertPrint(requestJson);
+      await api.post("/print", data);
+      getPrinter();
+      setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -31,8 +31,9 @@ export const PrinterProvider = ({ children }) => {
 
   const updatePrinter = async (data, id) => {
     try {
-      const requestJson = await api.patch(`/print/${id}`, data);
-      console.log(requestJson);
+      await api.patch(`/print/${id}`, data);
+      getPrinter();
+      setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +42,8 @@ export const PrinterProvider = ({ children }) => {
   const deletePrinter = async (id) => {
     try {
       await api.delete(`/print/${id}`);
+      getPrinter();
+      setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -60,9 +63,8 @@ export const PrinterProvider = ({ children }) => {
     <PrinterContext.Provider
       value={{
         getPrinter,
-        printer,
+        printers,
         createPrinter,
-        insertPrint,
         updatePrinter,
         deletePrinter,
         openModalDelete,

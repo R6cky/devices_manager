@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import { PrinterStyled } from "./Styled";

@@ -8,15 +8,6 @@ export const TonerItem = ({ toner }) => {
 
   const [tonerQuant, setTonerQuant] = useState(toner.quantity);
 
-  const dataToner = {
-    model: toner.model,
-    quantity: 0,
-  };
-
-  const changeToner = () => {};
-
-  //updateToner(toner, toner.id);
-
   return (
     <TonerItemStyled>
       <div className="item-content">

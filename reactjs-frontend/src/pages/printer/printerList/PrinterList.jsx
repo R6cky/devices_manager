@@ -4,7 +4,7 @@ import { PrinterItem } from "./printerItem/PrinterItem";
 import { PrinterContext } from "../../../context/PrinterContext";
 
 export const PrinterList = () => {
-  const { printer, getPrinter } = useContext(PrinterContext);
+  const { printers, getPrinter } = useContext(PrinterContext);
 
   useEffect(() => {
     getPrinter();
@@ -12,8 +12,8 @@ export const PrinterList = () => {
 
   return (
     <PrinterListStyled>
-      {printer.data
-        ? printer.data.map((elem) => {
+      {printers.data
+        ? printers.data.map((elem) => {
             return <PrinterItem key={elem.id} printer={elem} />;
           })
         : false}
