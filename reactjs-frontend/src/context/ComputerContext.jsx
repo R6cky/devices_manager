@@ -21,8 +21,9 @@ export const ComputerProvider = ({ children }) => {
 
   const createComputer = async (data) => {
     try {
-      const requestJson = await api.post("/computer", data);
-      setInsertComputer(requestJson);
+      await api.post("/computer", data);
+      getComputers();
+      setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -30,8 +31,9 @@ export const ComputerProvider = ({ children }) => {
 
   const updateComputer = async (data, id) => {
     try {
-      const requestJson = await api.patch(`/computer/${id}`, data);
-      console.log(requestJson);
+      await api.patch(`/computer/${id}`, data);
+      getComputers();
+      setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -40,6 +42,8 @@ export const ComputerProvider = ({ children }) => {
   const deleteComputer = async (id) => {
     try {
       await api.delete(`/computer/${id}`);
+      getComputers();
+      setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
     }

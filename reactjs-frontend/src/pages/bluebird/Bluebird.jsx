@@ -21,7 +21,6 @@ export const Bluebird = () => {
       <Header />
       <div className="btn-container">
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
-          {" "}
           Inserir bluebird
         </span>
       </div>
