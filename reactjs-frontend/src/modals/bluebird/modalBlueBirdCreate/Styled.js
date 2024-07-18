@@ -50,6 +50,13 @@ export const ModalBluebirdStyle = styled.div`
       height: 100px;
       font-size: 18px;
     }
+
+    .error-msg {
+      color: yellow;
+      border: solid red;
+      width: 100%;
+      height: 30px;
+    }
   }
 
   .btn-close {

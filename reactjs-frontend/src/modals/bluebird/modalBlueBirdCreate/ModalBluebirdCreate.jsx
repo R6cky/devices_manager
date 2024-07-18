@@ -1,25 +1,37 @@
 import { useContext } from "react";
 import { BluebirdContext } from "../../../context/BluebirdContext";
 import { ModalBluebirdStyle } from "./Styled";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup
+  .object({
+    serial_number: yup.string().required("Campo obrigatírio"),
+    hostname: yup.string().required("Campo obrigatírio"),
+    sector: yup.string().required("Campo obrigatírio"),
+    contact_number: yup.string().required("Campo obrigatírio"),
+  })
+  .required();
 
 export const ModalBluebird = () => {
   const { createBluebird, setModalCreateIsOpen } = useContext(BluebirdContext);
 
-  const data = {
-    serial_number: "",
-    hostname: "",
-    sector: "",
-    contact_number: "",
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submit = (data) => {
     createBluebird(data);
   };
 
   return (
     <ModalBluebirdStyle>
-      <form action="" className="form-bluebird" onSubmit={handleSubmit}>
+      <form action="" className="form-bluebird" onSubmit={handleSubmit(submit)}>
         <div className="btn-close">
           <span onClick={() => setModalCreateIsOpen(false)}>X</span>
         </div>
@@ -27,31 +39,20 @@ export const ModalBluebird = () => {
           <input
             type="text"
             placeholder="Serial number"
-            onChange={(e) => {
-              data.serial_number = e.target.value;
-            }}
+            {...register("serial_number")}
           />
-          <input
-            type="text"
-            placeholder="Hostname"
-            onChange={(e) => {
-              data.hostname = e.target.value;
-            }}
-          />
-          <input
-            type="text"
-            placeholder="Setor"
-            onChange={(e) => {
-              data.sector = e.target.value;
-            }}
-          />
+          <p className="error-msg">{errors.serial_number?.message}</p>
+
+          <input type="text" placeholder="Hostname" {...register("hostname")} />
+          <p className="error-msg">{errors.hostname?.message}</p>
+          <input type="text" placeholder="Setor" {...register("sector")} />
+          <p className="error-msg">{errors.sector?.message} </p>
           <input
             type="text"
             placeholder="Contato do coordenador"
-            onChange={(e) => {
-              data.contact_number = e.target.value;
-            }}
+            {...register("contact_number")}
           />
+          <p className="error-msg">{errors.contact_number?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>
