@@ -6,7 +6,6 @@ export const ModalPrinterStyle = styled.div`
   left: 0px;
   width: 100%;
   height: 100%;
-  border: solid green;
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
 
@@ -29,7 +28,7 @@ export const ModalPrinterStyle = styled.div`
   .input-container {
     margin: 0 auto;
     width: 80%;
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,6 +48,12 @@ export const ModalPrinterStyle = styled.div`
       width: 100%;
       height: 100px;
       font-size: 18px;
+    }
+
+    .error-msg {
+      color: yellow;
+      width: 100%;
+      height: 30px;
     }
   }
 
