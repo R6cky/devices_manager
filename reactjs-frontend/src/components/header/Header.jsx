@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <div className="top-header">
-        <span className="logo">FIELDS - CNF</span>
+        <span className="logo">DEVICES | MANAGER</span>
       </div>
 
       <nav className="nav-bar">

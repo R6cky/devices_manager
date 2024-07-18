@@ -24,13 +24,13 @@ export const TonerItemStyled = styled.li`
     h3 {
       font-size: 3rem;
       max-width: 100%;
-      color: white;
+      color: black;
     }
 
     .toner-quant {
       font-size: 5rem;
       font-weight: bold;
-      color: white;
+      color: black;
     }
   }
 

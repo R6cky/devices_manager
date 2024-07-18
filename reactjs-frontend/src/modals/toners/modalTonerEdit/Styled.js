@@ -10,6 +10,23 @@ export const ModalTonerEditStyle = styled.div`
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
 
+  span {
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+
   .form-toner {
     border: solid white 0.1px;
     width: 38rem;
@@ -37,6 +54,20 @@ export const ModalTonerEditStyle = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+
+      .toner-change-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 13rem;
+        height: 5rem;
+
+        .toner-input {
+          width: 5rem;
+          text-align: center;
+          font-size: 3rem;
+        }
+      }
 
       input {
         width: 100%;

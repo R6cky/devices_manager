@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModalTonerEditStyle } from "./Styled";
 import { TonerContext } from "../../../context/TonerContext";
 import * as yup from "yup";
@@ -44,12 +44,15 @@ export const ModalTonerEdit = () => {
             {...register("model")}
           />
           <p className="error-msg">{errors.model?.message}</p>
-          <input
-            type="text"
-            placeholder="Quantidade"
-            defaultValue={dataToner.quantity}
-            {...register("quantity")}
-          />
+
+          <div className="toner-change-container">
+            <input
+              className="toner-input"
+              type="text"
+              defaultValue={dataToner.quantity}
+              {...register("quantity")}
+            />
+          </div>
           <p className="error-msg">{errors.quantity?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>

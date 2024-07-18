@@ -12,9 +12,9 @@ export const TonerItem = ({ toner }) => {
         className="item-content"
         style={{
           backgroundColor:
-            toner.quantity == 2
+            toner.quantity <= 2 && toner.quantity > 0
               ? "yellow"
-              : toner.quantity <= 1
+              : toner.quantity == 0
               ? "red"
               : "green",
         }}
