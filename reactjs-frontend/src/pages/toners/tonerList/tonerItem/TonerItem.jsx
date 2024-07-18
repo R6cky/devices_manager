@@ -6,13 +6,21 @@ export const TonerItem = ({ toner }) => {
   const { openModalEdit, openModalDelete, updateToner } =
     useContext(TonerContext);
 
-  const [tonerQuant, setTonerQuant] = useState(toner.quantity);
-
   return (
     <TonerItemStyled>
-      <div className="item-content">
+      <div
+        className="item-content"
+        style={{
+          backgroundColor:
+            toner.quantity == 2
+              ? "yellow"
+              : toner.quantity <= 1
+              ? "red"
+              : "green",
+        }}
+      >
         <h3> {toner.model} </h3>
-        <span>Quantidade: {tonerQuant} </span>
+        <span className="toner-quant"> {toner.quantity} </span>
       </div>
 
       <div className="remove-edit-container">
