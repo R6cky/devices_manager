@@ -6,20 +6,18 @@ export const ModalBluebirdEditStyle = styled.div`
   left: 0px;
   width: 100%;
   height: 100%;
-  border: solid green;
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
 
   .form-bluebird {
     border: solid white 0.1px;
-    width: 38rem;
+    width: 40%;
     max-width: 100%;
-    height: 50rem;
+    height: 38rem;
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
     margin: 0 auto;
     border-radius: 10px;

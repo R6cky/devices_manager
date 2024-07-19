@@ -7,7 +7,6 @@ export const ModalTasDeleteStyle = styled.div`
   width: 100%;
   height: 100%;
   border: solid green;
-  padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
   display: flex;
   align-items: start;
