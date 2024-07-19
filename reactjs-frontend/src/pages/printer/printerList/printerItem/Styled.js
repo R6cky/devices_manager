@@ -10,6 +10,7 @@ export const PrinterItemStyled = styled.li`
   color: white;
   background: rgb(2, 0, 36);
   padding: 20px;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 
   -webkit-box-shadow: 4px 14px 26px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 14px 26px 0px rgba(0, 0, 0, 0.75);
@@ -31,6 +32,7 @@ export const PrinterItemStyled = styled.li`
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
 
     .item-content-ip {
@@ -38,12 +40,14 @@ export const PrinterItemStyled = styled.li`
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
     .item-brand-and-model {
       background-color: yellow;
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
 
     .item-toner-name {
@@ -51,12 +55,14 @@ export const PrinterItemStyled = styled.li`
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
     .item-queue-name {
       background-color: yellow;
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
 
     .item-sector {
@@ -64,6 +70,7 @@ export const PrinterItemStyled = styled.li`
       color: black;
       padding: 5px;
       border-radius: 8px;
+      width: 100%;
     }
   }
 
@@ -80,6 +87,16 @@ export const PrinterItemStyled = styled.li`
     .remove {
       width: 5rem;
       height: 3rem;
+    }
+  }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 `;
