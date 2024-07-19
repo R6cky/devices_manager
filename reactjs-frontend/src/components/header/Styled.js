@@ -22,22 +22,24 @@ export const HeaderStyled = styled.header`
   }
 
   .nav-bar {
-    border: solid yellow 1px;
     width: 100%;
     max-width: 100%;
     height: 200px;
 
     ul {
       width: 100%;
+      max-width: 100%;
       height: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-size: 20px;
       color: blue;
+      overflow-y: auto;
 
       li {
         width: 200px;
+        max-width: 100%;
         height: 60px;
         border-radius: 6px;
         display: flex;

@@ -59,7 +59,6 @@ export const ModalComputerStyle = styled.div`
     }
     .error-msg {
       color: yellow;
-      border: solid red;
       width: 100%;
       height: 30px;
     }
