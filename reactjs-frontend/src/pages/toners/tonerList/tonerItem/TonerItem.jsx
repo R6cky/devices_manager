@@ -23,13 +23,13 @@ export const TonerItem = ({ toner }) => {
         <span className="toner-quant"> {toner.quantity} </span>
       </div>
 
-      <div className="remove-edit-container">
-        <span onClick={() => openModalEdit(toner)} className="btn-edit">
+      <div className="item-buttons">
+        <button onClick={() => openModalEdit(toner)} className="edit">
           Editar
-        </span>
-        <span onClick={() => openModalDelete(toner.id)} className="btn-remove">
-          Remover
-        </span>
+        </button>
+        <button onClick={() => openModalDelete(toner.id)} className="remove">
+          remover
+        </button>
       </div>
     </TonerItemStyled>
   );

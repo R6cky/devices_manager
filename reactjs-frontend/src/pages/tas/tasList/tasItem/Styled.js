@@ -57,4 +57,14 @@ export const TasItemStyled = styled.li`
       height: 3rem;
     }
   }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `;
