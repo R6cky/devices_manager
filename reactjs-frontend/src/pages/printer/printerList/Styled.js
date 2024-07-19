@@ -4,11 +4,11 @@ export const PrinterListStyled = styled.ul`
   width: 90%;
   max-width: 100%;
   height: 100%;
-  border: solid yellow;
+  min-height: 1000px;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
   flex-wrap: wrap;
   margin: auto;
-  border-radius: 10px;
+  border: solid gray 0.5px;
 `;

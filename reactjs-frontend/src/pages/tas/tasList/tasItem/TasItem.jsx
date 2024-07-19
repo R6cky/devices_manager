@@ -8,8 +8,8 @@ export const TasItem = ({ tas }) => {
   return (
     <TasItemStyled>
       <div className="item-content">
-        <h3>Hostname: {tas.hostname} </h3>
-        <h3>Wifi: {tas.wifi_name} </h3>
+        <h3 className="item-content-hostname">Hostname: {tas.hostname} </h3>
+        <h3 className="item-content-ip">Wifi: {tas.wifi_name} </h3>
       </div>
       <div className="item-buttons">
         <button onClick={() => openModalEdit(tas)} className="edit">

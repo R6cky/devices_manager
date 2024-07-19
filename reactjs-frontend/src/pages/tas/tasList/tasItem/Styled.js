@@ -5,14 +5,41 @@ export const TasItemStyled = styled.li`
   width: 21rem;
   height: 28rem;
   max-width: 100%;
-  border: solid red;
   padding: 5px;
   margin: 20px;
+  background: rgb(2, 0, 36);
+  padding: 20px;
+  -webkit-box-shadow: 4px 14px 26px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 14px 26px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 14px 26px 0px rgba(0, 0, 0, 0.75);
+  animation: myAnim 2s ease 0s 1 normal forwards;
 
   .item-content {
-    border: solid green;
+    border: solid white 0.5px;
+    border-radius: 8px;
+    padding: 10px;
     height: 70%;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .item-content-hostname {
+      background-color: yellow;
+      color: black;
+      padding: 5px;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    .item-content-ip {
+      background-color: yellow;
+      color: black;
+      padding: 5px;
+      border-radius: 8px;
+      width: 100%;
+    }
   }
 
   .item-buttons {
