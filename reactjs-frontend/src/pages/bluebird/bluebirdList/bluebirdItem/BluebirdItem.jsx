@@ -13,9 +13,9 @@ export const BluebirdItem = ({ bluebird }) => {
         </h3>
         <h3 className="item-content-hostname">Hostname: {bluebird.hostname}</h3>
         <h3 className="item-content-sector">Setor: {bluebird.sector}</h3>
-        <p className="item-content-contact-number">
-          Contato do coordenador: {bluebird.contact_number}
-        </p>
+        <h3 className="item-content-contact-number">
+          Contato: {bluebird.contact_number}
+        </h3>
       </div>
       <div className="item-buttons">
         <button onClick={() => openModalEdit(bluebird)} className="edit">
