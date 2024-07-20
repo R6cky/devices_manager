@@ -24,10 +24,6 @@ export const ModalTasEditStyle = styled.div`
     border-radius: 10px;
     background-color: rgba(0, 0, 23, 0.9);
 
-    .error-msg {
-      color: white;
-    }
-
     .input-container {
       margin: 0 auto;
       width: 80%;
@@ -45,6 +41,12 @@ export const ModalTasEditStyle = styled.div`
 
       .btn-send {
         cursor: pointer;
+      }
+
+      .error-msg {
+        color: yellow;
+        width: 100%;
+        height: 30px;
       }
     }
     .btn-close {
