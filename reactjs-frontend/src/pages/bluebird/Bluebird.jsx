@@ -14,6 +14,8 @@ export const Bluebird = () => {
     modalEditIsOpen,
     setModalCreateIsOpen,
     modalDeleteIsOpen,
+    findBluebird,
+    inputVoid,
   } = useContext(BluebirdContext);
 
   return (
@@ -23,6 +25,18 @@ export const Bluebird = () => {
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
           Inserir bluebird
         </span>
+        <input
+          className="search"
+          onChange={(e) => findBluebird(e.target.value)}
+          type="text"
+          placeholder="Pesquisar"
+        />
+        <button
+          className="btn-search"
+          onClick={(e) => inputVoid(e.target.value)}
+        >
+          Pesquisar
+        </button>
       </div>
       <BluebirdList />
       <Footer />

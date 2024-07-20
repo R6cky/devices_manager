@@ -12,11 +12,11 @@ export const BluebirdList = () => {
 
   return (
     <BluebirdListStyled>
-      {bluebirds.data
-        ? bluebirds.data.map((elem) => {
+      {bluebirds.length > 0
+        ? bluebirds.map((elem) => {
             return <BluebirdItem key={elem.id} bluebird={elem} />;
           })
-        : false}
+        : null}
     </BluebirdListStyled>
   );
 };

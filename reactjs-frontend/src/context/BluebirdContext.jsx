@@ -10,11 +10,13 @@ export const BluebirdProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
+  const [searchList, setSearchList] = useState([]);
 
   const getBluebirds = async () => {
     try {
       const bluebirds = await api.get("/bluebird");
-      setBluebird(bluebirds);
+      console.log(bluebirds);
+      setBluebird(bluebirds.data);
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +62,23 @@ export const BluebirdProvider = ({ children }) => {
     setModalEditIsOpen(true);
   };
 
+  const findBluebird = (input) => {
+    if (input.trim() !== "") {
+      const foundBySn = bluebirds.filter((elem) => {
+        return elem.serial_number.toLowerCase().includes(input.toLowerCase());
+      });
+      setSearchList(foundBySn);
+    } else {
+      getBluebirds();
+    }
+  };
+
+  const inputVoid = (input) => {
+    if (input.trim().toLowerCase().trim() === "") {
+      setBluebird(searchList);
+    }
+  };
+
   return (
     <BluebirdContext.Provider
       value={{
@@ -77,6 +96,9 @@ export const BluebirdProvider = ({ children }) => {
         modalDeleteIsOpen,
         setModalDeleteIsOpen,
         openModalDelete,
+        findBluebird,
+        searchList,
+        inputVoid,
       }}
     >
       {children}
