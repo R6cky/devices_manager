@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 
 const schema = yup
   .object({
-    hostname: yup.string().required(),
-    wifi_name: yup.string().required(),
+    hostname: yup.string().required("Campo obrigatório"),
+    wifi_name: yup.string().required("Campo obrigatório"),
   })
   .required();
 
@@ -37,20 +37,25 @@ export const ModalTasEdit = () => {
           <span onClick={() => setModalEditIsOpen(false)}>X</span>
         </div>
         <div className="input-container">
-          <input
-            type="text"
-            placeholder="hostname"
-            defaultValue={dataTas.hostname}
-            {...register("hostname")}
-          />
-          <p className="error-msg">{errors.hostname?.message}</p>
-          <input
-            type="text"
-            placeholder="Wifi conectado"
-            defaultValue={dataTas.wifi_name}
-            {...register("wifi_name")}
-          />
-          <p className="error-msg">{errors.wifi_name?.message}</p>
+          <div className="input-container-hostname">
+            <input
+              type="text"
+              placeholder="hostname"
+              defaultValue={dataTas.hostname}
+              {...register("hostname")}
+            />
+            <p className="error-msg">{errors.hostname?.message}</p>
+          </div>
+          <div className="input-container-wifiname">
+            <input
+              type="text"
+              placeholder="Wifi conectado"
+              defaultValue={dataTas.wifi_name}
+              {...register("wifi_name")}
+            />
+            <p className="error-msg">{errors.wifi_name?.message}</p>
+          </div>
+
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>

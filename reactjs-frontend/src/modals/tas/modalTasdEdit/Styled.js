@@ -13,12 +13,10 @@ export const ModalTasEditStyle = styled.div`
     border: solid white 0.1px;
     width: 38rem;
     max-width: 100%;
-    height: 50rem;
-    max-height: 100%;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 100px;
+    gap: 10px;
     align-items: center;
     margin: 0 auto;
     border-radius: 10px;
@@ -27,11 +25,19 @@ export const ModalTasEditStyle = styled.div`
     .input-container {
       margin: 0 auto;
       width: 80%;
-      height: 400px;
+      height: 250px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
+
+      .input-container-hostname {
+        width: 100%;
+      }
+
+      .input-container-wifiname {
+        width: 100%;
+      }
 
       input {
         width: 100%;
