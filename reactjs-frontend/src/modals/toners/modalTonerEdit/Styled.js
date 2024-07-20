@@ -31,25 +31,26 @@ export const ModalTonerEditStyle = styled.div`
     border: solid white 0.1px;
     width: 38rem;
     max-width: 100%;
-    height: 50rem;
+    height: 400px;
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 100px;
+    gap: 10px;
     align-items: center;
     margin: 0 auto;
     border-radius: 10px;
     background-color: rgba(0, 0, 23, 0.9);
 
     .error-msg {
-      color: white;
+      color: yellow;
+      width: 100%;
+      height: 30px;
     }
 
     .input-container {
       margin: 0 auto;
       width: 80%;
-      height: 400px;
+      height: 250px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -64,8 +65,10 @@ export const ModalTonerEditStyle = styled.div`
 
         .toner-input {
           width: 5rem;
+          border-radius: 4px;
           text-align: center;
           font-size: 3rem;
+          font-weight: bold;
         }
       }
 

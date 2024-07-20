@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     button{
         cursor: pointer;
     }
+
+    input{
+        font-size: 28px;
+    }
     
 
 `;
