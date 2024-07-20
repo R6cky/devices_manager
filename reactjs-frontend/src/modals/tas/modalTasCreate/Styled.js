@@ -13,12 +13,11 @@ export const ModalTasStyle = styled.div`
     border: solid white 0.1px;
     width: 38rem;
     max-width: 100%;
-    height: 30rem;
+    height: 400px;
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 100px;
+    gap: 10px;
     align-items: center;
     margin: 0 auto;
     border-radius: 10px;
