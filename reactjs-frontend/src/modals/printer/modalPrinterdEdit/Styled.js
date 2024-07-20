@@ -33,7 +33,7 @@ export const ModalPrinterEditStyle = styled.div`
     .input-container {
       margin: 0 auto;
       width: 80%;
-      height: 400px;
+      height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

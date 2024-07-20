@@ -44,12 +44,6 @@ export const ModalPrinterStyle = styled.div`
       cursor: pointer;
     }
 
-    .textarea-description {
-      width: 100%;
-      height: 100px;
-      font-size: 18px;
-    }
-
     .error-msg {
       color: yellow;
       width: 100%;
