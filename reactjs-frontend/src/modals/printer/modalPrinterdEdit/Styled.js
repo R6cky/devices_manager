@@ -25,7 +25,9 @@ export const ModalPrinterEditStyle = styled.div`
     background-color: rgba(0, 0, 23, 0.9);
 
     .error-msg {
-      color: white;
+      color: yellow;
+      width: 100%;
+      height: 30px;
     }
 
     .input-container {
