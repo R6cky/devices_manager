@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ModalTonerEditStyle } from "./Styled";
 import { TonerContext } from "../../../context/TonerContext";
 import * as yup from "yup";
@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 
 const schema = yup
   .object({
-    model: yup.string().required(),
-    quantity: yup.number().required(),
+    model: yup.string().required("Campo obrigatório"),
+    quantity: yup.number().required().typeError("Campo obrigatório"),
   })
   .required();
 
@@ -38,6 +38,7 @@ export const ModalTonerEdit = () => {
         </div>
         <div className="input-container">
           <input
+            title="Modelo"
             type="text"
             placeholder="Modelo"
             defaultValue={dataToner.model}
@@ -47,13 +48,14 @@ export const ModalTonerEdit = () => {
 
           <div className="toner-change-container">
             <input
+              title="Quantidade"
               className="toner-input"
               type="text"
               defaultValue={dataToner.quantity}
               {...register("quantity")}
             />
+            <p className="error-msg">{errors.quantity?.message}</p>
           </div>
-          <p className="error-msg">{errors.quantity?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>

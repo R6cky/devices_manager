@@ -25,13 +25,15 @@ export const ModalComputerEditStyle = styled.div`
     background-color: rgba(0, 0, 23, 0.9);
 
     .error-msg {
-      color: white;
+      color: yellow;
+      width: 100%;
+      height: 30px;
     }
 
     .input-container {
       margin: 0 auto;
       width: 80%;
-      height: 400px;
+      height: 450px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -52,6 +54,7 @@ export const ModalComputerEditStyle = styled.div`
 
       .btn-send {
         cursor: pointer;
+        font-size: 24px;
       }
     }
     .btn-close {

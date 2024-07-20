@@ -28,7 +28,7 @@ export const ModalComputerStyle = styled.div`
   .input-container {
     margin: 0 auto;
     width: 80%;
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,13 +49,9 @@ export const ModalComputerStyle = styled.div`
 
     .btn-send {
       cursor: pointer;
+      font-size: 24px;
     }
 
-    .textarea-description {
-      width: 100%;
-      height: 100px;
-      font-size: 18px;
-    }
     .error-msg {
       color: yellow;
       width: 100%;

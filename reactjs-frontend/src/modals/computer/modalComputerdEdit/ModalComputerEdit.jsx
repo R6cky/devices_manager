@@ -6,11 +6,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
 const schema = yup.object().shape({
-  hostname: yup.string().required(),
-  ip: yup.string().required(),
-  sector: yup.string().required(),
-  operational_system: yup.string().required(),
-  type: yup.string().required(),
+  hostname: yup.string().required("Campo obrigatório"),
+  ip: yup.string().required("Campo obrigatório"),
+  sector: yup.string().required("Campo obrigatório"),
+  operational_system: yup.string().required("Campo obrigatório"),
+  type: yup.string().required("Campo obrigatório"),
 });
 
 export const ModalComputerEdit = () => {
@@ -65,18 +65,10 @@ export const ModalComputerEdit = () => {
             {...register("operational_system")}
             name="operational_system"
             className="operational_system"
-            id=""
           >
             <option value="Windows 11">Windows 11</option>
             <option value="Windows 10">Windows 10</option>
           </select>
-          {/* <input
-            type="text"
-            placeholder="os"
-            defaultValue={dataComputer.operational_system}
-            {...register("operational_system")}
-          /> */}
-          <p className="error-msg">{errors.operational_system?.message}</p>
 
           <select
             name=""
@@ -88,7 +80,6 @@ export const ModalComputerEdit = () => {
             <option value="Desktop">Desktop</option>
             <option value="Notebook">Notebook</option>
           </select>
-          <p className="error-msg">{errors.type?.message}</p>
           <input type="submit" className="btn-send" value={"Enviar"} />
         </div>
       </form>

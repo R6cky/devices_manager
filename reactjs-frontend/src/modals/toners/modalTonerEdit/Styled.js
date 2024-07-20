@@ -6,7 +6,6 @@ export const ModalTonerEditStyle = styled.div`
   left: 0px;
   width: 100%;
   height: 100%;
-  border: solid green;
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
 
@@ -58,10 +57,15 @@ export const ModalTonerEditStyle = styled.div`
 
       .toner-change-container {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-around;
         width: 13rem;
-        height: 5rem;
+        height: 6rem;
+
+        p {
+          text-align: center;
+        }
 
         .toner-input {
           width: 5rem;
