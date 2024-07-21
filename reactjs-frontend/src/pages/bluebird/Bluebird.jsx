@@ -32,9 +32,6 @@ export const Bluebird = () => {
           type="text"
           placeholder="Pesquisar"
         />
-        <button className="btn-search" onClick={(e) => console.log(e.target)}>
-          Pesquisar
-        </button>
       </div>
       <BluebirdList />
       <Footer />
