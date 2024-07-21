@@ -14,6 +14,8 @@ export const Computer = () => {
     modalEditIsOpen,
     setModalCreateIsOpen,
     modalDeleteIsOpen,
+    inputVoid,
+    findComputer,
   } = useContext(ComputerContext);
 
   return (
@@ -23,7 +25,15 @@ export const Computer = () => {
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
           Inserir Computador
         </span>
+        <input
+          className="search"
+          onChange={(e) => inputVoid(e.target.value)}
+          onChangeCapture={(e) => findComputer(e.target.value)}
+          type="text"
+          placeholder="Pesquisar"
+        />
       </div>
+
       <ComputerList />
       <Footer />
       {modalCreateIsOpen ? <ModalComputerCreate /> : null}

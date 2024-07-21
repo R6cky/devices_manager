@@ -27,7 +27,7 @@ export const Bluebird = () => {
         </span>
         <input
           className="search"
-          onInput={(e) => inputVoid(e.target.value)}
+          onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findBluebird(e.target.value)}
           type="text"
           placeholder="Pesquisar"

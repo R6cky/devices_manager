@@ -71,6 +71,13 @@ export const BluebirdProvider = ({ children }) => {
       });
       setBluebird(foundBySn);
     }
+
+    if (input.trim().toLowerCase() !== "") {
+      const foundByHn = bluebirds.filter((elem) => {
+        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setBluebird(foundByHn);
+    }
   };
 
   const inputVoid = (input) => {

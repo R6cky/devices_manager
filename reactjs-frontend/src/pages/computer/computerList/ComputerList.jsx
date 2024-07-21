@@ -12,8 +12,8 @@ export const ComputerList = () => {
 
   return (
     <ComputerListStyled>
-      {computers.data
-        ? computers.data.map((elem) => {
+      {computers
+        ? computers.map((elem) => {
             return <ComputerItem key={elem.id} computer={elem} />;
           })
         : false}

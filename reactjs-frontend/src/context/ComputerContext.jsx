@@ -9,11 +9,13 @@ export const ComputerProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
+  const [listReset, setListReset] = useState([]);
 
   const getComputers = async () => {
     try {
       const requestJson = await api.get("/computer");
-      setComputers(requestJson);
+      setComputers(requestJson.data);
+      setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
     }
@@ -59,6 +61,20 @@ export const ComputerProvider = ({ children }) => {
     setModalEditIsOpen(true);
   };
 
+  const findComputer = (input) => {
+    if (input.trim().toLowerCase() !== "") {
+      const foundByHn = computers.filter((elem) => {
+        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setComputers(foundByHn);
+    }
+  };
+
+  const inputVoid = (input) => {
+    if (input.trim().toLowerCase() === "") {
+      setComputers(listReset);
+    }
+  };
   return (
     <ComputerContext.Provider
       value={{
@@ -76,6 +92,8 @@ export const ComputerProvider = ({ children }) => {
         setModalEditIsOpen,
         openModalDelete,
         openModalEdit,
+        findComputer,
+        inputVoid,
       }}
     >
       {children}
