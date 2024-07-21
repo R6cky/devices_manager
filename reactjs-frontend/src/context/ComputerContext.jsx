@@ -68,6 +68,13 @@ export const ComputerProvider = ({ children }) => {
       });
       setComputers(foundByHn);
     }
+
+    if (input.trim().toLowerCase() !== "") {
+      const foundByIp = computers.filter((elem) => {
+        return elem.ip.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setComputers(foundByIp);
+    }
   };
 
   const inputVoid = (input) => {
