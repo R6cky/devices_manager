@@ -9,11 +9,13 @@ export const PrinterProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
+  const [listReset, setListReset] = useState([]);
 
   const getPrinter = async () => {
     try {
       const requestJson = await api.get("/print");
-      setPrinters(requestJson);
+      setPrinters(requestJson.data);
+      setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
     }
@@ -59,6 +61,28 @@ export const PrinterProvider = ({ children }) => {
     setModalEditIsOpen(true);
   };
 
+  const findPrinter = (input) => {
+    if (input.trim().toLowerCase() !== "") {
+      const foundByHn = printers.filter((elem) => {
+        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setPrinters(foundByHn);
+    }
+
+    if (input.trim().toLowerCase() !== "") {
+      const foundByIp = printers.filter((elem) => {
+        return elem.ip.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setPrinters(foundByIp);
+    }
+  };
+
+  const inputVoid = (input) => {
+    if (input.trim().toLowerCase() === "") {
+      setPrinters(listReset);
+    }
+  };
+
   return (
     <PrinterContext.Provider
       value={{
@@ -75,6 +99,8 @@ export const PrinterProvider = ({ children }) => {
         setModalCreateIsOpen,
         setModalDeleteIsOpen,
         setModalEditIsOpen,
+        inputVoid,
+        findPrinter,
       }}
     >
       {children}
