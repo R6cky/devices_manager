@@ -27,14 +27,12 @@ export const Bluebird = () => {
         </span>
         <input
           className="search"
-          onChange={(e) => findBluebird(e.target.value)}
+          onInput={(e) => inputVoid(e.target.value)}
+          onChangeCapture={(e) => findBluebird(e.target.value)}
           type="text"
           placeholder="Pesquisar"
         />
-        <button
-          className="btn-search"
-          onClick={(e) => inputVoid(e.target.value)}
-        >
+        <button className="btn-search" onClick={(e) => console.log(e.target)}>
           Pesquisar
         </button>
       </div>
