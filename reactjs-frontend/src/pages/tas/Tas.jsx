@@ -14,6 +14,8 @@ export const Tas = () => {
     setModalCreateIsOpen,
     modalDeleteIsOpen,
     modalEditIsOpen,
+    inputVoid,
+    findTas,
   } = useContext(TasContext);
   return (
     <TasStyled>
@@ -22,6 +24,13 @@ export const Tas = () => {
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
           Inserir TAS
         </span>
+        <input
+          className="search"
+          onChange={(e) => inputVoid(e.target.value)}
+          onChangeCapture={(e) => findTas(e.target.value)}
+          type="text"
+          placeholder="Pesquisar"
+        />
       </div>
       <TasList />
       <Footer />

@@ -10,11 +10,13 @@ export const TasProvider = ({ children }) => {
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
+  const [listReset, setListReset] = useState([]);
 
   const getTas = async () => {
     try {
       const requestJson = await api.get("/tas");
-      setTas(requestJson);
+      setTas(requestJson.data);
+      setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +62,21 @@ export const TasProvider = ({ children }) => {
     setModalEditIsOpen(true);
   };
 
+  const findTas = (input) => {
+    if (input.trim().toLowerCase() !== "") {
+      const foundTas = tas.filter((elem) => {
+        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setTas(foundTas);
+    }
+  };
+
+  const inputVoid = (input) => {
+    if (input.trim().toLowerCase() === "") {
+      setTas(listReset);
+    }
+  };
+
   return (
     <TasContext.Provider
       value={{
@@ -77,6 +94,8 @@ export const TasProvider = ({ children }) => {
         setModalCreateIsOpen,
         setModalEditIsOpen,
         setModalDeleteIsOpen,
+        findTas,
+        inputVoid,
       }}
     >
       {children}

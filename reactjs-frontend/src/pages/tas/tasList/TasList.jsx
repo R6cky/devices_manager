@@ -12,8 +12,8 @@ export const TasList = () => {
 
   return (
     <TasListStyled>
-      {tas.data ? (
-        tas.data.map((elem) => {
+      {tas ? (
+        tas.map((elem) => {
           return <TasItem key={elem.id} tas={elem} />;
         })
       ) : (
