@@ -13,11 +13,21 @@ datasource db {
 
 model User {
   id String @id @default(uuid())
-  name String
   email String @unique
-  password String 
-
+  password String   
+  refreshTokens RefreshToken[]
   @@map("user")
+}
+
+
+model RefreshToken {
+  id String @id @default(uuid())
+  hashedToken String
+  userId String
+  User User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  revoked Boolean @default(false)
+  createdAt DateTime @default(now())
+  updateAd DateTime @updatedAt
 }
 
 
