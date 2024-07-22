@@ -17,7 +17,7 @@ export const BluebirdList = () => {
           return <BluebirdItem key={elem.id} bluebird={elem} />;
         })
       ) : (
-        <p className="msg-void-list">Não há itens por aqui :-|</p>
+        <p className="msg-void-list">Não há itens por aqui... :-|</p>
       )}
     </BluebirdListStyled>
   );

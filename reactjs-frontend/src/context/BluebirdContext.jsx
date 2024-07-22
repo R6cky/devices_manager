@@ -11,14 +11,18 @@ export const BluebirdProvider = ({ children }) => {
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
+  const [loading, setloading] = useState(false);
 
   const getBluebirds = async () => {
     try {
       const bluebirds = await api.get("/bluebird");
+      setloading(true);
       setBluebird(bluebirds.data);
       setListReset(bluebirds.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setloading(false);
     }
   };
 
@@ -101,6 +105,7 @@ export const BluebirdProvider = ({ children }) => {
         openModalDelete,
         findBluebird,
         inputVoid,
+        loading,
       }}
     >
       {children}

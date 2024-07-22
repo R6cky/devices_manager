@@ -16,6 +16,7 @@ export const Bluebird = () => {
     modalDeleteIsOpen,
     findBluebird,
     inputVoid,
+    loading,
   } = useContext(BluebirdContext);
 
   return (
@@ -33,6 +34,7 @@ export const Bluebird = () => {
           placeholder="Hostname | Serial Number"
         />
       </div>
+
       <BluebirdList />
       <Footer />
       {modalCreateIsOpen ? <ModalBluebird /> : null}
