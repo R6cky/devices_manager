@@ -10,12 +10,13 @@ export const TonerProvider = ({ children }) => {
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
-  //const [toner, setToner] = useState(0);
+  const [listReset, setListReset] = useState([]);
 
   const getToner = async () => {
     try {
       const requestJson = await api.get("/toner");
-      setToner(requestJson);
+      setToner(requestJson.data);
+      setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
     }
@@ -62,6 +63,21 @@ export const TonerProvider = ({ children }) => {
     setModalEditIsOpen(true);
   };
 
+  const findToner = (input) => {
+    if (input.trim().toLowerCase() !== "") {
+      const findComputer = toner.filter((elem) => {
+        return elem.model.toLowerCase().includes(input.toLowerCase().trim());
+      });
+      setToner(findComputer);
+    }
+  };
+
+  const inputVoid = (input) => {
+    if (input.trim().toLowerCase() === "") {
+      setToner(listReset);
+    }
+  };
+
   return (
     <TonerContext.Provider
       value={{
@@ -79,6 +95,8 @@ export const TonerProvider = ({ children }) => {
         setModalEditIsOpen,
         setModalDeleteIsOpen,
         setModalCreateIsOpen,
+        inputVoid,
+        findToner,
       }}
     >
       {children}

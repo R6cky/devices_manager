@@ -14,6 +14,8 @@ export const Toner = () => {
     modalDeleteIsOpen,
     modalEditIsOpen,
     modalCreateIsOpen,
+    inputVoid,
+    findToner,
   } = useContext(TonerContext);
 
   return (
@@ -23,6 +25,13 @@ export const Toner = () => {
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
           Inserir Toner
         </span>
+        <input
+          className="search"
+          onChange={(e) => inputVoid(e.target.value)}
+          onChangeCapture={(e) => findToner(e.target.value)}
+          type="text"
+          placeholder="Pesquisar"
+        />
       </div>
 
       <TonerList />

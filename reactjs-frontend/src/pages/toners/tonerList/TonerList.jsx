@@ -12,8 +12,8 @@ export const TonerList = () => {
 
   return (
     <TonerListStyled>
-      {toner.data ? (
-        toner.data.map((elem) => {
+      {toner ? (
+        toner.map((elem) => {
           return <TonerItem key={elem.id} toner={elem} />;
         })
       ) : (
