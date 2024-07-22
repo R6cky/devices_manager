@@ -29,7 +29,7 @@ export const Tas = () => {
           onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findTas(e.target.value)}
           type="text"
-          placeholder="Pesquisar"
+          placeholder="Hostname"
         />
       </div>
       <TasList />

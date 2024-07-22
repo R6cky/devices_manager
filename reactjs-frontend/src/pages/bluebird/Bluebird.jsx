@@ -30,7 +30,7 @@ export const Bluebird = () => {
           onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findBluebird(e.target.value)}
           type="text"
-          placeholder="Pesquisar"
+          placeholder="Hostname | Serial Number"
         />
       </div>
       <BluebirdList />

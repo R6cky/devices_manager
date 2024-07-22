@@ -30,7 +30,7 @@ export const Computer = () => {
           onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findComputer(e.target.value)}
           type="text"
-          placeholder="Pesquisar"
+          placeholder="Hostname | IP"
         />
       </div>
 

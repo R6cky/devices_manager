@@ -26,11 +26,12 @@ export const Printer = () => {
           Inserir Impressora
         </span>
         <input
+          title="Pesquisar"
           className="search"
           onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findPrinter(e.target.value)}
           type="text"
-          placeholder="Pesquisar"
+          placeholder="SN | Hostname | IP"
         />
       </div>
       <PrinterList />

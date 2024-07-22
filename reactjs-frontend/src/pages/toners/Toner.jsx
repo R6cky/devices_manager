@@ -30,7 +30,7 @@ export const Toner = () => {
           onChange={(e) => inputVoid(e.target.value)}
           onChangeCapture={(e) => findToner(e.target.value)}
           type="text"
-          placeholder="Pesquisar"
+          placeholder="Modelo do toner"
         />
       </div>
 
