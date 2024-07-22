@@ -12,11 +12,13 @@ export const ComputerList = () => {
 
   return (
     <ComputerListStyled>
-      {computers
-        ? computers.map((elem) => {
-            return <ComputerItem key={elem.id} computer={elem} />;
-          })
-        : false}
+      {computers.length > 0 ? (
+        computers.map((elem) => {
+          return <ComputerItem key={elem.id} computer={elem} />;
+        })
+      ) : (
+        <p className="msg-void-list">Não há itens por aqui :-|</p>
+      )}
     </ComputerListStyled>
   );
 };

@@ -12,12 +12,12 @@ export const TonerList = () => {
 
   return (
     <TonerListStyled>
-      {toner ? (
+      {toner.length > 0 ? (
         toner.map((elem) => {
           return <TonerItem key={elem.id} toner={elem} />;
         })
       ) : (
-        <span>null</span>
+        <p className="msg-void-list">Não há itens por aqui :-|</p>
       )}
     </TonerListStyled>
   );

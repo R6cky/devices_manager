@@ -12,11 +12,13 @@ export const PrinterList = () => {
 
   return (
     <PrinterListStyled>
-      {printers
-        ? printers.map((elem) => {
-            return <PrinterItem key={elem.id} printer={elem} />;
-          })
-        : false}
+      {printers.length > 0 ? (
+        printers.map((elem) => {
+          return <PrinterItem key={elem.id} printer={elem} />;
+        })
+      ) : (
+        <p className="msg-void-list">Não há itens por aqui :-|</p>
+      )}
     </PrinterListStyled>
   );
 };

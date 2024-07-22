@@ -12,12 +12,12 @@ export const TasList = () => {
 
   return (
     <TasListStyled>
-      {tas ? (
+      {tas.length > 0 ? (
         tas.map((elem) => {
           return <TasItem key={elem.id} tas={elem} />;
         })
       ) : (
-        <span>null</span>
+        <p className="msg-void-list">Não há itens por aqui :-|</p>
       )}
     </TasListStyled>
   );

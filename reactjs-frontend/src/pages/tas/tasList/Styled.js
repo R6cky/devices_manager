@@ -11,4 +11,9 @@ export const TasListStyled = styled.ul`
   flex-wrap: wrap;
   margin: auto;
   border: solid gray 0.5px;
+
+  .msg-void-list {
+    font-size: 30px;
+    margin-top: 100px;
+  }
 `;
