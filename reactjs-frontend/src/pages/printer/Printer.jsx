@@ -14,6 +14,8 @@ export const Printer = () => {
     modalEditIsOpen,
     setModalCreateIsOpen,
     modalDeleteIsOpen,
+    inputVoid,
+    findPrinter,
   } = useContext(PrinterContext);
 
   return (
@@ -23,6 +25,13 @@ export const Printer = () => {
         <span className="btn-insert" onClick={() => setModalCreateIsOpen(true)}>
           Inserir Impressora
         </span>
+        <input
+          className="search"
+          onChange={(e) => inputVoid(e.target.value)}
+          onChangeCapture={(e) => findPrinter(e.target.value)}
+          type="text"
+          placeholder="Pesquisar"
+        />
       </div>
       <PrinterList />
       <Footer />

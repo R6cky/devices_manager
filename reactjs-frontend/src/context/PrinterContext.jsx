@@ -64,16 +64,13 @@ export const PrinterProvider = ({ children }) => {
   const findPrinter = (input) => {
     if (input.trim().toLowerCase() !== "") {
       const foundByHn = printers.filter((elem) => {
-        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+        return (
+          elem.hostname.toLowerCase().includes(input.toLowerCase().trim()) ||
+          elem.ip.toLowerCase().includes(input.toLowerCase().trim()) ||
+          elem.queue_name.toLowerCase().includes(input.toLowerCase().trim())
+        );
       });
       setPrinters(foundByHn);
-    }
-
-    if (input.trim().toLowerCase() !== "") {
-      const foundByIp = printers.filter((elem) => {
-        return elem.ip.toLowerCase().includes(input.toLowerCase().trim());
-      });
-      setPrinters(foundByIp);
     }
   };
 

@@ -63,17 +63,13 @@ export const ComputerProvider = ({ children }) => {
 
   const findComputer = (input) => {
     if (input.trim().toLowerCase() !== "") {
-      const foundByHn = computers.filter((elem) => {
-        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
+      const findComputer = computers.filter((elem) => {
+        return (
+          elem.hostname.toLowerCase().includes(input.toLowerCase().trim()) ||
+          elem.ip.toLowerCase().includes(input.toLowerCase().trim())
+        );
       });
-      setComputers(foundByHn);
-    }
-
-    if (input.trim().toLowerCase() !== "") {
-      const foundByIp = computers.filter((elem) => {
-        return elem.ip.toLowerCase().includes(input.toLowerCase().trim());
-      });
-      setComputers(foundByIp);
+      setComputers(findComputer);
     }
   };
 

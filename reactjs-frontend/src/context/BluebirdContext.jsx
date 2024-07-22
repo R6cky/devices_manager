@@ -64,19 +64,15 @@ export const BluebirdProvider = ({ children }) => {
 
   const findBluebird = (input) => {
     if (input.trim().toLowerCase() !== "") {
-      const foundBySn = bluebirds.filter((elem) => {
-        return elem.serial_number
-          .toLowerCase()
-          .includes(input.toLowerCase().trim());
+      const foundBb = bluebirds.filter((elem) => {
+        return (
+          elem.serial_number
+            .toLowerCase()
+            .includes(input.toLowerCase().trim()) ||
+          elem.hostname.toLowerCase().includes(input.toLowerCase().trim())
+        );
       });
-      setBluebird(foundBySn);
-    }
-
-    if (input.trim().toLowerCase() !== "") {
-      const foundByHn = bluebirds.filter((elem) => {
-        return elem.hostname.toLowerCase().includes(input.toLowerCase().trim());
-      });
-      setBluebird(foundByHn);
+      setBluebird(foundBb);
     }
   };
 

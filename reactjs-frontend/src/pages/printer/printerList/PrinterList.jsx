@@ -12,8 +12,8 @@ export const PrinterList = () => {
 
   return (
     <PrinterListStyled>
-      {printers.data
-        ? printers.data.map((elem) => {
+      {printers
+        ? printers.map((elem) => {
             return <PrinterItem key={elem.id} printer={elem} />;
           })
         : false}
