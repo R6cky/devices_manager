@@ -6,7 +6,6 @@ export const ModalTasDeleteStyle = styled.div`
   left: 0px;
   width: 100%;
   height: 100%;
-  border: solid green;
   background-color: rgba(0, 0, 23, 0.9);
   display: flex;
   align-items: start;
@@ -53,6 +52,9 @@ export const ModalTasDeleteStyle = styled.div`
 
     .btn-container {
       background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
       .btn-yes {
         border: solid;

@@ -6,7 +6,6 @@ export const ModalTonerDeleteStyle = styled.div`
   left: 0px;
   width: 100%;
   height: 100%;
-  border: solid green;
   padding-top: 30px;
   background-color: rgba(0, 0, 23, 0.9);
   display: flex;
@@ -54,9 +53,11 @@ export const ModalTonerDeleteStyle = styled.div`
 
     .btn-container {
       background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
       .btn-yes {
-        border: solid;
         width: 5rem;
         height: 3rem;
         display: flex;
@@ -71,7 +72,6 @@ export const ModalTonerDeleteStyle = styled.div`
       }
 
       .btn-no {
-        border: solid;
         width: 5rem;
         height: 3rem;
         display: flex;

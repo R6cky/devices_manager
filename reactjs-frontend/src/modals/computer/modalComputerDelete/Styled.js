@@ -53,6 +53,9 @@ export const ModalComputerDeleteStyle = styled.div`
 
     .btn-container {
       background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
       .btn-yes {
         border: solid;
