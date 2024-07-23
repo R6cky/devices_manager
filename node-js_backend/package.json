@@ -1,8 +1,6 @@
 {
   "scripts": {
-    "scripts" {
-    "postinstall": "prisma generate"
-  }
+    "postinstall": "prisma generate",
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
