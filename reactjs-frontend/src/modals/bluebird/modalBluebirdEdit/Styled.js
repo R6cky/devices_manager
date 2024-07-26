@@ -11,7 +11,7 @@ export const ModalBluebirdEditStyle = styled.div`
 
   .form-bluebird {
     border: solid white 0.1px;
-    width: 40%;
+    width: 38rem;
     max-width: 100%;
     height: 38rem;
     max-height: 100%;
