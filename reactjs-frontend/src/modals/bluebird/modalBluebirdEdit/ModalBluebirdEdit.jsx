@@ -63,7 +63,7 @@ export const ModalBluebirdEdit = () => {
           <input
             className="contact_number"
             type="text"
-            placeholder="Contato do coordenador"
+            placeholder="Nome | Telefone"
             defaultValue={dataBluebird.contact_number}
             {...register("contact_number")}
           />
