@@ -42,6 +42,8 @@ export const ModalBluebirdEditStyle = styled.div`
         width: 100%;
         height: 3.5rem;
         font-size: 18px;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       .btn-send {
