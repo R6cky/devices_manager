@@ -49,7 +49,7 @@ export const ModalBluebird = () => {
           <p className="error-msg">{errors.sector?.message} </p>
           <input
             type="text"
-            placeholder="Contato do coordenador"
+            placeholder="Nome do coordenador | Telefone "
             {...register("contact_number")}
           />
           <p className="error-msg">{errors.contact_number?.message}</p>
