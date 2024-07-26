@@ -35,11 +35,11 @@ export const HeaderStyled = styled.header`
       align-items: center;
       font-size: 20px;
       color: blue;
-      overflow-y: auto;
+      overflow-y: scroll;
 
       li {
         width: 200px;
-        max-width: 100%;
+        min-width: 100%;
         height: 60px;
         border-radius: 6px;
         display: flex;
