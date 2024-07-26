@@ -40,7 +40,6 @@ export const HeaderStyled = styled.header`
       li {
         width: 200px;
         min-width: 70%;
-        {min-width < 70% ? margin:5px;}
         height: 60px;
         border-radius: 6px;
         display: flex;
