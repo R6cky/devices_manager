@@ -7,6 +7,7 @@ import { ComputerList } from "./computerList/ComputerList";
 import { ModalComputerCreate } from "../../modals/computer/modalComputerCreate/ModalComputerCreate";
 import { ModalComputerEdit } from "../../modals/computer/modalComputerdEdit/ModalComputerEdit";
 import { ModalComputerDelete } from "../../modals/computer/modalComputerDelete/ModalComputerDelete";
+import { ToastContainer } from "react-toastify";
 
 export const Computer = () => {
   const {
@@ -32,6 +33,7 @@ export const Computer = () => {
           type="text"
           placeholder="Hostname | IP"
         />
+        <ToastContainer />
       </div>
 
       <ComputerList />

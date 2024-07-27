@@ -7,6 +7,7 @@ import { TonerList } from "./tonerList/TonerList";
 import { ModalTonerEdit } from "../../modals/toners/modalTonerEdit/ModalTonerEdit";
 import { ModalTonerDelete } from "../../modals/toners/modalTonerDelete/ModalTonerDelete";
 import { ModalTonerCreate } from "../../modals/toners/modalTonerCreate/ModalTonerCreate";
+import { ToastContainer } from "react-toastify";
 
 export const Toner = () => {
   const {
@@ -32,6 +33,7 @@ export const Toner = () => {
           type="text"
           placeholder="Modelo do toner"
         />
+        <ToastContainer />
       </div>
 
       <TonerList />

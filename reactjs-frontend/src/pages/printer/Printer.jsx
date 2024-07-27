@@ -7,6 +7,7 @@ import { PrinterList } from "./printerList/PrinterList";
 import { ModalPrinterCreate } from "../../modals/printer/modalPrinterCreate/ModalPrinterCreate";
 import { ModalPrinterEdit } from "../../modals/printer/modalPrinterdEdit/ModalPrinterEdit";
 import { ModalPrinterDelete } from "../../modals/printer/modalPrinterDelete/ModalPrinterDelete";
+import { ToastContainer } from "react-toastify";
 
 export const Printer = () => {
   const {
@@ -33,6 +34,7 @@ export const Printer = () => {
           type="text"
           placeholder="SN | Hostname | IP"
         />
+        <ToastContainer />
       </div>
       <PrinterList />
       <Footer />

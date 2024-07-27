@@ -7,6 +7,8 @@ import { BluebirdContext } from "../../context/BluebirdContext";
 import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBluebirdCreate";
 import { ModalBluebirdDelete } from "../../modals/bluebird/modalBluebirdDelete/ModalBluebirdDelete";
 import { ModalBluebirdEdit } from "../../modals/bluebird/modalBluebirdEdit/ModalBluebirdEdit";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Bluebird = () => {
   const {
@@ -16,7 +18,6 @@ export const Bluebird = () => {
     modalDeleteIsOpen,
     findBluebird,
     inputVoid,
-    loading,
   } = useContext(BluebirdContext);
 
   return (
@@ -33,6 +34,7 @@ export const Bluebird = () => {
           type="text"
           placeholder="Hostname | Serial Number"
         />
+        <ToastContainer />
       </div>
 
       <BluebirdList />

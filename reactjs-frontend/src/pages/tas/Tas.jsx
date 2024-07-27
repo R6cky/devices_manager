@@ -7,6 +7,7 @@ import { ModalTasCreate } from "../../modals/tas/modalTasCreate/ModalTasCreate";
 import { ModalTasEdit } from "../../modals/tas/modalTasdEdit/ModalTasEdit";
 import { ModalTasDelete } from "../../modals/tas/modalTasDelete/ModalTasDelete";
 import { Footer } from "../../components/footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 export const Tas = () => {
   const {
@@ -31,6 +32,7 @@ export const Tas = () => {
           type="text"
           placeholder="Hostname"
         />
+        <ToastContainer />
       </div>
       <TasList />
       <Footer />

@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 
@@ -29,6 +30,10 @@ export const BluebirdProvider = ({ children }) => {
   const createBluebird = async (data) => {
     try {
       await api.post("/bluebird", data);
+      toast.success("Bluebird Criado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getBluebirds();
       setModalCreateIsOpen(false);
     } catch (error) {
@@ -39,6 +44,10 @@ export const BluebirdProvider = ({ children }) => {
   const updateBluebird = async (data, id) => {
     try {
       await api.patch(`/bluebird/${id}`, data);
+      toast.success("Bluebird atualizado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getBluebirds();
       setModalEditIsOpen(false);
     } catch (error) {
@@ -49,6 +58,10 @@ export const BluebirdProvider = ({ children }) => {
   const deleteBluebird = async (id) => {
     try {
       await api.delete(`/bluebird/${id}`);
+      toast.success("Bluebird deletado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getBluebirds();
       setModalDeleteIsOpen(false);
     } catch (error) {
