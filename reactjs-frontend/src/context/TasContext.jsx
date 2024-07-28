@@ -1,9 +1,9 @@
+import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 
 export const TasContext = createContext({});
 
-// eslint-disable-next-line react/prop-types
 export const TasProvider = ({ children }) => {
   const [tas, setTas] = useState([]);
   const [insertTas, setInsertTas] = useState({});
@@ -25,6 +25,10 @@ export const TasProvider = ({ children }) => {
   const createTas = async (data) => {
     try {
       await api.post("/tas", data);
+      toast.success("Tas criado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getTas();
       setModalCreateIsOpen(false);
     } catch (error) {
@@ -35,6 +39,10 @@ export const TasProvider = ({ children }) => {
   const updateTas = async (data, id) => {
     try {
       await api.patch(`/tas/${id}`, data);
+      toast.success("Tas atualizado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getTas();
       setModalEditIsOpen(false);
     } catch (error) {
@@ -45,6 +53,10 @@ export const TasProvider = ({ children }) => {
   const deleteTas = async (id) => {
     try {
       await api.delete(`/tas/${id}`);
+      toast.success("Tas deletado com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getTas();
       setModalDeleteIsOpen(false);
     } catch (error) {
