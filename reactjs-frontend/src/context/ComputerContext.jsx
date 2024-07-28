@@ -1,5 +1,6 @@
 import { api } from "../services/api";
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const ComputerContext = createContext({});
 
@@ -24,6 +25,10 @@ export const ComputerProvider = ({ children }) => {
   const createComputer = async (data) => {
     try {
       await api.post("/computer", data);
+      toast.success("Computador criado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getComputers();
       setModalCreateIsOpen(false);
     } catch (error) {
@@ -34,6 +39,10 @@ export const ComputerProvider = ({ children }) => {
   const updateComputer = async (data, id) => {
     try {
       await api.patch(`/computer/${id}`, data);
+      toast.success("Computador editado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getComputers();
       setModalEditIsOpen(false);
     } catch (error) {
@@ -44,6 +53,10 @@ export const ComputerProvider = ({ children }) => {
   const deleteComputer = async (id) => {
     try {
       await api.delete(`/computer/${id}`);
+      toast.success("Computador deletado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getComputers();
       setModalDeleteIsOpen(false);
     } catch (error) {

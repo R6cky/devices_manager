@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 
@@ -24,6 +25,10 @@ export const PrinterProvider = ({ children }) => {
   const createPrinter = async (data) => {
     try {
       await api.post("/print", data);
+      toast.success(" Impressora criada com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getPrinter();
       setModalCreateIsOpen(false);
     } catch (error) {
@@ -34,6 +39,10 @@ export const PrinterProvider = ({ children }) => {
   const updatePrinter = async (data, id) => {
     try {
       await api.patch(`/print/${id}`, data);
+      toast.success(" Impressora atualizada com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getPrinter();
       setModalEditIsOpen(false);
     } catch (error) {
@@ -44,6 +53,10 @@ export const PrinterProvider = ({ children }) => {
   const deletePrinter = async (id) => {
     try {
       await api.delete(`/print/${id}`);
+      toast.success(" Impressora deletada com sucesso!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
       getPrinter();
       setModalDeleteIsOpen(false);
     } catch (error) {
