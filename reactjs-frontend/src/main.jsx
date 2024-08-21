@@ -40,7 +40,6 @@ const router = createBrowserRouter([
     element: <Bluebird />,
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyle />
