@@ -1,9 +1,9 @@
-import { prismaClient } from "../../database/prismaClient";
+import { prismaClient } from "../../database/prismaClient.js";
 
-const getUserByEmailAndPassword = (email) => {
+const getUserByEmail = (email) => {
   return prismaClient.user.findUnique({
     where: { email },
   });
 };
 
-export { getUserByEmailAndPassword };
+export { getUserByEmail };

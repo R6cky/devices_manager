@@ -1,9 +1,5 @@
-const crypto = require("crypto");
+import crypto from "crypto";
 
-const hashToken = (token) => {
+export const hashToken = (token) => {
   return crypto.createHash("sha512").update(token).digest("hex");
-};
-
-exports = {
-  hashToken,
 };

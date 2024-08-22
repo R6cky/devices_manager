@@ -1,5 +1,5 @@
-import { hashToken } from "../../api/utils/hashToken";
-import { prismaClient } from "../../database/prismaClient";
+import { hashToken } from "../../utils/hashToken.js";
+import { prismaClient } from "../../database/prismaClient.js";
 
 const addRefreshTokenInWhiteList = ({ jti, refreshToken, userId }) => {
   return prismaClient.refreshToken.create({

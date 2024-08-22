@@ -24,6 +24,7 @@ import { GetAllTonerController } from "./controllers/toner/getAllTonerController
 import { GetTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
 import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
 import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
+import { UserController } from "./controllers/users/userRegister.js";
 
 const router = Router();
 
@@ -57,6 +58,8 @@ const getTonerById = new GetTonerByIdController();
 const updateToner = new UpdateTonerController();
 const deleteToner = new DeleteTonerController();
 
+const userRegister = new UserController();
+
 router.post("/bluebird", createBluebirds.handle);
 router.get("/bluebird", getAllBluebirds.handle);
 router.get("/bluebird/:id", getBluebirdById.handle);
@@ -86,5 +89,8 @@ router.get("/toner", getAllToner.handle);
 router.get("/toner/:id", getTonerById.handle);
 router.patch("/toner/:id", updateToner.handle);
 router.delete("/toner/:id", deleteToner.handle);
+
+router.post("/register", userRegister.register);
+router.post("/login");
 
 export { router };

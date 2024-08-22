@@ -1,7 +1,6 @@
 import { router } from "./router.js";
 import express from "express";
 import cors from "cors";
-import * as newrelic from "newrelic";
 
 const app = express();
 
