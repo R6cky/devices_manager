@@ -25,6 +25,7 @@ import { GetTonerByIdController } from "./controllers/toner/getTonerByIdControll
 import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
 import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
 import { UserController } from "./controllers/users/userRegister.js";
+import { createUserByEmail } from "./controllers/users/createUserByEmailAndPasssword.js";
 
 const router = Router();
 
@@ -90,7 +91,7 @@ router.get("/toner/:id", getTonerById.handle);
 router.patch("/toner/:id", updateToner.handle);
 router.delete("/toner/:id", deleteToner.handle);
 
-router.post("/register", userRegister.register);
+router.post("/register", createUserByEmail);
 router.post("/login");
 
 export { router };

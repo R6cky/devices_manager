@@ -1,9 +1,13 @@
 import bcrypt from "bcrypt";
 import { prismaClient } from "../../database/prismaClient.js";
 
-export const createUserByEmail = async (user) => {
-  user.password = bcrypt.hashSync(user.password, 12);
-  return await prismaClient.user.create({
-    data: user,
+export const createUserByEmail = async (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, 12);
+  const user = await prismaClient.user.create({
+    data: {
+      email: req.body.email,
+      password: req.body.password,
+    },
   });
+  return res.status(201).json(user);
 };

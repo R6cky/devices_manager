@@ -7,18 +7,18 @@ import { addRefreshTokenInWhiteList } from "../refreshToken/addRefreshTokenToWhi
 export class UserController {
   async register(req, res, next) {
     try {
-      const { email, password } = req.body;
+      const { email, password, id } = req.body;
       if (!email || !password) {
         res.status(400);
         throw new Error("You must provide an email and password.");
       }
 
-      const existingUser = await getUserByEmail(email);
+      // const existingUser = await getUserByEmail(email);
 
-      if (existingUser) {
-        res.status(400);
-        throw new Error("User already exists.");
-      }
+      // if (existingUser) {
+      //   res.status(400);
+      //   throw new Error("User already exists.");
+      // }
 
       const user = createUserByEmail({ email, password });
       const jti = uuiv4();
