@@ -28,7 +28,7 @@ const deleteRefreshToken = (id) => {
 
 const revokedTokens = (userId) => {
   return prismaClient.refreshToken.updateMany({
-    where: { id },
+    where: { userId },
     data: {
       revoked: true,
     },

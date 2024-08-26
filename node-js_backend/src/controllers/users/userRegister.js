@@ -13,14 +13,14 @@ export class UserController {
         throw new Error("You must provide an email and password.");
       }
 
-      // const existingUser = await getUserByEmail(email);
+      const existingUser = await getUserByEmail(email);
 
-      // if (existingUser) {
-      //   res.status(400);
-      //   throw new Error("User already exists.");
-      // }
+      if (existingUser) {
+        res.status(400);
+        throw new Error("User already exists.");
+      }
 
-      const user = createUserByEmail({ email, password });
+      const user = await createUserByEmail({ email, password });
       const jti = uuiv4();
       const { accesToken, refreshToken } = generateTokens(user, jti);
       await addRefreshTokenInWhiteList({ jti, refreshToken, userId: user.id });

@@ -1,9 +1,7 @@
 import { prismaClient } from "../../database/prismaClient";
 
-const getUserById = (id) => {
+export const getUserById = (id) => {
   return prismaClient.user.findUnique({
     where: { id },
   });
 };
-
-export { getUserById };
