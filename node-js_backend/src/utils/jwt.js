@@ -13,7 +13,7 @@ export const generateRefreshToken = (user, jti) => {
 };
 
 export const generateTokens = (user, jti) => {
-  const acccesToken = generatedAccesToken(user);
+  const accesToken = generatedAccesToken(user);
   const refreshToken = generateRefreshToken(user, jti);
-  return { acccesToken, refreshToken };
+  return { accesToken, refreshToken };
 };

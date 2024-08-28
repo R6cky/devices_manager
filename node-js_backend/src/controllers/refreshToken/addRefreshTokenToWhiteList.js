@@ -1,23 +1,23 @@
 import { hashToken } from "../../utils/hashToken.js";
 import { prismaClient } from "../../database/prismaClient.js";
 
-const addRefreshTokenInWhiteList = ({ jti, refreshToken, userId }) => {
+export const addRefreshTokenInWhiteList = ({ jti, refreshToken, userId }) => {
   return prismaClient.refreshToken.create({
     data: {
-      jti,
+      id: jti,
       hashedToken: hashToken(refreshToken),
       userId,
     },
   });
 };
 
-const findRefreshTokenById = (id) => {
+export const findRefreshTokenById = (id) => {
   return prismaClient.refreshToken.findUnique({
     where: { id },
   });
 };
 
-const deleteRefreshToken = (id) => {
+export const deleteRefreshToken = (id) => {
   return prismaClient.refreshToken.update({
     where: { id },
     data: {
@@ -26,18 +26,11 @@ const deleteRefreshToken = (id) => {
   });
 };
 
-const revokedTokens = (userId) => {
+export const revokedTokens = (userId) => {
   return prismaClient.refreshToken.updateMany({
     where: { userId },
     data: {
       revoked: true,
     },
   });
-};
-
-export {
-  addRefreshTokenInWhiteList,
-  findRefreshTokenById,
-  deleteRefreshToken,
-  revokedTokens,
 };
