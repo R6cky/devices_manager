@@ -33,5 +33,9 @@ export const RegisterStyled = styled.div`
       border-radius: 4px;
       font-size: 20px;
     }
+
+    p {
+      color: red;
+    }
   }
 `;

@@ -15,6 +15,7 @@ import { Printer } from "./pages/printer/Printer.jsx";
 import { TonerProvider } from "./context/TonerContext.jsx";
 import { Register } from "./pages/register/Register.jsx";
 import { Login } from "./pages/login/Login.jsx";
+import { Userprovider } from "./context/UserContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -58,9 +59,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <PrinterProvider>
           <ComputerProvider>
             <BluebirdProvider>
-              <RouterProvider router={router}>
-                <App />
-              </RouterProvider>
+              <Userprovider>
+                <RouterProvider router={router}>
+                  <App />
+                </RouterProvider>
+              </Userprovider>
             </BluebirdProvider>
           </ComputerProvider>
         </PrinterProvider>
