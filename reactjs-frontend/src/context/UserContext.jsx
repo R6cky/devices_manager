@@ -12,14 +12,25 @@ export const Userprovider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
-      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const loginUser = async (data) => {
+    try {
+      await api.post("/login", data);
+      toast.success(`Bem vindo ${data.email}!`, {
+        autoClose: 2000,
+        theme: "dark",
+      });
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <UserContext.Provider value={{ createUser }}>
+    <UserContext.Provider value={{ createUser, loginUser }}>
       {children}
     </UserContext.Provider>
   );
