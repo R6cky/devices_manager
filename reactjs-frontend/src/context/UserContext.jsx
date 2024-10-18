@@ -8,15 +8,12 @@ export const Userprovider = ({ children }) => {
   const createUser = async (data) => {
     try {
       await api.post("/register", data);
-      toast.success("Usuário Criado com sucesso!", {
+      toast.success(`O usuário ${data.email} foi Criado com sucesso!`, {
         autoClose: 2000,
         theme: "dark",
       });
+      console.log(data);
     } catch (error) {
-      toast.error("Ops, o usuário não foi criado, algum erroaconteceu.", {
-        autoClose: 2000,
-        theme: "dark",
-      });
       console.log(error);
     }
   };

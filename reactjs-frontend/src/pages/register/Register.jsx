@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import { ToastContainer } from "react-toastify";
 
 const schema = yup
   .object({
@@ -41,6 +42,7 @@ export const Register = () => {
         <p> {errors.password?.message}</p>
         <button type="submit">Criar</button>
       </form>
+      <ToastContainer />
     </RegisterStyled>
   );
 };
