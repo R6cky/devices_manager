@@ -13,7 +13,7 @@ export const Userprovider = ({ children }) => {
         theme: "dark",
       });
       console.log(data);
-      //window.location.replace("/login");
+      window.location.replace("/login");
     } catch (error) {
       console.log(error);
     }
@@ -28,8 +28,8 @@ export const Userprovider = ({ children }) => {
       });
       const { accesToken, refreshToken } = dataJson.data;
       localStorage.setItem("accesToken", accesToken);
-      localStorage.setItem("refreshToken", refreshToken);
-      console.log(dataJson);
+      //localStorage.setItem("refreshToken", refreshToken);
+      window.location.replace("/bluebird");
     } catch (error) {
       console.log(error);
     }
