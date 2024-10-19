@@ -12,6 +12,7 @@ export const Userprovider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
+      window.location.replace("/login");
     } catch (error) {
       console.log(error);
     }
@@ -24,6 +25,7 @@ export const Userprovider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
+      window.location.replace("/");
     } catch (error) {
       console.log(error);
     }

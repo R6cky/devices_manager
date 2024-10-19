@@ -19,6 +19,18 @@ import { Userprovider } from "./context/UserContext.jsx";
 
 const router = createBrowserRouter([
   {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/bluebird",
+    element: <Bluebird />,
+  },
+  {
     path: "/bluebird",
     element: <Bluebird />,
   },
@@ -41,14 +53,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Bluebird />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
