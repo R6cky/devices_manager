@@ -12,7 +12,8 @@ export const Userprovider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
-      window.location.replace("/login");
+      console.log(data);
+      //window.location.replace("/login");
     } catch (error) {
       console.log(error);
     }
@@ -20,12 +21,15 @@ export const Userprovider = ({ children }) => {
 
   const loginUser = async (data) => {
     try {
-      await api.post("/login", data);
+      const dataJson = await api.post("/login", data);
       toast.success(`Bem vindo ${data.email}!`, {
         autoClose: 2000,
         theme: "dark",
       });
-      window.location.replace("/");
+      const { accesToken, refreshToken } = dataJson.data;
+      localStorage.setItem("accesToken", accesToken);
+      localStorage.setItem("refreshToken", refreshToken);
+      console.log(dataJson);
     } catch (error) {
       console.log(error);
     }
