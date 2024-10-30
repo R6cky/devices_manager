@@ -51,7 +51,9 @@ export const BluebirdProvider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
