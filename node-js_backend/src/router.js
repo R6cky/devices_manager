@@ -68,10 +68,11 @@ router.get("/bluebird/:id", ensureAuth, getBluebirdById.handle);
 router.patch("/bluebird/:id", ensureAuth, updateBluebird.handle);
 router.delete("/bluebird/:id", ensureAuth, deleteBlueBird.handle);
 
-router.post("/computer", createComputer.handle);
-router.get("/computer", getAllComputer.handle);
-router.get("/computer/:id", getComputerById.handle);
-router.patch("/computer/:id", updateComputer.handle);
+router.post("/computer", ensureAuth, createComputer.handle);
+router.get("/computer", ensureAuth, getAllComputer.handle);
+router.get("/computer/:id", ensureAuth, getComputerById.handle);
+router.patch("/computer/:id", ensureAuth, updateComputer.handle);
+router.delete("/computer/:id", deleteComputer.handle);
 router.delete("/computer/:id", deleteComputer.handle);
 
 router.post("/print", createPrint.handle);
