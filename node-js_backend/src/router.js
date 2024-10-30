@@ -65,8 +65,8 @@ const userRegister = new UserController();
 router.post("/bluebird", ensureAuth, createBluebirds.handle);
 router.get("/bluebird", getAllBluebirds.handle);
 router.get("/bluebird/:id", getBluebirdById.handle);
-router.patch("/bluebird/:id", updateBluebird.handle);
-router.delete("/bluebird/:id", deleteBlueBird.handle);
+router.patch("/bluebird/:id", ensureAuth, updateBluebird.handle);
+router.delete("/bluebird/:id", ensureAuth, deleteBlueBird.handle);
 
 router.post("/computer", createComputer.handle);
 router.get("/computer", getAllComputer.handle);
