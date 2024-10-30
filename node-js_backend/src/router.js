@@ -87,11 +87,11 @@ router.get("/tas/:id", ensureAuth, getTasById.handle);
 router.patch("/tas/:id", ensureAuth, updateTas.handle);
 router.delete("/tas/:id", ensureAuth, deleteTas.handle);
 
-router.post("/toner", createToner.handle);
-router.get("/toner", getAllToner.handle);
-router.get("/toner/:id", getTonerById.handle);
-router.patch("/toner/:id", updateToner.handle);
-router.delete("/toner/:id", deleteToner.handle);
+router.post("/toner", ensureAuth, createToner.handle);
+router.get("/toner", ensureAuth, getAllToner.handle);
+router.get("/toner/:id", ensureAuth, getTonerById.handle);
+router.patch("/toner/:id", ensureAuth, updateToner.handle);
+router.delete("/toner/:id", ensureAuth, deleteToner.handle);
 
 router.post("/register", userRegister.register);
 router.post("/login", userRegister.login);
