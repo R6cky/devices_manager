@@ -71,8 +71,11 @@ export const BluebirdProvider = ({ children }) => {
   };
 
   const updateBluebird = async (data, id) => {
+    const token = localStorage.getItem("accessToken");
     try {
-      await api.patch(`/bluebird/${id}`, data);
+      await api.patch(`/bluebird/${id}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Bluebird atualizado com sucesso!", {
         autoClose: 2000,
         theme: "dark",
