@@ -81,11 +81,11 @@ router.get("/print/:id", ensureAuth, getPrintById.handle);
 router.patch("/print/:id", ensureAuth, updatePrint.handle);
 router.delete("/print/:id", ensureAuth, deletePrint.handle);
 
-router.post("/tas", createTas.handle);
-router.get("/tas", getAllTas.handle);
-router.get("/tas/:id", getTasById.handle);
-router.patch("/tas/:id", updateTas.handle);
-router.delete("/tas/:id", deleteTas.handle);
+router.post("/tas", ensureAuth, createTas.handle);
+router.get("/tas", ensureAuth, getAllTas.handle);
+router.get("/tas/:id", ensureAuth, getTasById.handle);
+router.patch("/tas/:id", ensureAuth, updateTas.handle);
+router.delete("/tas/:id", ensureAuth, deleteTas.handle);
 
 router.post("/toner", createToner.handle);
 router.get("/toner", getAllToner.handle);
