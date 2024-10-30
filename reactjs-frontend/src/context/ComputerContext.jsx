@@ -1,6 +1,7 @@
 import { api } from "../services/api";
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const ComputerContext = createContext({});
 
@@ -11,6 +12,7 @@ export const ComputerProvider = ({ children }) => {
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
+  const navigate = useNavigate();
 
   const getComputers = async () => {
     const token = localStorage.getItem("accesToken");
@@ -22,6 +24,7 @@ export const ComputerProvider = ({ children }) => {
       setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
@@ -39,6 +42,7 @@ export const ComputerProvider = ({ children }) => {
       setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
@@ -57,6 +61,7 @@ export const ComputerProvider = ({ children }) => {
       setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
@@ -75,6 +80,7 @@ export const ComputerProvider = ({ children }) => {
       setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
