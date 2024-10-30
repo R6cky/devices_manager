@@ -29,6 +29,14 @@ export const BluebirdProvider = ({ children }) => {
 
   const createBluebird = async (data) => {
     const token = localStorage.getItem("accesToken");
+
+    if (!token) {
+      toast.success("Algo errado com o token!", {
+        autoClose: 2000,
+        theme: "dark",
+      });
+    }
+
     try {
       await api.post("/bluebird", data, {
         headers: {
@@ -42,7 +50,12 @@ export const BluebirdProvider = ({ children }) => {
       getBluebirds();
       setModalCreateIsOpen(false);
     } catch (error) {
-      console.log(error);
+      const { data } = error.response;
+      console.log(data);
+      toast.error(data, {
+        autoClose: 2000,
+        theme: "dark",
+      });
     }
   };
 
