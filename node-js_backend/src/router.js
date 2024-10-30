@@ -72,14 +72,14 @@ router.post("/computer", ensureAuth, createComputer.handle);
 router.get("/computer", ensureAuth, getAllComputer.handle);
 router.get("/computer/:id", ensureAuth, getComputerById.handle);
 router.patch("/computer/:id", ensureAuth, updateComputer.handle);
-router.delete("/computer/:id", deleteComputer.handle);
-router.delete("/computer/:id", deleteComputer.handle);
+router.delete("/computer/:id", ensureAuth, deleteComputer.handle);
+router.delete("/computer/:id", ensureAuth, deleteComputer.handle);
 
-router.post("/print", createPrint.handle);
-router.get("/print", getAllPrint.handle);
-router.get("/print/:id", getPrintById.handle);
-router.patch("/print/:id", updatePrint.handle);
-router.delete("/print/:id", deletePrint.handle);
+router.post("/print", ensureAuth, createPrint.handle);
+router.get("/print", ensureAuth, getAllPrint.handle);
+router.get("/print/:id", ensureAuth, getPrintById.handle);
+router.patch("/print/:id", ensureAuth, updatePrint.handle);
+router.delete("/print/:id", ensureAuth, deletePrint.handle);
 
 router.post("/tas", createTas.handle);
 router.get("/tas", getAllTas.handle);
