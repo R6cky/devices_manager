@@ -24,6 +24,11 @@ export const BluebirdProvider = ({ children }) => {
       setListReset(bluebirds.data);
     } catch (error) {
       console.log(error);
+      const { data } = error.response;
+      console.log(data);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } finally {
       setloading(false);
     }
@@ -67,7 +72,16 @@ export const BluebirdProvider = ({ children }) => {
       getBluebirds();
       setModalEditIsOpen(false);
     } catch (error) {
-      console.log(error);
+      const { data } = error.response;
+      console.log(data);
+
+      toast.error(data, {
+        autoClose: 2000,
+        theme: "dark",
+      });
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
@@ -81,7 +95,16 @@ export const BluebirdProvider = ({ children }) => {
       getBluebirds();
       setModalDeleteIsOpen(false);
     } catch (error) {
-      console.log(error);
+      const { data } = error.response;
+      console.log(data);
+
+      toast.error(data, {
+        autoClose: 2000,
+        theme: "dark",
+      });
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
