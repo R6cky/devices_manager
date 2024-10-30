@@ -14,7 +14,7 @@ export const PrinterProvider = ({ children }) => {
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("accesToken");
 
   const getPrinter = async () => {
     try {
@@ -31,7 +31,9 @@ export const PrinterProvider = ({ children }) => {
 
   const createPrinter = async (data) => {
     try {
-      await api.post("/print", data);
+      await api.post("/print", data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success(" Impressora criada com sucesso!", {
         autoClose: 2000,
         theme: "dark",

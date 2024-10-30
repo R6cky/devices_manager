@@ -13,7 +13,6 @@ const schema = yup.object({
     .email("Digite um e-mail válido"),
   password: yup.string().required("Campo obrigatírio"),
 });
-
 export const Login = () => {
   const { loginUser } = useContext(UserContext);
 

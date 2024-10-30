@@ -1,7 +1,6 @@
 import { createContext } from "react";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
-
 export const UserContext = createContext({});
 
 export const Userprovider = ({ children }) => {

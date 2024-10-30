@@ -14,7 +14,7 @@ export const TonerProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("accesToken");
   const navigate = useNavigate();
 
   const getToner = async () => {
