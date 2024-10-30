@@ -30,13 +30,7 @@ export const BluebirdProvider = ({ children }) => {
     } catch (error) {
       const { data } = error.response;
       console.log(data);
-      toast.error(data, {
-        autoClose: 2000,
-        theme: "dark",
-      });
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+      navigate("/");
     } finally {
       setloading(false);
     }
@@ -71,7 +65,7 @@ export const BluebirdProvider = ({ children }) => {
   };
 
   const updateBluebird = async (data, id) => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage.getItem("accesToken");
     try {
       await api.patch(`/bluebird/${id}`, data, {
         headers: { Authorization: `Bearer ${token}` },
@@ -97,7 +91,7 @@ export const BluebirdProvider = ({ children }) => {
   };
 
   const deleteBluebird = async (id) => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage.getItem("accesToken");
 
     try {
       await api.delete(`/bluebird/${id}`, {

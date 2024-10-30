@@ -63,8 +63,8 @@ const deleteToner = new DeleteTonerController();
 const userRegister = new UserController();
 
 router.post("/bluebird", ensureAuth, createBluebirds.handle);
-router.get("/bluebird", getAllBluebirds.handle);
-router.get("/bluebird/:id", getBluebirdById.handle);
+router.get("/bluebird", ensureAuth, getAllBluebirds.handle);
+router.get("/bluebird/:id", ensureAuth, getBluebirdById.handle);
 router.patch("/bluebird/:id", ensureAuth, updateBluebird.handle);
 router.delete("/bluebird/:id", ensureAuth, deleteBlueBird.handle);
 
