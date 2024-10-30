@@ -1,5 +1,7 @@
 import { api } from "../services/api";
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const TonerContext = createContext({});
 
@@ -12,44 +14,63 @@ export const TonerProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
 
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
   const getToner = async () => {
     try {
-      const requestJson = await api.get("/toner");
+      const requestJson = await api.get("/toner", {
+        headers: { Authorization: `Bearer ${token}}` },
+      });
       setToner(requestJson.data);
       setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const createToner = async (data) => {
     try {
-      const requestJson = await api.post("/toner", data);
+      const requestJson = await api.post("/toner", data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setInsertToner(requestJson);
       getToner();
       setModalCreateIsOpen(false);
+      toast.success("toner criado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const updateToner = async (data, id) => {
     try {
-      await api.patch(`/toner/${id}`, data);
+      await api.patch(`/toner/${id}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       getToner();
       setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const deleteToner = async (id) => {
     try {
-      await api.delete(`/toner/${id}`);
+      await api.delete(`/toner/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       getToner();
       setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
