@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Register } from "./pages/register/Register";
 import { Login } from "./pages/login/Login";
 import { Bluebird } from "./pages/bluebird/Bluebird";

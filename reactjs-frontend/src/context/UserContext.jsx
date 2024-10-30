@@ -35,8 +35,13 @@ export const Userprovider = ({ children }) => {
     }
   };
 
+  const clearUser = () => {
+    localStorage.clear();
+    window.location.replace("/login");
+  };
+
   return (
-    <UserContext.Provider value={{ createUser, loginUser }}>
+    <UserContext.Provider value={{ createUser, loginUser, clearUser }}>
       {children}
     </UserContext.Provider>
   );

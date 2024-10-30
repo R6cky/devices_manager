@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import { HeaderStyled } from "./Styled";
 import { Link } from "react-router-dom";
-
+import { UserContext } from "../../context/UserContext";
 export const Header = () => {
+  const { clearUser } = useContext(UserContext);
   return (
     <HeaderStyled>
       <div className="top-header">
+        <div className="div-btn-exit">
+          <span onClick={() => clearUser()}>Sair</span>
+        </div>
         <span className="logo">DEVICES | MANAGER</span>
       </div>
 

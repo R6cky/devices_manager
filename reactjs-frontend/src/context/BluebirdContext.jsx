@@ -28,8 +28,13 @@ export const BluebirdProvider = ({ children }) => {
   };
 
   const createBluebird = async (data) => {
+    const token = localStorage.getItem("accesToken");
     try {
-      await api.post("/bluebird", data);
+      await api.post("/bluebird", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       toast.success("Bluebird Criado com sucesso!", {
         autoClose: 2000,
         theme: "dark",

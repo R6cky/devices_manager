@@ -14,11 +14,23 @@ export const HeaderStyled = styled.header`
 
   .top-header {
     width: 100%;
-    height: 100%;
+    height: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: 40px;
+
+    .div-btn-exit {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      padding-right: 50px;
+
+      span {
+        cursor: pointer;
+      }
+    }
   }
 
   .nav-bar {
