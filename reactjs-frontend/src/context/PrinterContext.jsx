@@ -1,24 +1,31 @@
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const PrinterContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
 export const PrinterProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [printers, setPrinters] = useState([]);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
 
+  const token = localStorage.getItem("token");
+
   const getPrinter = async () => {
     try {
-      const requestJson = await api.get("/print");
+      const requestJson = await api.get("/print", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setPrinters(requestJson.data);
       setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
@@ -33,12 +40,15 @@ export const PrinterProvider = ({ children }) => {
       setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const updatePrinter = async (data, id) => {
     try {
-      await api.patch(`/print/${id}`, data);
+      await api.patch(`/print/${id}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success(" Impressora atualizada com sucesso!", {
         autoClose: 2000,
         theme: "dark",
@@ -47,12 +57,15 @@ export const PrinterProvider = ({ children }) => {
       setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const deletePrinter = async (id) => {
     try {
-      await api.delete(`/print/${id}`);
+      await api.delete(`/print/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success(" Impressora deletada com sucesso!", {
         autoClose: 2000,
         theme: "dark",
@@ -61,6 +74,7 @@ export const PrinterProvider = ({ children }) => {
       setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
