@@ -25,10 +25,12 @@ import { GetTonerByIdController } from "./controllers/toner/getTonerByIdControll
 import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
 import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
 import { UserController } from "./controllers/users/userRegisterAndLogin.js";
+import { ensureAuth } from "./middleware/ensureAuth.js";
 
 const router = Router();
 
 const createBluebirds = new CreateBluebirdController();
+
 const getAllBluebirds = new GetAllBluebirdsController();
 const getBluebirdById = new GetBluebirdByIdController();
 const updateBluebird = new UpdateBluebirdController();
@@ -60,7 +62,7 @@ const deleteToner = new DeleteTonerController();
 
 const userRegister = new UserController();
 
-router.post("/bluebird", createBluebirds.handle);
+router.post("/bluebird", ensureAuth, createBluebirds.handle);
 router.get("/bluebird", getAllBluebirds.handle);
 router.get("/bluebird/:id", getBluebirdById.handle);
 router.patch("/bluebird/:id", updateBluebird.handle);
