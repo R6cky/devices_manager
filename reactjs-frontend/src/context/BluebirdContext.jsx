@@ -17,15 +17,23 @@ export const BluebirdProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const getBluebirds = async () => {
+    const token = localStorage.getItem("accesToken");
     try {
-      const bluebirds = await api.get("/bluebird");
+      const bluebirds = await api.get("/bluebird", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setloading(true);
       setBluebird(bluebirds.data);
       setListReset(bluebirds.data);
     } catch (error) {
-      console.log(error);
       const { data } = error.response;
       console.log(data);
+      toast.error(data, {
+        autoClose: 2000,
+        theme: "dark",
+      });
       setTimeout(() => {
         navigate("/");
       }, 2000);
