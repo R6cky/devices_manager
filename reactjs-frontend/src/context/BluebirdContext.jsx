@@ -97,8 +97,12 @@ export const BluebirdProvider = ({ children }) => {
   };
 
   const deleteBluebird = async (id) => {
+    const token = localStorage.getItem("accessToken");
+
     try {
-      await api.delete(`/bluebird/${id}`);
+      await api.delete(`/bluebird/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Bluebird deletado com sucesso!", {
         autoClose: 2000,
         theme: "dark",
