@@ -13,8 +13,11 @@ export const ComputerProvider = ({ children }) => {
   const [listReset, setListReset] = useState([]);
 
   const getComputers = async () => {
+    const token = localStorage.getItem("accesToken");
     try {
-      const requestJson = await api.get("/computer");
+      const requestJson = await api.get("/computer", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setComputers(requestJson.data);
       setListReset(requestJson.data);
     } catch (error) {
@@ -23,8 +26,11 @@ export const ComputerProvider = ({ children }) => {
   };
 
   const createComputer = async (data) => {
+    const token = localStorage.getItem("accesToken");
     try {
-      await api.post("/computer", data);
+      await api.post("/computer", data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Computador criado com sucesso", {
         autoClose: 2000,
         theme: "dark",
@@ -37,8 +43,12 @@ export const ComputerProvider = ({ children }) => {
   };
 
   const updateComputer = async (data, id) => {
+    const token = localStorage.getItem("accesToken");
+
     try {
-      await api.patch(`/computer/${id}`, data);
+      await api.patch(`/computer/${id}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Computador editado com sucesso", {
         autoClose: 2000,
         theme: "dark",
@@ -51,8 +61,12 @@ export const ComputerProvider = ({ children }) => {
   };
 
   const deleteComputer = async (id) => {
+    const token = localStorage.getItem("accesToken");
+
     try {
-      await api.delete(`/computer/${id}`);
+      await api.delete(`/computer/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Computador deletado com sucesso", {
         autoClose: 2000,
         theme: "dark",
