@@ -55,6 +55,10 @@ export const TonerProvider = ({ children }) => {
       });
       getToner();
       setModalEditIsOpen(false);
+      toast.success("toner criado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
     } catch (error) {
       console.log(error);
       navigate("/");
@@ -68,6 +72,10 @@ export const TonerProvider = ({ children }) => {
       });
       getToner();
       setModalDeleteIsOpen(false);
+      toast.success("toner criado com sucesso", {
+        autoClose: 2000,
+        theme: "dark",
+      });
     } catch (error) {
       console.log(error);
       navigate("/");
