@@ -8,22 +8,25 @@ import { PrinterProvider } from "./context/PrinterContext.jsx";
 import { TasProvider } from "./context/TasContext.jsx";
 import { TonerProvider } from "./context/TonerContext.jsx";
 import { Userprovider } from "./context/UserContext.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GlobalStyle />
-    <TonerProvider>
-      <TasProvider>
-        <PrinterProvider>
-          <ComputerProvider>
-            <BluebirdProvider>
-              <Userprovider>
-                <App />
-              </Userprovider>
-            </BluebirdProvider>
-          </ComputerProvider>
-        </PrinterProvider>
-      </TasProvider>
-    </TonerProvider>
+    <BrowserRouter>
+      <GlobalStyle />
+      <TonerProvider>
+        <TasProvider>
+          <PrinterProvider>
+            <ComputerProvider>
+              <BluebirdProvider>
+                <Userprovider>
+                  <App />
+                </Userprovider>
+              </BluebirdProvider>
+            </ComputerProvider>
+          </PrinterProvider>
+        </TasProvider>
+      </TonerProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

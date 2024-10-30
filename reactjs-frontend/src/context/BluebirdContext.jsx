@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const BluebirdContext = createContext({});
 
@@ -13,6 +14,7 @@ export const BluebirdProvider = ({ children }) => {
   const [modalEditIsOpen, setModalEditIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
   const [loading, setloading] = useState(false);
+  const navigate = useNavigate();
 
   const getBluebirds = async () => {
     try {
@@ -29,13 +31,6 @@ export const BluebirdProvider = ({ children }) => {
 
   const createBluebird = async (data) => {
     const token = localStorage.getItem("accesToken");
-
-    if (!token) {
-      toast.success("Algo errado com o token!", {
-        autoClose: 2000,
-        theme: "dark",
-      });
-    }
 
     try {
       await api.post("/bluebird", data, {
@@ -56,6 +51,7 @@ export const BluebirdProvider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
+      navigate("/");
     }
   };
 
