@@ -1,10 +1,12 @@
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { createContext, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export const TasContext = createContext({});
 
 export const TasProvider = ({ children }) => {
+  const navigate = useNavigate();
+
   const [tas, setTas] = useState([]);
   const [insertTas, setInsertTas] = useState({});
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
@@ -12,19 +14,26 @@ export const TasProvider = ({ children }) => {
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [listReset, setListReset] = useState([]);
 
+  const token = localStorage.getItem("accesToken");
+
   const getTas = async () => {
     try {
-      const requestJson = await api.get("/tas");
+      const requestJson = await api.get("/tas", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setTas(requestJson.data);
       setListReset(requestJson.data);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const createTas = async (data) => {
     try {
-      await api.post("/tas", data);
+      await api.post("/tas", data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Tas criado com sucesso!", {
         autoClose: 2000,
         theme: "dark",
@@ -33,12 +42,15 @@ export const TasProvider = ({ children }) => {
       setModalCreateIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const updateTas = async (data, id) => {
     try {
-      await api.patch(`/tas/${id}`, data);
+      await api.patch(`/tas/${id}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Tas atualizado com sucesso!", {
         autoClose: 2000,
         theme: "dark",
@@ -47,12 +59,15 @@ export const TasProvider = ({ children }) => {
       setModalEditIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
   const deleteTas = async (id) => {
     try {
-      await api.delete(`/tas/${id}`);
+      await api.delete(`/tas/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success("Tas deletado com sucesso!", {
         autoClose: 2000,
         theme: "dark",
@@ -61,6 +76,7 @@ export const TasProvider = ({ children }) => {
       setModalDeleteIsOpen(false);
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   };
 
