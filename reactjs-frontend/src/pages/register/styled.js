@@ -5,13 +5,12 @@ export const RegisterStyled = styled.div`
   max-width: 100%;
   height: 100vh;
   max-height: 100vh;
-  border: solid red;
   display: flex;
+  background-color: yellow;
   align-items: center;
   justify-content: center;
 
   form {
-    border: solid red 1px;
     width: 600px;
     height: 500px;
     border-radius: 8px;
@@ -20,6 +19,7 @@ export const RegisterStyled = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
+    background-color: #110f32;
 
     input {
       width: 80%;
