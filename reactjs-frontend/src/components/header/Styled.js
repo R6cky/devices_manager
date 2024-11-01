@@ -30,6 +30,9 @@ export const HeaderStyled = styled.header`
       span {
         cursor: pointer;
       }
+      span:hover {
+        text-decoration: underline;
+      }
     }
   }
 

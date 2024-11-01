@@ -14,6 +14,7 @@ export const RegisterStyled = styled.div`
   form {
     margin-top: 100px;
     width: 600px;
+    max-width: 90%;
     height: 500px;
     border-radius: 8px;
     display: flex;
