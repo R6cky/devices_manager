@@ -7,7 +7,6 @@ export const PrinterContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
 export const PrinterProvider = ({ children }) => {
-  const navigate = useNavigate();
   const [printers, setPrinters] = useState([]);
   const [modalCreateIsOpen, setModalCreateIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
@@ -15,6 +14,7 @@ export const PrinterProvider = ({ children }) => {
   const [listReset, setListReset] = useState([]);
 
   const token = localStorage.getItem("accesToken");
+  const navigate = useNavigate();
 
   const getPrinter = async () => {
     try {

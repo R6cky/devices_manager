@@ -20,7 +20,7 @@ export const TonerProvider = ({ children }) => {
   const getToner = async () => {
     try {
       const requestJson = await api.get("/toner", {
-        headers: { Authorization: `Bearer ${token}}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       setToner(requestJson.data);
       setListReset(requestJson.data);
