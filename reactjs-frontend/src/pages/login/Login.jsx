@@ -29,16 +29,28 @@ export const Login = () => {
   return (
     <LoginStyled>
       <form action="" onSubmit={handleSubmit(submit)}>
-        <input
-          type="email"
-          name=""
-          id=""
-          placeholder="Email"
-          {...register("email")}
-        />
-        <p>{errors.email?.message}</p>
-        <input type="password" placeholder="Senha" {...register("password")} />
-        {errors.password?.message}
+        <div className="title-form">
+          <h3>Login</h3>
+        </div>
+        <div className="input-mail">
+          <input
+            type="email"
+            name=""
+            id=""
+            placeholder="Email"
+            {...register("email")}
+          />
+          <p>{errors.email?.message}</p>
+        </div>
+
+        <div className="input-password">
+          <input
+            type="password"
+            placeholder="Senha"
+            {...register("password")}
+          />
+          <p>{errors.password?.message}</p>
+        </div>
         <button type="submit">Login</button>
       </form>
       <ToastContainer />
