@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ToastContainer } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
+import { Footer } from "../../components/footer/Footer";
 
 const schema = yup.object({
   email: yup
@@ -53,7 +54,9 @@ export const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
+
       <ToastContainer />
+      <Footer />
     </LoginStyled>
   );
 };

@@ -1,6 +1,6 @@
 {
-    "files.exclude": {
-        "Reindent Lines": true
-    },
-    "editor.formatOnSave": true
+  "files.exclude": {
+    "Reindent Lines": true
+  },
+  "editor.formatOnSave": true
 }

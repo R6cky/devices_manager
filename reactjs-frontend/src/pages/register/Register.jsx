@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { ToastContainer } from "react-toastify";
+import { Footer } from "../../components/footer/Footer";
 
 const schema = yup
   .object({
@@ -30,19 +31,31 @@ export const Register = () => {
   return (
     <RegisterStyled>
       <form action="" onSubmit={handleSubmit(submit)}>
-        <input
-          type="email"
-          name=""
-          id=""
-          placeholder="Email"
-          {...register("email")}
-        />
-        <p> {errors.email?.message}</p>
-        <input type="password" placeholder="Senha" {...register("password")} />
-        <p> {errors.password?.message}</p>
+        <div className="title-form">
+          <h3>Register</h3>
+        </div>
+        <div className="input-mail">
+          <input
+            type="email"
+            name=""
+            id=""
+            placeholder="Email"
+            {...register("email")}
+          />
+          <p> {errors.email?.message}</p>
+        </div>
+        <div className="input-password">
+          <input
+            type="password"
+            placeholder="Senha"
+            {...register("password")}
+          />
+          <p> {errors.password?.message}</p>
+        </div>
         <button type="submit">Criar</button>
       </form>
       <ToastContainer />
+      <Footer />
     </RegisterStyled>
   );
 };

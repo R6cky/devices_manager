@@ -6,11 +6,13 @@ export const LoginStyled = styled.div`
   height: 100vh;
   max-height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: yellow;
   align-items: center;
-  justify-content: center;
 
   form {
+    margin-top: 100px;
     width: 600px;
     max-width: 90%;
     height: 500px;
@@ -45,7 +47,7 @@ export const LoginStyled = styled.div`
 
       input {
         width: 100%;
-        height: 50px;
+        height: 60px;
         border-radius: 4px;
         font-size: 20px;
         padding-left: 8px;
@@ -66,7 +68,7 @@ export const LoginStyled = styled.div`
 
       input {
         width: 100%;
-        height: 50px;
+        height: 60px;
         border-radius: 4px;
         font-size: 20px;
         padding-left: 8px;
@@ -80,7 +82,7 @@ export const LoginStyled = styled.div`
     }
     button {
       width: 80%;
-      height: 50px;
+      height: 60px;
       border-radius: 4px;
       font-size: 20px;
     }
