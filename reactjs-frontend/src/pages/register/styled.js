@@ -86,8 +86,15 @@ export const RegisterStyled = styled.div`
       font-size: 20px;
     }
 
-    p {
-      color: red;
+    .redirect-button-div {
+      a {
+        color: white;
+        font-size: 20px;
+      }
+      a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 `;

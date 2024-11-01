@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
+import { Header } from "../../components/header/Header";
+import { Link } from "react-router-dom";
 
 const schema = yup.object({
   email: yup
@@ -26,7 +28,6 @@ export const Login = () => {
   const submit = (data) => {
     loginUser(data);
   };
-
   return (
     <LoginStyled>
       <form action="" onSubmit={handleSubmit(submit)}>
@@ -43,7 +44,6 @@ export const Login = () => {
           />
           <p>{errors.email?.message}</p>
         </div>
-
         <div className="input-password">
           <input
             type="password"
@@ -53,6 +53,11 @@ export const Login = () => {
           <p>{errors.password?.message}</p>
         </div>
         <button type="submit">Login</button>
+        <div className="redirect-button-div">
+          <Link className="redirect-button-btn" to={"/register"}>
+            Cadastre-se
+          </Link>
+        </div>
       </form>
 
       <ToastContainer />

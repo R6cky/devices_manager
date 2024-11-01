@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { ToastContainer } from "react-toastify";
 import { Footer } from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 const schema = yup
   .object({
@@ -53,6 +54,11 @@ export const Register = () => {
           <p> {errors.password?.message}</p>
         </div>
         <button type="submit">Criar</button>
+        <div className="redirect-button-div">
+          <Link className="redirect-button-btn" to={"/login"}>
+            Fazer Login
+          </Link>
+        </div>
       </form>
       <ToastContainer />
       <Footer />

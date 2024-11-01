@@ -86,5 +86,16 @@ export const LoginStyled = styled.div`
       border-radius: 4px;
       font-size: 20px;
     }
+
+    .redirect-button-div {
+      a {
+        color: white;
+        font-size: 20px;
+      }
+      a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 `;
