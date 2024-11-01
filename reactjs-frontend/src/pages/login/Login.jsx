@@ -6,7 +6,6 @@ import { ToastContainer } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
-import { Header } from "../../components/header/Header";
 import { Link } from "react-router-dom";
 
 const schema = yup.object({
