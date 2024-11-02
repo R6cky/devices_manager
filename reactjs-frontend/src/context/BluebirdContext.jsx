@@ -52,12 +52,7 @@ export const BluebirdProvider = ({ children }) => {
       getBluebirds();
       setModalCreateIsOpen(false);
     } catch (error) {
-      const { data } = error.response;
-      console.log(data);
-      toast.error(data, {
-        autoClose: 2000,
-        theme: "dark",
-      });
+      console.log(error.message);
       setTimeout(() => {
         navigate("/");
       }, 2000);

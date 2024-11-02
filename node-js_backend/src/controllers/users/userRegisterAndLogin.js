@@ -11,7 +11,7 @@ export class UserController {
     const data = schemaRegisterAndLogin.parse(req.body);
 
     try {
-      const { email, password, id } = data;
+      const { email, password } = data;
       if (!email || !password) {
         res.status(400);
         throw new Error("You must provide an email and password.");
@@ -24,7 +24,7 @@ export class UserController {
         throw new Error("User already exists.");
       }
 
-      const user = await createUserByEmail({ email, password });
+      const user = await createUserByEmail(data);
       const jti = uuiv4();
       const { accesToken, refreshToken } = generateTokens(user, jti);
       await addRefreshTokenInWhiteList({ jti, refreshToken, userId: user.id });
