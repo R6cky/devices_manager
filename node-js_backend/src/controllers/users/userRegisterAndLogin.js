@@ -4,11 +4,14 @@ import { v4 as uuiv4 } from "uuid";
 import { generateTokens } from "../../utils/jwt.js";
 import { addRefreshTokenInWhiteList } from "../refreshToken/addRefreshTokenToWhiteList.js";
 import bcrypt from "bcrypt";
+import { schemaRegisterAndLogin } from "../../utils/validators.js";
 
 export class UserController {
   async register(req, res, next) {
+    const data = schemaRegisterAndLogin.parse(req.body);
+
     try {
-      const { email, password, id } = req.body;
+      const { email, password, id } = data;
       if (!email || !password) {
         res.status(400);
         throw new Error("You must provide an email and password.");
@@ -33,8 +36,10 @@ export class UserController {
   }
 
   async login(req, res, next) {
+    const data = schemaRegisterAndLogin.parse(req.body);
+
     try {
-      const { email, password } = req.body;
+      const { email, password } = data;
       if (!email || !password) {
         res.status(400);
         throw new Error("You must provide an email and password.");
