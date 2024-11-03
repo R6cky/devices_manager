@@ -8,9 +8,8 @@ import { schemaRegisterAndLogin } from "../../utils/validators.js";
 
 export class UserController {
   async register(req, res, next) {
-    const data = schemaRegisterAndLogin.parse(req.body);
-
     try {
+      const data = schemaRegisterAndLogin.parse(req.body);
       const { email, password } = data;
       if (!email || !password) {
         res.status(400);
@@ -20,7 +19,7 @@ export class UserController {
       const existingUser = await getUserByEmail(email);
 
       if (existingUser) {
-        res.status(400);
+        res.status(400).json({ message: "User already exists." });
         throw new Error("User already exists.");
       }
 
@@ -31,7 +30,8 @@ export class UserController {
       return res.status(201).json({ user, accesToken, refreshToken });
     } catch (error) {
       console.log(error);
-      next(error);
+      res.status(400).json(error.issues);
+      //next(error);
     }
   }
 
