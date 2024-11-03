@@ -1,18 +1,19 @@
 import { prismaClient } from "../../database/prismaClient.js";
-
+import { schemaUpdateBluebids } from "../../utils/validators.js";
 export class UpdateBluebirdController {
   async handle(req, res) {
-    const blueBird = await prismaClient.blueBird.update({
-      where: {
-        id: req.params.id,
-      },
-      data: {
-        serial_number: req.body.serial_number,
-        hostname: req.body.hostname,
-        sector: req.body.sector,
-        contact_number: req.body.contact_number,
-      },
-    });
-    return res.json(blueBird);
+    try {
+      const dataBluebird = schemaUpdateBluebids.parse(req.body);
+      const blueBird = await prismaClient.blueBird.update({
+        where: {
+          id: req.params.id,
+        },
+        data: dataBluebird,
+      });
+      return res.status(200).json(blueBird);
+    } catch (error) {
+      console.log(error.issues);
+      return res.status(400).json(error.issues);
+    }
   }
 }

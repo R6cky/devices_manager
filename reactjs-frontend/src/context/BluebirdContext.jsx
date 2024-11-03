@@ -52,10 +52,7 @@ export const BluebirdProvider = ({ children }) => {
       getBluebirds();
       setModalCreateIsOpen(false);
     } catch (error) {
-      console.log(error.message);
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+      console.log(error);
     }
   };
 
