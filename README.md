@@ -21,3 +21,6 @@ e o"node-js_backend", que são os diretórios do front e backend.
 #npm install; npx prisma migrade dev; npm run dev
 
 Após isso a aplicação deve iniciar e você já pode utilizá-la.
+
+Link do deploy da aplicação:  
+https://devices-manageryxw.vercel.app/
