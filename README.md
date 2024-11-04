@@ -12,8 +12,7 @@ Instruções para utilizar:
 1 - clone o repositório em sua máquina local.  
 o diretório principal é o "devices manager", ele possue os diretórios "reactjs-frontend"  
 e o"node-js_backend", que são os diretórios do front e backend.  
-2 - Entre no diretório "reactjs-frontend"  
-2.1 - execute os comandos:
+2 - Entre no diretório "reactjs-frontend" e execute os comandos:
 
 #npm install; npm run dev
 
