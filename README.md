@@ -1,6 +1,6 @@
 # devices_manager
 
-###Este projeto surgiu da necessidade de gerenciar alguns dispositivos
+###Este projeto surgiu da necessidade de gerenciar alguns dispositivos,
 ###na empresa onde eu trabalhei. Eramos um time de 3 pessoas,
 ###E o parque tecnológico relativamente grande, atendíamos
 ###Vários tripulantes de uma empresa aérea e existiam
