@@ -1,14 +1,17 @@
 import { prismaClient } from "../../database/prismaClient.js";
+import { schemaCreateToner } from "../../utils/validators.js";
 
 export class CreateTonerController {
   async handle(req, res) {
-    const { model, quantity } = req.body;
-    const toner = await prismaClient.toner.create({
-      data: {
-        model,
-        quantity,
-      },
-    });
-    return res.status(201).json(toner);
+    try {
+      const dataToner = schemaCreateToner.parse(req.body);
+      const toner = await prismaClient.toner.create({
+        data: dataToner,
+      });
+      return res.status(201).json(toner);
+    } catch (error) {
+      console.log(error.issues);
+      return res.status(400).json(error.issues);
+    }
   }
 }
