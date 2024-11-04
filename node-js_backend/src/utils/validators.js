@@ -31,7 +31,7 @@ export const schemaRegisterAndLogin = z.object({
 
 export const schemaCreateTas = z.object({
   hostname: z.string("O valor deve ser texto"),
-  wifi_name: schemaCreateBluebids.string("O valor deve ser texto"),
+  wifi_name: z.string("O valor deve ser texto"),
 });
 
 export const schemaCreateToner = z.object({
@@ -49,7 +49,7 @@ export const schemaCreatePrinter = z.object({
 });
 
 export const schemaCreateComputer = z.object({
-  hosthname: z.string("O valor deve ser texto"),
+  hostname: z.string("O valor deve ser texto"),
   ip: z.string("O valor deve ser texto"),
   sector: z.string("O valor deve ser texto"),
   operational_system: z.string(""),
