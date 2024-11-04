@@ -1,15 +1,17 @@
 import { prismaClient } from "../../database/prismaClient.js";
+import { schemaCreateTas } from "../../utils/validators.js";
 
 export class CreateTasController {
   async handle(req, res) {
-    const { hostname, wifi_name } = req.body;
-
-    const tas = await prismaClient.tas.create({
-      data: {
-        hostname: hostname,
-        wifi_name: wifi_name,
-      },
-    });
-    return res.status(201).json(tas);
+    try {
+      const dataTas = schemaCreateTas.parse(req.body);
+      const tas = await prismaClient.tas.create({
+        data: dataTas,
+      });
+      return res.status(201).json(tas);
+    } catch (error) {
+      console.log(error.issues);
+      return res.status(400).json(error.issues);
+    }
   }
 }
