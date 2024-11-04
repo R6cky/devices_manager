@@ -28,3 +28,8 @@ export const schemaRegisterAndLogin = z.object({
     .min(6, "O valor mínimo é 6 caracteres")
     .max(15, "O valor máximo é 15 caracteres"),
 });
+
+export const schemaCreateTas = z.object({
+  hostname: z.string("O valor deve ser texto"),
+  wifi_name: schemaCreateBluebids.string("O valor deve ser texto"),
+});
