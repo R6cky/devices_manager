@@ -24,5 +24,5 @@ Após isso a aplicação deve iniciar e você já pode utilizá-la.
 
 Deploy da aplicação:
 -> o frontend está hospedado no site "vercel.com"  
- -> o backend está hospedado no site "render.com"  
+-> o backend está hospedado no site "render.com"  
 Link da aplicação: https://devices-manageryxw.vercel.app/
