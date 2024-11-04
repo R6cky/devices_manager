@@ -9,15 +9,12 @@ export class UpdateComputerController {
         where: {
           id: req.params.id,
         },
-        data: {
-          hostname: req.body.hostname,
-          ip: req.body.ip,
-          sector: req.body.sector,
-          operational_system: req.body.operational_system,
-          type: req.body.type,
-        },
+        data: dataComputer,
       });
-    } catch (error) {}
-    return res.status(200).json(computer);
+      return res.status(200).json(computer);
+    } catch (error) {
+      console.log(error.issues);
+      return res.status(400).json(error.issues);
+    }
   }
 }
