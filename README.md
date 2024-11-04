@@ -22,7 +22,7 @@ e o"node-js_backend", que são os diretórios do front e backend.
 
 Após isso a aplicação deve iniciar e você já pode utilizá-la.
 
-Deploy da aplicação:
+Deploy da aplicação:  
 -> o frontend está hospedado no site "vercel.com"  
 -> o backend está hospedado no site "render.com"  
 Link da aplicação: https://devices-manageryxw.vercel.app/
