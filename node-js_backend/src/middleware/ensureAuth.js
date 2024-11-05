@@ -12,10 +12,10 @@ export const ensureAuth = (req, res, next) => {
     const [, token] = authHeader.split(" ");
     const secretKey = process.env.ACCESS_TOKEN_SECRET;
     const decoded = verify(token, secretKey);
-    //const { userId } = decoded;
-    // req.user = {
-    //   id: userId,
-    // };
+    const { userId } = decoded;
+    req.user = {
+      id: userId,
+    };
 
     next();
   } catch (err) {

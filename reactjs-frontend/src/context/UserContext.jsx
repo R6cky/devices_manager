@@ -1,9 +1,13 @@
 import { createContext } from "react";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
+
 export const UserContext = createContext({});
 
 export const Userprovider = ({ children }) => {
+  const navigate = useNavigate();
+
   const createUser = async (data) => {
     try {
       await api.post("/register", data);
@@ -12,7 +16,7 @@ export const Userprovider = ({ children }) => {
         theme: "dark",
       });
       console.log(data);
-      window.location.replace("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -25,10 +29,10 @@ export const Userprovider = ({ children }) => {
         autoClose: 2000,
         theme: "dark",
       });
-      const { accesToken, refreshToken } = dataJson.data;
+      const { accesToken } = dataJson.data;
+      console.log("DATA JSON", dataJson.data);
       localStorage.setItem("accesToken", accesToken);
-      //localStorage.setItem("refreshToken", refreshToken);
-      window.location.replace("/bluebird");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

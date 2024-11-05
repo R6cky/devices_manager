@@ -17,17 +17,14 @@ export class UserController {
       // }
 
       const existingUser = await getUserByEmail(email);
-
       if (existingUser) {
         res.status(400).json({ message: "User already exists." });
         throw new Error("User already exists.");
       }
 
       const user = await createUserByEmail(data);
-      //const jti = uuiv4();
       const { accesToken } = generatedAccesToken(user);
-      console.log("JWT AQUI", accesToken);
-      return res.status(201).json({ user, accesToken });
+      return res.status(201).json({ accesToken });
     } catch (error) {
       console.log(error);
       res.status(400).json(error.issues);
@@ -62,12 +59,13 @@ export class UserController {
 
       // const jti = uuiv4();
       const { accesToken } = generatedAccesToken(existingUser);
+      // const refreshToken = generateRefreshToken(existingUser, jti);
       // await addRefreshTokenInWhiteList({
       //   jti,
       //   refreshToken,
       //   userId: existingUser.id,
       // });
-      console.log(existingUser);
+      console.log("EXISTING USER", existingUser);
       res.status(200).json({ accesToken });
     } catch (error) {
       res.status(400).json(error.issues);
