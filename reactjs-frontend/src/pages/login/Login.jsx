@@ -7,7 +7,6 @@ import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
-
 const schema = yup.object({
   email: yup
     .string()
@@ -15,6 +14,7 @@ const schema = yup.object({
     .email("Digite um e-mail válido"),
   password: yup.string().required("Campo obrigatírio"),
 });
+
 export const Login = () => {
   const { loginUser } = useContext(UserContext);
 

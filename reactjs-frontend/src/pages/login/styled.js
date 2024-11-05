@@ -8,21 +8,22 @@ export const LoginStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: yellow;
+  background-color: #110f32;
   align-items: center;
 
   form {
     margin-top: 100px;
-    width: 600px;
+    width: 500px;
     max-width: 90%;
-    height: 500px;
+    height: 400px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: #110f32;
+    background-color: var(--main-color);
+    border: solid white 0.2px;
 
     .title-form {
       width: 80%;

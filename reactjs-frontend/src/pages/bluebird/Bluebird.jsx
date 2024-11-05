@@ -7,7 +7,7 @@ import { BluebirdContext } from "../../context/BluebirdContext";
 import { ModalBluebird } from "../../modals/bluebird/modalBlueBirdCreate/ModalBluebirdCreate";
 import { ModalBluebirdDelete } from "../../modals/bluebird/modalBluebirdDelete/ModalBluebirdDelete";
 import { ModalBluebirdEdit } from "../../modals/bluebird/modalBluebirdEdit/ModalBluebirdEdit";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Bluebird = () => {
