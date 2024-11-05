@@ -30,7 +30,6 @@ export const BluebirdProvider = ({ children }) => {
     } catch (error) {
       const { data } = error.response;
       console.log(data);
-      navigate("/");
     } finally {
       setloading(false);
     }
@@ -71,14 +70,10 @@ export const BluebirdProvider = ({ children }) => {
     } catch (error) {
       const { data } = error.response;
       console.log(data);
-
       toast.error(data, {
         autoClose: 2000,
         theme: "dark",
       });
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
     }
   };
 

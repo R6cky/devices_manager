@@ -16,7 +16,7 @@ export const Userprovider = ({ children }) => {
         theme: "dark",
       });
       console.log(data);
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -30,10 +30,10 @@ export const Userprovider = ({ children }) => {
         theme: "dark",
       });
       const { accesToken } = dataJson.data;
-      console.log("DATA JSON", dataJson.data);
       localStorage.setItem("accesToken", accesToken);
-      navigate("/");
+      navigate("/bluebird");
     } catch (error) {
+      navigate("/");
       console.log(error);
     }
   };
