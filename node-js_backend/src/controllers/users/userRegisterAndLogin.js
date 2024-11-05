@@ -1,8 +1,6 @@
 import { createUserByEmail } from "./createUserByEmailAndPasssword.js";
 import { getUserByEmail } from "./getUserByEmail.js";
-import { v4 as uuiv4 } from "uuid";
 import { generatedAccesToken } from "../../utils/jwt.js";
-import { addRefreshTokenInWhiteList } from "../refreshToken/addRefreshTokenToWhiteList.js";
 import bcrypt from "bcrypt";
 import { schemaRegisterAndLogin } from "../../utils/validators.js";
 
