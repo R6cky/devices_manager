@@ -1,7 +1,7 @@
 import { createUserByEmail } from "./createUserByEmailAndPasssword.js";
 import { getUserByEmail } from "./getUserByEmail.js";
 import { v4 as uuiv4 } from "uuid";
-import { generateTokens } from "../../utils/jwt.js";
+import { generatedAccesToken } from "../../utils/jwt.js";
 import { addRefreshTokenInWhiteList } from "../refreshToken/addRefreshTokenToWhiteList.js";
 import bcrypt from "bcrypt";
 import { schemaRegisterAndLogin } from "../../utils/validators.js";
@@ -26,10 +26,10 @@ export class UserController {
       }
 
       const user = await createUserByEmail(data);
-      const jti = uuiv4();
-      const { accesToken, refreshToken } = generateTokens(user, jti);
-      await addRefreshTokenInWhiteList({ jti, refreshToken, userId: user.id });
-      return res.status(201).json({ user, accesToken, refreshToken });
+      //const jti = uuiv4();
+      const { accesToken } = generatedAccesToken(user);
+      console.log("JWT AQUI", accesToken);
+      return res.status(201).json({ user, accesToken });
     } catch (error) {
       console.log(error);
       res.status(400).json(error.issues);
@@ -62,14 +62,15 @@ export class UserController {
         throw new Error("Invalid login credentials.");
       }
 
-      const jti = uuiv4();
-      const { accesToken, refreshToken } = generateTokens(existingUser, jti);
-      await addRefreshTokenInWhiteList({
-        jti,
-        refreshToken,
-        userId: existingUser.id,
-      });
-      res.status(200).json({ accesToken, refreshToken });
+      // const jti = uuiv4();
+      const { accesToken } = generatedAccesToken(existingUser);
+      // await addRefreshTokenInWhiteList({
+      //   jti,
+      //   refreshToken,
+      //   userId: existingUser.id,
+      // });
+      console.log(existingUser);
+      res.status(200).json({ accesToken });
     } catch (error) {
       res.status(400).json(error.issues);
       console.log(error);
