@@ -58,14 +58,7 @@ export class UserController {
       }
 
       // const jti = uuiv4();
-      const { accesToken } = generatedAccesToken(existingUser);
-      // const refreshToken = generateRefreshToken(existingUser, jti);
-      // await addRefreshTokenInWhiteList({
-      //   jti,
-      //   refreshToken,
-      //   userId: existingUser.id,
-      // });
-      console.log("EXISTING USER", existingUser);
+      const accesToken = generatedAccesToken(existingUser);
       res.status(200).json({ accesToken });
     } catch (error) {
       res.status(400).json(error.issues);
