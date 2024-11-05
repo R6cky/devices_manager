@@ -61,7 +61,6 @@ export const Register = () => {
         </div>
       </form>
       <ToastContainer />
-      <Footer />
     </RegisterStyled>
   );
 };

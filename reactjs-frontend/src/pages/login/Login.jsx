@@ -60,7 +60,6 @@ export const Login = () => {
       </form>
 
       <ToastContainer />
-      <Footer />
     </LoginStyled>
   );
 };
