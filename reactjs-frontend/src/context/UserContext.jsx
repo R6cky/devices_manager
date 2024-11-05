@@ -33,7 +33,6 @@ export const Userprovider = ({ children }) => {
       localStorage.setItem("accesToken", accesToken);
       navigate("/bluebird");
     } catch (error) {
-      navigate("/");
       console.log(error);
     }
   };

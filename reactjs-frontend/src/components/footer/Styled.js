@@ -6,6 +6,6 @@ export const FooterStyled = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00000c;
+  background-color: var(--main-color);
   color: white;
 `;
