@@ -1,5 +1,5 @@
-import { createUserByEmail } from "../controllers/users/createUserByEmailAndPasssword.js";
-
+import { createUserByEmail } from "../services/user.service.js";
+//import { CreateBluebirdController } from "../controllers/bluebird/createBluebirdController.js";
 const users = [
   {
     email: "rocky@mail.com",
@@ -331,9 +331,15 @@ const computers = [
 ];
 
 const createMocData = async (list) => {
+  //const bluebirdCreate = new CreateBluebirdController();
+
   await list.map((elem) => {
-    createUserByEmail(elem);
+    return createUserByEmail(elem);
   });
-  await list.map((elem) => {});
+  // await list.map((elem) => {
+  //   bluebirdCreate.handle(elem);
+  //   console.log(elem);
+  // });
 };
 await createMocData(users);
+//await createMocData(users);

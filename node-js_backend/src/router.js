@@ -24,8 +24,12 @@ import { GetAllTonerController } from "./controllers/toner/getAllTonerController
 import { GetTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
 import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
 import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
-import { UserController } from "./controllers/users/userRegisterAndLogin.js";
+import {
+  userLoginController,
+  userRegister,
+} from "./controllers/users/userRegisterAndLogin.js";
 import { ensureAuth } from "./middleware/ensureAuth.js";
+import { userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
@@ -60,7 +64,7 @@ const getTonerById = new GetTonerByIdController();
 const updateToner = new UpdateTonerController();
 const deleteToner = new DeleteTonerController();
 
-const userRegister = new UserController();
+//const userRegister = new UserController();
 
 router.post("/bluebird", ensureAuth, createBluebirds.handle);
 router.get("/bluebird", ensureAuth, getAllBluebirds.handle);
@@ -93,7 +97,7 @@ router.get("/toner/:id", ensureAuth, getTonerById.handle);
 router.patch("/toner/:id", ensureAuth, updateToner.handle);
 router.delete("/toner/:id", ensureAuth, deleteToner.handle);
 
-router.post("/register", userRegister.register);
-router.post("/login", userRegister.login);
+router.post("/register", userExists, userRegister);
+router.post("/login", userExists, userLoginController);
 
 export { router };
