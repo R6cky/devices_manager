@@ -9,12 +9,6 @@ export class UserController {
     try {
       const data = schemaRegisterAndLogin.parse(req.body);
       const { email } = data;
-      // if (!email || !password) {
-      //   res
-      //     .status(400)
-      //     .json({ message: "You must provide an email and password." });
-      //   throw new Error("You must provide an email and password.");
-      // }
 
       const existingUser = await getUserByEmail(email);
       if (existingUser) {
@@ -36,10 +30,6 @@ export class UserController {
     try {
       const data = schemaRegisterAndLogin.parse(req.body);
       const { email, password } = data;
-      // if (!email || !password) {
-      //   res.status(400);
-      //   throw new Error("You must provide an email and password.");
-      // }
 
       const existingUser = await getUserByEmail(email);
 

@@ -2,7 +2,8 @@
   "scripts": {
     "postinstall": "prisma generate",
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "build-data": "nodemon node ./src/database/index.js"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^5.17.0",
