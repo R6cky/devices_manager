@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import { prismaClient } from "../database/prismaClient.js";
 import { schemaRegisterAndLogin } from "../utils/validators.js";
-import { getUserByEmail } from "../controllers/users/getUserByEmail.js";
 import { generatedAccesToken } from "../utils/jwt.js";
 
 export const createUserByEmail = async (user) => {
@@ -32,4 +31,16 @@ export const userLoginService = async (user) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const getUserByEmail = (email) => {
+  return prismaClient.user.findUnique({
+    where: { email },
+  });
+};
+
+export const getUserById = (id) => {
+  return prismaClient.user.findUnique({
+    where: { id },
+  });
 };
