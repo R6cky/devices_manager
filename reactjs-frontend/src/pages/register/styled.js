@@ -15,7 +15,7 @@ export const RegisterStyled = styled.div`
     margin-top: 100px;
     width: 500px;
     max-width: 90%;
-    height: 400px;
+    height: 450px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -48,14 +48,14 @@ export const RegisterStyled = styled.div`
 
       input {
         width: 100%;
-        height: 60px;
+        height: 50px;
         border-radius: 4px;
         font-size: 20px;
         padding-left: 8px;
       }
 
       p {
-        color: white;
+        color: var(--color-message-input);
         font-size: 20px;
         font-weight: bold;
       }
@@ -69,14 +69,14 @@ export const RegisterStyled = styled.div`
 
       input {
         width: 100%;
-        height: 60px;
+        height: 50px;
         border-radius: 4px;
         font-size: 20px;
         padding-left: 8px;
       }
 
       p {
-        color: white;
+        color: var(--color-message-input);
         font-size: 20px;
         font-weight: bold;
       }
