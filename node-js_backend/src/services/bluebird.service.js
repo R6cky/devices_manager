@@ -13,3 +13,25 @@ export const createBluebirdService = async (data) => {
     console.log(error);
   }
 };
+
+export const deleteBluebirdService = async (id) => {
+  try {
+    const bluebird = await prismaClient.blueBird.delete({
+      where: {
+        id: id,
+      },
+    });
+    return bluebird;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAllBluebirdService = async () => {
+  try {
+    const bluebirds = await prismaClient.blueBird.findMany();
+    return bluebirds;
+  } catch (error) {
+    console.log(error);
+  }
+};

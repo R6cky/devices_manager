@@ -10,10 +10,3 @@ app.use(router);
 app.listen(`${port}`, () => {
   console.log(`Running on port ${port}`);
 });
-
-const obj = {
-  name: "cleiton",
-  idade: 30,
-  sexo: "masculino",
-  cor: "preta",
-};

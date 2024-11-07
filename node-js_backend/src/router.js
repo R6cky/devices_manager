@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { createBluebirdController } from "./controllers/bluebird/createBluebirdController.js";
-import { GetAllBluebirdsController } from "./controllers/bluebird/getAllBluebirdsController.js";
+import { getAllBluebirdsController } from "./controllers/bluebird/getAllBluebirdsController.js";
 import { GetBluebirdByIdController } from "./controllers/bluebird/getBluebirdByIdController.js";
 import { UpdateBluebirdController } from "./controllers/bluebird/updateBluebirdController.js";
-import { DeleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
+import { deleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
 import { CreateComputerController } from "./controllers/computer/createComputerController.js";
 import { GetAllComputerController } from "./controllers/computer/getAllComputerController.js";
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
@@ -33,10 +33,8 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const getAllBluebirds = new GetAllBluebirdsController();
 const getBluebirdById = new GetBluebirdByIdController();
 const updateBluebird = new UpdateBluebirdController();
-const deleteBlueBird = new DeleteBluebirdController();
 
 const createComputer = new CreateComputerController();
 const getAllComputer = new GetAllComputerController();
@@ -65,10 +63,10 @@ const deleteToner = new DeleteTonerController();
 //const userRegister = new UserController();
 
 router.post("/bluebird", ensureAuth, createBluebirdController);
-router.get("/bluebird", ensureAuth, getAllBluebirds.handle);
+router.get("/bluebird", ensureAuth, getAllBluebirdsController);
 router.get("/bluebird/:id", ensureAuth, getBluebirdById.handle);
 router.patch("/bluebird/:id", ensureAuth, updateBluebird.handle);
-router.delete("/bluebird/:id", ensureAuth, deleteBlueBird.handle);
+router.delete("/bluebird/:id", ensureAuth, deleteBluebirdController);
 
 router.post("/computer", ensureAuth, createComputer.handle);
 router.get("/computer", ensureAuth, getAllComputer.handle);

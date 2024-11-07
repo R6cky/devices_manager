@@ -1,12 +1,6 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { deleteBluebirdService } from "../../services/bluebird.service.js";
 
-export class DeleteBluebirdController {
-  async handle(req, res) {
-    const bluebird = await prismaClient.blueBird.delete({
-      where: {
-        id: req.params.id,
-      },
-    });
-    return res.status(204).json(bluebird);
-  }
-}
+export const deleteBluebirdController = (req, res) => {
+  deleteBluebirdService(req.params.id);
+  return res.status(204).json({ message: "Deletado com sucesso!" });
+};

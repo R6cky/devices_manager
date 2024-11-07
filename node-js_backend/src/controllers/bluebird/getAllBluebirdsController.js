@@ -1,8 +1,7 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { getAllBluebirdService } from "../../services/bluebird.service.js";
 
-export class GetAllBluebirdsController {
-  async handle(req, res) {
-    const bluebird = await prismaClient.blueBird.findMany();
-    return res.status(200).json(bluebird);
-  }
-}
+export const getAllBluebirdsController = async (req, res) => {
+  const bluebirds = await getAllBluebirdService();
+  console.log(bluebirds);
+  return res.status(200).json(bluebirds);
+};
