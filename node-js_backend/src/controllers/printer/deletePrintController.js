@@ -2,7 +2,7 @@ import { deletePrinterService } from "../../services/printer.service.js";
 
 export const deletePrintController = async (req, res) => {
   try {
-    await deletePrinterService(req.parms.id);
+    await deletePrinterService(req.params.id);
     return res.status(204).json();
   } catch (error) {
     console.log(error);
