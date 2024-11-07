@@ -26,12 +26,7 @@ const bluebirds = [
     sector: "rampa",
     contact_number: "44976564432",
   },
-  {
-    serial_number: "jkp5678abcd/lmn",
-    hostname: "sampmnb876",
-    sector: "almoxarifado",
-    contact_number: "11987654321",
-  },
+
   {
     serial_number: "ztr2345lkmop/xyz",
     hostname: "poaexmnr234",
