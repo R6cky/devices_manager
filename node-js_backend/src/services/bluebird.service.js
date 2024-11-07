@@ -35,3 +35,12 @@ export const getAllBluebirdService = async () => {
     console.log(error);
   }
 };
+
+export const getBluebirdByIdService = (id) => {
+  const bluebirds = prismaClient.blueBird.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  return bluebirds;
+};

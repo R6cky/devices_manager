@@ -1,12 +1,6 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { getBluebirdByIdService } from "../../services/bluebird.service.js";
 
-export class GetBluebirdByIdController {
-  async handle(req, res) {
-    const bluebird = await prismaClient.blueBird.findUnique({
-      where: {
-        id: req.params.id,
-      },
-    });
-    return res.json(bluebird);
-  }
-}
+export const getBluebirdByIdController = async (req, res) => {
+  const bluebird = await getBluebirdByIdService(req.params.id);
+  return res.status(200).json(bluebird);
+};
