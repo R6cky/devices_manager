@@ -1,17 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
-import { schemaCreateComputer } from "../../utils/validators.js";
+import { createComputerService } from "../../services/computer.service.js";
 
-export class CreateComputerController {
-  async handle(req, res) {
-    try {
-      const dataComputer = schemaCreateComputer.parse(req.body);
-      const computer = await prismaClient.computer.create({
-        data: dataComputer,
-      });
-      res.status(201).json(computer);
-    } catch (error) {
-      console.log(error.issues);
-      return res.status(400).json(error.issues);
-    }
+export const createComputerController = async (req, res) => {
+  try {
+    const computer = await createComputerService(req.body);
+    res.status(201).json(computer);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(error);
   }
-}
+};

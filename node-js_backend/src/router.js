@@ -4,11 +4,11 @@ import { getAllBluebirdsController } from "./controllers/bluebird/getAllBluebird
 import { getBluebirdByIdController } from "./controllers/bluebird/getBluebirdByIdController.js";
 import { updateBluebirdController } from "./controllers/bluebird/updateBluebirdController.js";
 import { deleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
-import { CreateComputerController } from "./controllers/computer/createComputerController.js";
+import { createComputerController } from "./controllers/computer/createComputerController.js";
 import { GetAllComputerController } from "./controllers/computer/getAllComputerController.js";
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
 import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
-import { DeleteComputerController } from "./controllers/computer/deleteComputerController.js";
+import { deleteComputerController } from "./controllers/computer/deleteComputerController.js";
 import { CreatePrintController } from "./controllers/printer/createPrintController.js";
 import { GetAllPrintController } from "./controllers/printer/getAllPrintController.js";
 import { GetPrintByIdController } from "./controllers/printer/getPrintByIdController.js";
@@ -33,11 +33,9 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const createComputer = new CreateComputerController();
 const getAllComputer = new GetAllComputerController();
 const getComputerById = new GetComputerByIdController();
 const updateComputer = new UpdateComputerController();
-const deleteComputer = new DeleteComputerController();
 
 const createPrint = new CreatePrintController();
 const getAllPrint = new GetAllPrintController();
@@ -65,12 +63,11 @@ router.get("/bluebird/:id", ensureAuth, getBluebirdByIdController);
 router.patch("/bluebird/:id", ensureAuth, updateBluebirdController);
 router.delete("/bluebird/:id", ensureAuth, deleteBluebirdController);
 
-router.post("/computer", ensureAuth, createComputer.handle);
+router.post("/computer", ensureAuth, createComputerController);
 router.get("/computer", ensureAuth, getAllComputer.handle);
 router.get("/computer/:id", ensureAuth, getComputerById.handle);
 router.patch("/computer/:id", ensureAuth, updateComputer.handle);
-router.delete("/computer/:id", ensureAuth, deleteComputer.handle);
-router.delete("/computer/:id", ensureAuth, deleteComputer.handle);
+router.delete("/computer/:id", ensureAuth, deleteComputerController);
 
 router.post("/print", ensureAuth, createPrint.handle);
 router.get("/print", ensureAuth, getAllPrint.handle);
