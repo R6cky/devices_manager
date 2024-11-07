@@ -1,5 +1,5 @@
 import { createUserByEmail } from "../services/user.service.js";
-//import { CreateBluebirdController } from "../controllers/bluebird/createBluebirdController.js";
+import { createBluebirdService } from "../services/bluebird.service.js";
 const users = [
   {
     email: "rocky@mail.com",
@@ -325,16 +325,11 @@ const computers = [
   },
 ];
 
-const createMocData = async (list) => {
-  //const bluebirdCreate = new CreateBluebirdController();
-
-  await list.map((elem) => {
-    return createUserByEmail(elem);
-  });
-  // await list.map((elem) => {
-  //   bluebirdCreate.handle(elem);
-  //   console.log(elem);
-  // });
+const createMocData = (list, fn) => {
+  for (let i = 0; i < list.length; i++) {
+    fn(list[i]);
+  }
 };
-await createMocData(users);
-//await createMocData(users);
+
+createMocData(users, createUserByEmail);
+createMocData(bluebirds, createBluebirdService);
