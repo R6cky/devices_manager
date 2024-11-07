@@ -5,7 +5,7 @@ import { getBluebirdByIdController } from "./controllers/bluebird/getBluebirdByI
 import { updateBluebirdController } from "./controllers/bluebird/updateBluebirdController.js";
 import { deleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
 import { createComputerController } from "./controllers/computer/createComputerController.js";
-import { GetAllComputerController } from "./controllers/computer/getAllComputerController.js";
+import { getAllComputerController } from "./controllers/computer/getAllComputerController.js";
 import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
 import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
 import { deleteComputerController } from "./controllers/computer/deleteComputerController.js";
@@ -33,7 +33,6 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const getAllComputer = new GetAllComputerController();
 const getComputerById = new GetComputerByIdController();
 const updateComputer = new UpdateComputerController();
 
@@ -64,7 +63,7 @@ router.patch("/bluebird/:id", ensureAuth, updateBluebirdController);
 router.delete("/bluebird/:id", ensureAuth, deleteBluebirdController);
 
 router.post("/computer", ensureAuth, createComputerController);
-router.get("/computer", ensureAuth, getAllComputer.handle);
+router.get("/computer", ensureAuth, getAllComputerController);
 router.get("/computer/:id", ensureAuth, getComputerById.handle);
 router.patch("/computer/:id", ensureAuth, updateComputer.handle);
 router.delete("/computer/:id", ensureAuth, deleteComputerController);

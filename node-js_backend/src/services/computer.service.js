@@ -15,3 +15,7 @@ export const deleteComputerService = async (id) => {
     },
   });
 };
+
+export const getAllComputerService = async () => {
+  return await prismaClient.computer.findMany();
+};
