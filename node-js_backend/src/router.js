@@ -6,8 +6,8 @@ import { updateBluebirdController } from "./controllers/bluebird/updateBluebirdC
 import { deleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
 import { createComputerController } from "./controllers/computer/createComputerController.js";
 import { getAllComputerController } from "./controllers/computer/getAllComputerController.js";
-import { GetComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
-import { UpdateComputerController } from "./controllers/computer/updateComputerController.js";
+import { getComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
+import { updateComputerController } from "./controllers/computer/updateComputerController.js";
 import { deleteComputerController } from "./controllers/computer/deleteComputerController.js";
 import { CreatePrintController } from "./controllers/printer/createPrintController.js";
 import { GetAllPrintController } from "./controllers/printer/getAllPrintController.js";
@@ -32,9 +32,6 @@ import { ensureAuth } from "./middleware/ensureAuth.js";
 import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
-
-const getComputerById = new GetComputerByIdController();
-const updateComputer = new UpdateComputerController();
 
 const createPrint = new CreatePrintController();
 const getAllPrint = new GetAllPrintController();
@@ -64,8 +61,8 @@ router.delete("/bluebird/:id", ensureAuth, deleteBluebirdController);
 
 router.post("/computer", ensureAuth, createComputerController);
 router.get("/computer", ensureAuth, getAllComputerController);
-router.get("/computer/:id", ensureAuth, getComputerById.handle);
-router.patch("/computer/:id", ensureAuth, updateComputer.handle);
+router.get("/computer/:id", ensureAuth, getComputerByIdController);
+router.patch("/computer/:id", ensureAuth, updateComputerController);
 router.delete("/computer/:id", ensureAuth, deleteComputerController);
 
 router.post("/print", ensureAuth, createPrint.handle);
