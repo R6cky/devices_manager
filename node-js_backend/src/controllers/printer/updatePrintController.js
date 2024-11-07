@@ -1,20 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
-import { schemaCreatePrinter } from "../../utils/validators.js";
+import { updatePrinterService } from "../../services/printer.service.js";
 
-export class UpdatePrintController {
-  async handle(req, res) {
-    try {
-      const dataPrinter = schemaCreatePrinter.partial(req.body);
-      const printer = await prismaClient.printer.update({
-        where: {
-          id: req.params.id,
-        },
-        data: dataPrinter,
-      });
-      return res.status(200).json(printer);
-    } catch (error) {
-      console.log(error.issues);
-      res.status(200).json(error.issues);
-    }
+export const updatePrintController = async (req, res) => {
+  try {
+    const printer = await updatePrinterService(req.body, req.params.id);
+    return res.status(200).json(printer);
+  } catch (error) {
+    console.log(error);
+    res.status(200).json(error);
   }
-}
+};
