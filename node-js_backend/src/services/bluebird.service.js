@@ -44,3 +44,12 @@ export const getBluebirdByIdService = (id) => {
   });
   return bluebirds;
 };
+
+export const updateBluebirdService = (data, id) => {
+  const dataBluebird = schemaCreateBluebids.parse(data);
+  const bluebird = prismaClient.blueBird.update({
+    data: dataBluebird,
+    where: { id: id },
+  });
+  return bluebird;
+};

@@ -2,7 +2,7 @@ import { Router } from "express";
 import { createBluebirdController } from "./controllers/bluebird/createBluebirdController.js";
 import { getAllBluebirdsController } from "./controllers/bluebird/getAllBluebirdsController.js";
 import { getBluebirdByIdController } from "./controllers/bluebird/getBluebirdByIdController.js";
-import { UpdateBluebirdController } from "./controllers/bluebird/updateBluebirdController.js";
+import { updateBluebirdController } from "./controllers/bluebird/updateBluebirdController.js";
 import { deleteBluebirdController } from "./controllers/bluebird/deleteBluebirdController.js";
 import { CreateComputerController } from "./controllers/computer/createComputerController.js";
 import { GetAllComputerController } from "./controllers/computer/getAllComputerController.js";
@@ -33,8 +33,6 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const updateBluebird = new UpdateBluebirdController();
-
 const createComputer = new CreateComputerController();
 const getAllComputer = new GetAllComputerController();
 const getComputerById = new GetComputerByIdController();
@@ -64,7 +62,7 @@ const deleteToner = new DeleteTonerController();
 router.post("/bluebird", ensureAuth, createBluebirdController);
 router.get("/bluebird", ensureAuth, getAllBluebirdsController);
 router.get("/bluebird/:id", ensureAuth, getBluebirdByIdController);
-router.patch("/bluebird/:id", ensureAuth, updateBluebird.handle);
+router.patch("/bluebird/:id", ensureAuth, updateBluebirdController);
 router.delete("/bluebird/:id", ensureAuth, deleteBluebirdController);
 
 router.post("/computer", ensureAuth, createComputer.handle);

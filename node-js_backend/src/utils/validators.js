@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const schemaCreateBluebids = z.object({
-  serial_number: z.string("Este campo aceita somente texto."),
+  serial_number: z.string("Este campo aceita somente texto.").min(3),
   hostname: z.string("Este campo aceita somente texto."),
   sector: z.string(" O valor deve ser texto"),
   contact_number: z.string(" O valor deve ser texto"),

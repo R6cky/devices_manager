@@ -1,19 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
-import { schemaCreateBluebids } from "../../utils/validators.js";
-export class UpdateBluebirdController {
-  async handle(req, res) {
-    try {
-      const dataBluebird = schemaCreateBluebids.parse(req.body);
-      const blueBird = await prismaClient.blueBird.update({
-        where: {
-          id: req.params.id,
-        },
-        data: dataBluebird,
-      });
-      return res.status(200).json(blueBird);
-    } catch (error) {
-      console.log(error.issues);
-      return res.status(400).json(error.issues);
-    }
+import { updateBluebirdService } from "../../services/bluebird.service.js";
+
+export const updateBluebirdController = async (req, res) => {
+  try {
+    const bluebird = await updateBluebirdService(req.body, req.params.id);
+    return res.status(200).json(bluebird);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(error);
   }
-}
+};
