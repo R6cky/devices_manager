@@ -16,17 +16,8 @@ export const createUserByEmail = async (user) => {
 export const userLoginService = async (user) => {
   try {
     const data = schemaRegisterAndLogin.parse(user);
-    const { email, password } = data;
 
-    const existingUser = await getUserByEmail(email);
-
-    const validPassword = await bcrypt.compare(password, existingUser.password);
-    if (!validPassword) {
-      res.status(403).json({ message: "Invalid login credentials." });
-      throw new Error("Invalid login credentials.");
-    }
-
-    const accesToken = generatedAccesToken(existingUser);
+    const accesToken = generatedAccesToken(data);
     return { ...data, accesToken };
   } catch (error) {
     console.log(error);

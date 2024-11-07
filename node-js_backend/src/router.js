@@ -29,7 +29,7 @@ import {
   userRegister,
 } from "./controllers/users/userRegisterAndLogin.js";
 import { ensureAuth } from "./middleware/ensureAuth.js";
-import { userExists } from "./middleware/user.middleware.js";
+import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
@@ -98,6 +98,6 @@ router.patch("/toner/:id", ensureAuth, updateToner.handle);
 router.delete("/toner/:id", ensureAuth, deleteToner.handle);
 
 router.post("/register", userExists, userRegister);
-router.post("/login", userExists, userLoginController);
+router.post("/login", userExists, passwordValidate, userLoginController);
 
 export { router };
