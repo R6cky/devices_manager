@@ -9,11 +9,11 @@ import { getAllComputerController } from "./controllers/computer/getAllComputerC
 import { getComputerByIdController } from "./controllers/computer/getComputerByIdController.js";
 import { updateComputerController } from "./controllers/computer/updateComputerController.js";
 import { deleteComputerController } from "./controllers/computer/deleteComputerController.js";
-import { CreatePrintController } from "./controllers/printer/createPrintController.js";
-import { GetAllPrintController } from "./controllers/printer/getAllPrintController.js";
-import { GetPrintByIdController } from "./controllers/printer/getPrintByIdController.js";
-import { UpdatePrintController } from "./controllers/printer/updatePrintController.js";
-import { DeletePrintController } from "./controllers/printer/deletePrintController.js";
+import { createPrintController } from "./controllers/printer/createPrintController.js";
+import { getAllPrintController } from "./controllers/printer/getAllPrintController.js";
+import { getPrintByIdController } from "./controllers/printer/getPrintByIdController.js";
+import { updatePrintController } from "./controllers/printer/updatePrintController.js";
+import { deletePrintController } from "./controllers/printer/deletePrintController.js";
 import { CreateTasController } from "./controllers/tas/createTasController.js";
 import { GetTasByIdController } from "./controllers/tas/getTasByIdController.js";
 import { UpdateTasController } from "./controllers/tas/updateTasController.js";
@@ -33,12 +33,6 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const createPrint = new CreatePrintController();
-const getAllPrint = new GetAllPrintController();
-const getPrintById = new GetPrintByIdController();
-const updatePrint = new UpdatePrintController();
-const deletePrint = new DeletePrintController();
-
 const createTas = new CreateTasController();
 const getAllTas = new GetAllTasController();
 const getTasById = new GetTasByIdController();
@@ -50,8 +44,6 @@ const getAllToner = new GetAllTonerController();
 const getTonerById = new GetTonerByIdController();
 const updateToner = new UpdateTonerController();
 const deleteToner = new DeleteTonerController();
-
-//const userRegister = new UserController();
 
 router.post("/bluebird", ensureAuth, createBluebirdController);
 router.get("/bluebird", ensureAuth, getAllBluebirdsController);
@@ -65,11 +57,11 @@ router.get("/computer/:id", ensureAuth, getComputerByIdController);
 router.patch("/computer/:id", ensureAuth, updateComputerController);
 router.delete("/computer/:id", ensureAuth, deleteComputerController);
 
-router.post("/print", ensureAuth, createPrint.handle);
-router.get("/print", ensureAuth, getAllPrint.handle);
-router.get("/print/:id", ensureAuth, getPrintById.handle);
-router.patch("/print/:id", ensureAuth, updatePrint.handle);
-router.delete("/print/:id", ensureAuth, deletePrint.handle);
+router.post("/print", ensureAuth, createPrintController);
+router.get("/print", ensureAuth, getAllPrintController);
+router.get("/print/:id", ensureAuth, getPrintByIdController);
+router.patch("/print/:id", ensureAuth, updatePrintController);
+router.delete("/print/:id", ensureAuth, deletePrintController);
 
 router.post("/tas", ensureAuth, createTas.handle);
 router.get("/tas", ensureAuth, getAllTas.handle);
