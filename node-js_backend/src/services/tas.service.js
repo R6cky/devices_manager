@@ -1,12 +1,11 @@
 import { prismaClient } from "../database/prismaClient.js";
-import { schemaCreateBluebids, schemaCreateTas } from "../utils/validators.js";
+import { schemaCreateTas } from "../utils/validators.js";
 
 export const createTasService = async (data) => {
   const dataTas = schemaCreateTas.parse(data);
-  const tas = await prismaClient.tas.create({
+  return await prismaClient.tas.create({
     data: dataTas,
   });
-  return tas;
 };
 
 export const deleteTasService = async (id) => {

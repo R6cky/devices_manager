@@ -14,7 +14,7 @@ import { getAllPrintController } from "./controllers/printer/getAllPrintControll
 import { getPrintByIdController } from "./controllers/printer/getPrintByIdController.js";
 import { updatePrintController } from "./controllers/printer/updatePrintController.js";
 import { deletePrintController } from "./controllers/printer/deletePrintController.js";
-import { CreateTasController } from "./controllers/tas/createTasController.js";
+import { createTasController } from "./controllers/tas/createTasController.js";
 import { GetTasByIdController } from "./controllers/tas/getTasByIdController.js";
 import { UpdateTasController } from "./controllers/tas/updateTasController.js";
 import { GetAllTasController } from "./controllers/tas/getAllTasController.js";
@@ -33,7 +33,6 @@ import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
 
-const createTas = new CreateTasController();
 const getAllTas = new GetAllTasController();
 const getTasById = new GetTasByIdController();
 const updateTas = new UpdateTasController();
@@ -63,7 +62,7 @@ router.get("/print/:id", ensureAuth, getPrintByIdController);
 router.patch("/print/:id", ensureAuth, updatePrintController);
 router.delete("/print/:id", ensureAuth, deletePrintController);
 
-router.post("/tas", ensureAuth, createTas.handle);
+router.post("/tas", ensureAuth, createTasController);
 router.get("/tas", ensureAuth, getAllTas.handle);
 router.get("/tas/:id", ensureAuth, getTasById.handle);
 router.patch("/tas/:id", ensureAuth, updateTas.handle);
