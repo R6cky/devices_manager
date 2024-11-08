@@ -18,23 +18,23 @@ export const deleteTasService = async (id) => {
 };
 
 export const getAllTasService = async () => {
-  const bluebirds = await prismaClient.tas.findMany();
-  return bluebirds;
+  const tas = await prismaClient.tas.findMany();
+  return tas;
 };
 
 export const getTasByIdService = async (id) => {
-  const bluebirds = prismaClient.tas.findUnique({
+  const tas = prismaClient.tas.findUnique({
     where: {
       id: id,
     },
   });
-  return bluebirds;
+  return tas;
 };
 
 export const updateTasService = async (data, id) => {
-  const dataBluebird = schemaCreateTas.parse(data);
+  const dataTas = schemaCreateTas.parse(data);
   const tas = prismaClient.tas.update({
-    data: dataBluebird,
+    data: dataTas,
     where: { id: id },
   });
   return tas;
