@@ -1,5 +1,10 @@
-import { createUserByEmail } from "../services/user.service.js";
+import { userRegisterService } from "../services/user.service.js";
 import { createBluebirdService } from "../services/bluebird.service.js";
+import { createTasService } from "../services/tas.service.js";
+import { createPrinterService } from "../services/printer.service.js";
+import { createComputerService } from "../services/computer.service.js";
+import { createTonerService } from "../services/toner.services.js";
+
 const users = [
   {
     email: "rocky@mail.com",
@@ -331,5 +336,9 @@ const createMocData = (list, fn) => {
   }
 };
 
-createMocData(users, createUserByEmail);
+createMocData(users, userRegisterService);
 createMocData(bluebirds, createBluebirdService);
+createMocData(printers, createPrinterService);
+createMocData(tas, createTasService);
+createMocData(toners, createTonerService);
+createMocData(computers, createComputerService);

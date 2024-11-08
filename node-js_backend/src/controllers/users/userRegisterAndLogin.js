@@ -1,10 +1,10 @@
 import {
-  createUserByEmail,
+  userRegisterService,
   userLoginService,
 } from "../../services/user.service.js";
 
 export const userRegister = async (req, res) => {
-  const user = await createUserByEmail(req.body);
+  const user = await userRegisterService(req.body);
   return res
     .status(201)
     .json({ message: `Usuário ${user.email} criado com sucesso!` });
