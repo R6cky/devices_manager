@@ -1,12 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { deleteTonerService } from "../../services/toner.services.js";
 
-export class DeleteTonerController {
-  async handle(req, res) {
-    const toner = await prismaClient.toner.delete({
-      where: {
-        id: req.params.id,
-      },
-    });
-    return res.status(204).json(toner);
+export const deleteTonerController = async (req, res) => {
+  try {
+    await deleteTonerService(req.params.id);
+    return res.status(204).json({ message: "deletado com sucesso!" });
+  } catch (error) {
+    console.log(error);
+    res.satus(400).json(error);
   }
-}
+};

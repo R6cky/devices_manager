@@ -19,11 +19,11 @@ import { getTasByIdController } from "./controllers/tas/getTasByIdController.js"
 import { updateTasController } from "./controllers/tas/updateTasController.js";
 import { getAllTasController } from "./controllers/tas/getAllTasController.js";
 import { deleteTasController } from "./controllers/tas/deleteTasController.js";
-import { CreateTonerController } from "./controllers/toner/createTonerController.js";
-import { GetAllTonerController } from "./controllers/toner/getAllTonerController.js";
-import { GetTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
-import { UpdateTonerController } from "./controllers/toner/updateTonerController.js";
-import { DeleteTonerController } from "./controllers/toner/deleteTonerController.js";
+import { createTonerController } from "./controllers/toner/createTonerController.js";
+import { getAllTonerController } from "./controllers/toner/getAllTonerController.js";
+import { getTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
+import { updateTonerController } from "./controllers/toner/updateTonerController.js";
+import { deleteTonerController } from "./controllers/toner/deleteTonerController.js";
 import {
   userLoginController,
   userRegister,
@@ -32,12 +32,6 @@ import { ensureAuth } from "./middleware/ensureAuth.js";
 import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
-
-const createToner = new CreateTonerController();
-const getAllToner = new GetAllTonerController();
-const getTonerById = new GetTonerByIdController();
-const updateToner = new UpdateTonerController();
-const deleteToner = new DeleteTonerController();
 
 router.post("/bluebird", ensureAuth, createBluebirdController);
 router.get("/bluebird", ensureAuth, getAllBluebirdsController);
@@ -63,11 +57,11 @@ router.get("/tas/:id", ensureAuth, getTasByIdController);
 router.patch("/tas/:id", ensureAuth, updateTasController);
 router.delete("/tas/:id", ensureAuth, deleteTasController);
 
-router.post("/toner", ensureAuth, createToner.handle);
-router.get("/toner", ensureAuth, getAllToner.handle);
-router.get("/toner/:id", ensureAuth, getTonerById.handle);
-router.patch("/toner/:id", ensureAuth, updateToner.handle);
-router.delete("/toner/:id", ensureAuth, deleteToner.handle);
+router.post("/toner", ensureAuth, createTonerController);
+router.get("/toner", ensureAuth, getAllTonerController);
+router.get("/toner/:id", ensureAuth, getTonerByIdController);
+router.patch("/toner/:id", ensureAuth, updateTonerController);
+router.delete("/toner/:id", ensureAuth, deleteTonerController);
 
 router.post("/register", userExists, userRegister);
 router.post("/login", userExists, passwordValidate, userLoginController);

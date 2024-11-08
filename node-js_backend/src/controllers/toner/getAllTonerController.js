@@ -1,8 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { getAllTonerService } from "../../services/toner.services.js";
 
-export class GetAllTonerController {
-  async handle(req, res) {
-    const toner = await prismaClient.toner.findMany();
-    return res.status(200).json(toner);
+export const getAllTonerController = async (req, res) => {
+  try {
+    const toners = await getAllTonerService();
+    return res.status(200).json(toners);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(error);
   }
-}
+};

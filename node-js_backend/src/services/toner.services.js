@@ -9,33 +9,29 @@ export const createTonerService = async (data) => {
 };
 
 export const deleteTonerService = async (id) => {
-  const toner = await prismaClient.toner.delete({
+  return await prismaClient.toner.delete({
     where: {
       id: id,
     },
   });
-  return toner;
 };
 
 export const getAllTonerService = async () => {
-  const toner = await prismaClient.toner.findMany();
-  return toner;
+  return await prismaClient.toner.findMany();
 };
 
 export const getTonerByIdService = async (id) => {
-  const toner = prismaClient.toner.findUnique({
+  return prismaClient.toner.findUnique({
     where: {
       id: id,
     },
   });
-  return toner;
 };
 
 export const updateTasService = async (data, id) => {
   const dataToner = schemaCreateToner.parse(data);
-  const toner = prismaClient.toner.update({
+  return prismaClient.toner.update({
     data: dataToner,
     where: { id: id },
   });
-  return toner;
 };
