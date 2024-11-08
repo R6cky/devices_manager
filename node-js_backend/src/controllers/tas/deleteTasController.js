@@ -1,12 +1,11 @@
-import { prismaClient } from "../../database/prismaClient.js";
+import { deleteTasService } from "../../services/tas.service.js";
 
-export class DeleteTasController {
-  async handle(req, res) {
-    const tas = await prismaClient.tas.delete({
-      where: {
-        id: req.params.id,
-      },
-    });
-    return res.status(204).json(tas);
+export const deleteTasController = async (req, res) => {
+  try {
+    await deleteTasService(req.params.id);
+    return res.status(204).json({ message: "Deletado com sucesso!" });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(error);
   }
-}
+};

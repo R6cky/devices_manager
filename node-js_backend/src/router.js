@@ -15,10 +15,10 @@ import { getPrintByIdController } from "./controllers/printer/getPrintByIdContro
 import { updatePrintController } from "./controllers/printer/updatePrintController.js";
 import { deletePrintController } from "./controllers/printer/deletePrintController.js";
 import { createTasController } from "./controllers/tas/createTasController.js";
-import { GetTasByIdController } from "./controllers/tas/getTasByIdController.js";
-import { UpdateTasController } from "./controllers/tas/updateTasController.js";
-import { GetAllTasController } from "./controllers/tas/getAllTasController.js";
-import { DeleteTasController } from "./controllers/tas/deleteTasController.js";
+import { getTasByIdController } from "./controllers/tas/getTasByIdController.js";
+import { updateTasController } from "./controllers/tas/updateTasController.js";
+import { getAllTasController } from "./controllers/tas/getAllTasController.js";
+import { deleteTasController } from "./controllers/tas/deleteTasController.js";
 import { CreateTonerController } from "./controllers/toner/createTonerController.js";
 import { GetAllTonerController } from "./controllers/toner/getAllTonerController.js";
 import { GetTonerByIdController } from "./controllers/toner/getTonerByIdController.js";
@@ -32,11 +32,6 @@ import { ensureAuth } from "./middleware/ensureAuth.js";
 import { passwordValidate, userExists } from "./middleware/user.middleware.js";
 
 const router = Router();
-
-const getAllTas = new GetAllTasController();
-const getTasById = new GetTasByIdController();
-const updateTas = new UpdateTasController();
-const deleteTas = new DeleteTasController();
 
 const createToner = new CreateTonerController();
 const getAllToner = new GetAllTonerController();
@@ -63,10 +58,10 @@ router.patch("/print/:id", ensureAuth, updatePrintController);
 router.delete("/print/:id", ensureAuth, deletePrintController);
 
 router.post("/tas", ensureAuth, createTasController);
-router.get("/tas", ensureAuth, getAllTas.handle);
-router.get("/tas/:id", ensureAuth, getTasById.handle);
-router.patch("/tas/:id", ensureAuth, updateTas.handle);
-router.delete("/tas/:id", ensureAuth, deleteTas.handle);
+router.get("/tas", ensureAuth, getAllTasController);
+router.get("/tas/:id", ensureAuth, getTasByIdController);
+router.patch("/tas/:id", ensureAuth, updateTasController);
+router.delete("/tas/:id", ensureAuth, deleteTasController);
 
 router.post("/toner", ensureAuth, createToner.handle);
 router.get("/toner", ensureAuth, getAllToner.handle);

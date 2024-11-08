@@ -32,7 +32,7 @@ export const getTasByIdService = async (id) => {
 };
 
 export const updateTasService = async (data, id) => {
-  const dataBluebird = schemaCreateBluebids.parse(data);
+  const dataBluebird = schemaCreateTas.parse(data);
   const tas = prismaClient.tas.update({
     data: dataBluebird,
     where: { id: id },
