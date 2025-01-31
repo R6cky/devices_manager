@@ -31,4 +31,4 @@ Deploy da aplicação:
 Link da aplicação: https://devices-manageryxw.vercel.app/ 
 Obs. O backend está hospedado gratuitamente no "render.com" e na versão gratuita a api demora de 30seg a 60seg para 
 subir, a partir da primaira requisição feita. 
-\*Em construção...
+
