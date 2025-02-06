@@ -32,3 +32,18 @@ Link da aplicação: https://devices-manageryxw.vercel.app/
 Obs. O backend está hospedado gratuitamente no "render.com" e na versão gratuita a api demora de 30seg a 60seg para 
 subir, a partir da primaira requisição feita. 
 
+
+
+Usuários criados no banco que você pode usar para fazer login na aplicação: 
+-----------------------------------
+email: "rocky@mail.com"
+password: "123456"
+-----------------------------------
+email: "alexandre@mail.com"
+password: "123456"
+-----------------------------------
+email: "lucas@mail.com"    
+password: "123456"
+-----------------------------------
+email: "adair@mail.com"
+password: "123456"
