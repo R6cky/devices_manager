@@ -18,10 +18,7 @@ e o"node-js_backend", que são os diretórios do front e backend.
 
 3 - Entre no diretório "node-js_backend" e execute os comandos:
 
-#npm install -
-#npx prisma migrade dev -
-#npm run build-data -
-#npm run dev -
+#npm install; npx prisma migrade dev; npm run build-data; npm run dev
 
 Após isso a aplicação deve iniciar e você já pode utilizá-la.
 
