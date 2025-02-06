@@ -1,12 +1,12 @@
 # devices_manager
 
 Este projeto surgiu da necessidade de gerenciar alguns dispositivos,
-na empresa onde eu trabalhei. Eramos um time de 3 pessoas,
-E o parque tecnológico relativamente grande, atendíamos
+na empresa onde eu trabalhei. Eramos um time de 3 pessoas, revesados por escalas.
+O parque tecnológico relativamente grande, atendíamos
 Vários tripulantes de uma empresa aérea e existiam
-muitos dispositivos sob nosssa responsabilidade no aeroporto
+muitos dispositivos sob nossa responsabilidade no aeroporto
 estávamos com dificuldades em gerenciar tudo em através de planilhas
-então tive a idéia de criar esse sistema. Foi construído em NodeJS (Express+Prisma) e ReactJS ###no frontend. Você pode adaptá-lo a sua vontade, modificando as módels e adaptando o código a ###sua necessidade.
+então tive a idéia de criar esse sistema. Foi construído em NodeJS (Express+Prisma) e ReactJS no frontend. Você pode adaptá-lo a sua vontade, modificando as módels e adaptando o código a sua necessidade.
 
 Instruções para utilizar:  
 1 - clone o repositório em sua máquina local.  
@@ -18,10 +18,10 @@ e o"node-js_backend", que são os diretórios do front e backend.
 
 3 - Entre no diretório "node-js_backend" e execute os comandos:
 
-#npm install
-#npx prisma migrade dev
-#npm run build-data
-#npm run dev
+#npm install 
+#npx prisma migrade dev 
+#npm run build-data 
+#npm run dev 
 
 Após isso a aplicação deve iniciar e você já pode utilizá-la.
 
