@@ -25,11 +25,9 @@ Após isso a aplicação deve iniciar e você já pode utilizá-la.
 Deploy da aplicação:  
 -> o frontend está hospedado no site "vercel.com"  
 -> o backend está hospedado no site "render.com"  
-Link da aplicação: https://devices-manageryxw.vercel.app/ 
-Obs. O backend está hospedado gratuitamente no "render.com" e na versão gratuita a api demora de 30seg a 60seg para 
-subir, a partir da primaira requisição feita. 
-
-
+Link da aplicação: https://devices-manageryxw.vercel.app/
+Obs. O backend está hospedado gratuitamente no "render.com" e na versão gratuita a api demora de 30seg a 60seg para
+subir, a partir da primaira requisição feita.
 
 Usuários criados no banco que você pode usar para fazer login na aplicação:
 
@@ -44,3 +42,11 @@ password: "123456"
 
 email: "adair@mail.com"
 password: "123456"
+
+Importante:
+
+Ao fazer o download do projeto
+
+acesse o arquivo "api.js" no diretório "reactjs-frontend/src/services/"
+
+e mude o endereço da API https://\*onrender.com para http://localhost.
